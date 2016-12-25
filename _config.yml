@@ -28,7 +28,6 @@ sass:
 
 # Build settings
 markdown: kramdown
-highlighter: rogue
 gems:
   - jekyll-feed
   - jekyll-sitemap

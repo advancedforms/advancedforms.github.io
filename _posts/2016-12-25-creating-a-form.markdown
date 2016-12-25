@@ -21,7 +21,7 @@ Registering your forms programmatically is great if you want to integrate Advanc
 
 To create a form programmatically the function `af_register_form( $form )` is provided. The $form parameter should be an array matching the following structure:
 
-{% highlight php startinline %}
+{% highlight php %}
 <?php
 
 $form = array(
