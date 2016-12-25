@@ -17,7 +17,7 @@ title: Advanced Forms Documentation
 email: fabian@flapplabs.se
 description: > # this means to ignore newlines until "baseurl:"
   Wordpress plugin for creating flexible and developer-friendly forms using the power of Advanced Custom Fields
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://advancedforms.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 permalink: /:categories/:title/
