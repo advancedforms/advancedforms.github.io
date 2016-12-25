@@ -31,6 +31,7 @@ markdown: kramdown
 highlighter: rogue
 gems:
   - jekyll-feed
+  - jekyll-sitemap
 exclude:
   - Gemfile
   - Gemfile.lock
