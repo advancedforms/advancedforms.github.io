@@ -10,6 +10,7 @@ After a form has been submitted the field values need to be processed. The plugi
 If you need to process the form data further the handy action hook af/form/submission should be used. The hook can be used in three different ways.
 
 {% highlight php startinline %}
+<?php
 
 add_action( 'af/form/submission', 'your_callback_function' );
 add_action( 'af/form/submission/id=FORM_ID', 'your_callback_function' );
@@ -30,6 +31,7 @@ To simplify the retrieval of field values a helper function af_get_field is prov
 The following is an example of processing a form submission and extracting the value entered into the field with name "email".
 
 {% highlight php startinline %}
+<?php
 
 function handle_form_submission( $form, $fields, $args ) {
     

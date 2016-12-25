@@ -24,6 +24,7 @@ A form can also be displayed using a function call which specifies the form key 
 The $args parameter allows you to tweak how the form is displayed. These settings can also be passed to the shortcode. The available settings and their defaults are as follows.
 
 {% highlight php startinline %}
+<?php
 
 $args = array(
     'display_title'           => false, 		// Whether the title should be displayed or not (true/false)

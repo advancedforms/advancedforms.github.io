@@ -8,6 +8,7 @@ categories: actions form-display
 Triggered at the beginning of a form, before the title.
 
 {% highlight php startinline %}
+<?php
 
 function before_title( $form, $args ) {
     echo 'Before title';

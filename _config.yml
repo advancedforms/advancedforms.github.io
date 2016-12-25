@@ -28,7 +28,7 @@ sass:
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rogue
 gems:
   - jekyll-feed
 exclude:

@@ -8,6 +8,7 @@ categories: filters forms
 Alter the arguments used to display a form. The arguments are either passed to the function call or defined as attributes on a shortcode.
 
 {% highlight php startinline %}
+<?php
 
 function filter_args( $args, $form ) {
     $args['submit_text'] = 'Send';

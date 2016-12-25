@@ -22,6 +22,7 @@ Registering your forms programmatically is great if you want to integrate Advanc
 To create a form programmatically the function `af_register_form( $form )` is provided. The $form parameter should be an array matching the following structure:
 
 {% highlight php startinline %}
+<?php
 
 $form = array(
     'title' => 'Form title',
@@ -45,6 +46,7 @@ The only required attribute is **key** which should be a unique identifier for y
 If you are adding ACF field groups programmatically using the function `acf_add_local_field_group` then you need to set your ACF location rule to match your registered form. Adding your form as a location rule is simple and can be done like this:
 
 {% highlight php startinline %}
+<?php
 
 $acf_location_rule = array (
     'param' => 'af_form',

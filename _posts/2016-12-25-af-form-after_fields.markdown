@@ -8,6 +8,7 @@ categories: actions form-display
 Triggered after the submit button.
 
 {% highlight php startinline %}
+<?php
 
 function after_fields( $form, $args ) {
     echo 'After fields';

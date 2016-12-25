@@ -10,6 +10,7 @@ Filter attributes on field wrappers. Use to add classes, set an ID, or add new a
 `$attributes` is an array of HTML attributes and their values.
 
 {% highlight php startinline %}
+<?php
 
 function filter_field_attributes( $attributes, $field, $form, $args ) {
     $attributes['id'] = 'form-id';

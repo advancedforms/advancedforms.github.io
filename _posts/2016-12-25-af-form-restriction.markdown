@@ -10,6 +10,7 @@ Restrict a form based on custom conditions. Return false to display form normall
 The first conditional in the example should always be included in order to not override other restrictions.
 
 {% highlight php startinline %}
+<?php
 
 function restrict_form( $restriction, $form, $args ) {
 	

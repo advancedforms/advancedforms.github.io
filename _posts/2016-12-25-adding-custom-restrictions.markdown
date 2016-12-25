@@ -10,6 +10,7 @@ Advanced Forms comes with the option to hide a form unless certain conditions ar
 Custom restrictions may be applied using the filter `af/form/restriction` which is documented [here]({{ site.url }}/filters/forms/af-form-restriction). The following is an example of limiting a form to only administrators.
 
 {% highlight php startinline %}
+<?php
 
 function restrict_form( $restriction, $form, $args ) {
     

@@ -8,6 +8,7 @@ categories: actions form-display
 Triggered right before the fields and after the description.
 
 {% highlight php startinline %}
+<?php
 
 function hidden_field( $form, $args ) {
     echo '<input type="hidden" name="some_hidden_field" value="with some value">';

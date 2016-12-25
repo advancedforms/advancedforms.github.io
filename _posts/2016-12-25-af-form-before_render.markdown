@@ -10,6 +10,7 @@ Make changes to a form before it's rendered. Parameter `$form` is a form array.
 Can be used for example to modify the form title, description, or success message.
 
 {% highlight php startinline %}
+<?php
 
 function filter_form( $form, $args ) {
     $form['display']['description'] = 'New form description';

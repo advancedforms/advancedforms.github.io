@@ -8,6 +8,7 @@ categories: actions form-display
 Triggered right before the fields and after the description.
 
 {% highlight php startinline %}
+<?php
 
 function before_fields( $form, $args ) {
     echo 'Before fields and after description';
