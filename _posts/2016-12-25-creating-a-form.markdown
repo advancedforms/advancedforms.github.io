@@ -19,29 +19,34 @@ The fields connected to a form are fully defined by Advanced Custom Fields allow
 
 Registering your forms programmatically is great if you want to integrate Advanced Forms with your theme or plugin. In the future the plugin will include an export feature to generate form code from a form created using the admin interface.
 
-To create a form programmatically the function `af_register_form( $form )` is provided. The $form parameter should be an array matching the following structure:
+To create a form programmatically the function `af_register_form( $form )` is provided. The $form parameter should be an array matching the structure in the following example.
+
+Note that the only required attribute is **key** which should be a unique identifier for your form starting with `"form_"`. Setting the title attribute is recommended.
 
 {% highlight php %}
 <?php
 
-$form = array(
-    'title' => 'Form title',
-    'key' => 'form_some_unique_key',
-    'display' => array(
-        'description' => '',
-        'success_message' => '',
-    ),
-    'create_entries' => false,
-    'restrict_entries' => false,
-    'entries_limit' => 0,
-    'entries_restriction_message' => '',
-);
-
-af_register_form( $form );
+function register_form() {
+	$form = array(
+	    'title' => 'Form title',
+	    'key' => 'form_some_unique_key',
+	    'display' => array(
+	        'description' => '',
+	        'success_message' => '',
+	    ),
+	    'create_entries' => false,
+	    'restrict_entries' => false,
+	    'entries_limit' => 0,
+	    'entries_restriction_message' => '',
+	);
+	
+	af_register_form( $form );
+}
+add_action( 'af/register_forms', 'register_form' );
 
 {% endhighlight %}
 
-The only required attribute is **key** which should be a unique identifier for your form starting with `"form_"`. Setting the title attribute is recommended.
+It's recommended to register your forms on the `af/register_forms` hook to ensure that both Advanced Forms and ACF are installed and ready.
 
 If you are adding ACF field groups programmatically using the function `acf_add_local_field_group` then you need to set your ACF location rule to match your registered form. Adding your form as a location rule is simple and can be done like this:
 
