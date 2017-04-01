@@ -27,12 +27,29 @@ The $args parameter allows you to tweak how the form is displayed. These setting
 <?php
 
 $args = array(
-    'display_title'           => false, 		// Whether the title should be displayed or not (true/false)
-    'display_description'     => false, 		// Whether the description should be displayed or not (true/false)
-    'submit_text'             => 'Submit', 		// Text used for the submit button
-    'redirect'                => 'Current URL',		// The URL to redirect to after a successful submission. Defaults to the current URL displaying the success message set in the form settings
-    'echo'                    => true, 			// Whether the form output should be echoed or returned
-    'values'                  => array(), 		// Field values to pre-fill. Should be an array with format: $field_name_or_key => $field_prefill_value
+    // Whether the title should be displayed or not (true/false)
+    'display_title' => false,
+    
+    // Whether the description should be displayed or not (true/false)
+    'display_description' => false,
+    
+    // Text used for the submit button
+    'submit_text' => 'Submit',
+    
+    // The URL to redirect to after a successful submission. Defaults to the current URL displaying the success message set in the form settings
+    'redirect' => 'Current URL',
+    
+    // Whether the form output should be echoed or returned	
+    'echo' => true,
+    
+    // Field values to pre-fill. Should be an array with format: $field_name_or_key => $field_prefill_value
+    'values' => array(),
+    
+    // Array of field keys or names to exclude from form rendering
+    'exclude_fields' => array(),
+    
+    // Either 'wp' or 'basic'. Whether to use the Wordpress media uploader or a regular file input for file/image fields.
+    'uploader' => 'wp',
 );
 
 advanced_form( 'form_key', $args );
