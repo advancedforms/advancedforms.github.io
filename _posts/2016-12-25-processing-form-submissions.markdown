@@ -26,7 +26,7 @@ The action passes three different parameters:
 - `$fields` – Array of the submitted fields and their processed values
 - `$args` – Array of arguments used to display the form
 
-To simplify the retrieval of field values a helper function af_get_field is provided which takes the field name/key to find and the array of fields. The function returns a processed value in the same format as ACF's `get_field` would.
+To simplify the retrieval of field values a helper function `af_get_field` is provided which takes the field name/key to find. The function returns a processed value in the same format as ACF's `get_field` would.
 
 The following is an example of processing a form submission and extracting the value entered into the field with name "email".
 
@@ -35,9 +35,11 @@ The following is an example of processing a form submission and extracting the v
 
 function handle_form_submission( $form, $fields, $args ) {
     
-    $email = af_get_field( 'email', $fields );
+    $email = af_get_field( 'email' );
     
 }
 add_action( 'af/form/submission', 'handle_form_submission' );
 
 {% endhighlight %}
+
+***Note:** Previously `af_get_field` required you to pass the `$field` array as a second parameter. As of AF 1.1 this is no longer required or recommended.*

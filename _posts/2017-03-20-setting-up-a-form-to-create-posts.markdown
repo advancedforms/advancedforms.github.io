@@ -22,11 +22,11 @@ The next step is customizing our form to make it generate a post after submissio
 {% highlight php startinline %}
 <?php
 
-function generate_post_from_form_submission( $form, $fields, $args ) {
+function generate_post_from_form_submission() {
     
 	// Get the submitted field values
-	$post_title = af_get_field( 'post_title', $fields );
-	$post_content = af_get_field( 'post_content', $fields );
+	$post_title = af_get_field( 'post_title' );
+	$post_content = af_get_field( 'post_content' );
     
 	// Set up a form using the values for post title and content
 	// Replace post_type with whatever type of post you want to generate
@@ -41,7 +41,7 @@ function generate_post_from_form_submission( $form, $fields, $args ) {
 	wp_insert_post( $post_data );
     
 }
-add_action( 'af/form/submission/key=YOUR_FORM_KEY', 'generate_post_from_form_submission', 10, 3 );
+add_action( 'af/form/submission/key=YOUR_FORM_KEY', 'generate_post_from_form_submission', 10 );
 
 {% endhighlight %}
 

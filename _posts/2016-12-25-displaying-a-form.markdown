@@ -36,8 +36,9 @@ $args = array(
     // Text used for the submit button
     'submit_text' => 'Submit',
     
-    // The URL to redirect to after a successful submission. Defaults to the current URL displaying the success message set in the form settings
-    'redirect' => 'Current URL',
+    // The URL to which the form points. Defaults to the current URL which will automatically display a success message after submission
+    // If this is overriden you may use af_has_submission to check for a form submission
+    'target' => CURRENT_URL,
     
     // Whether the form output should be echoed or returned	
     'echo' => true,
@@ -50,6 +51,9 @@ $args = array(
     
     // Either 'wp' or 'basic'. Whether to use the Wordpress media uploader or a regular file input for file/image fields.
     'uploader' => 'wp',
+    
+    // The URL to redirect to after a successful submission. Defaults to false for no redirection.
+    'redirect' => false,
 );
 
 advanced_form( 'form_key', $args );
