@@ -11,7 +11,7 @@ A common use for front-end forms is to create posts with submitted form data. Ad
 
 The first step is creating a form which we'll later customize. Create a new form through the admin panel and leave all settings to their defaults. Make note of the unique form key shown beneath the title field, the form key will be used to target our form in code later.
 
-Next we need to add fields to our form. Create a new ACF field group and set its location to match our form. Add one field for the post title and another for the post content. Here's an example of a configured field group:
+Next we need to add fields to our form. Create a new ACF field group and set its location to match our form. Add one field for the post title and another for the post content and also set the location to match posts because we want to use the same fields there. Here's an example of a configured field group:
 
 ![Example field configuration]({{ site.url }}/assets/images/post-generating-form-group.png)
 
@@ -38,7 +38,10 @@ function generate_post_from_form_submission() {
 	);
 	
 	// Create post with the previously retrieved values
-	wp_insert_post( $post_data );
+	$post_id = wp_insert_post( $post_data );
+	
+	// Save extra_information field directly to custom field on post
+	af_save_field_to_post( 'extra_information', $post_id );
     
 }
 add_action( 'af/form/submission/key=YOUR_FORM_KEY', 'generate_post_from_form_submission', 10 );
@@ -46,6 +49,10 @@ add_action( 'af/form/submission/key=YOUR_FORM_KEY', 'generate_post_from_form_sub
 {% endhighlight %}
 
 The code runs after our form has been submitted, retrieves the field values and generates a form from them. Make sure to replace `YOUR_FORM_KEY` with the key for your specific form.
+
+## Saving custom fields
+
+Because Advanced Forms uses ACF fields it's really easy to save your form values directly to custom fields on a post. A helper function `af_save_field_to_post( $field_key_or_name, $post_id )` is provided for this exact purpose. `af_save_field_to_post` takes your field key or name as the first parameter and a post ID to save to as the second. In the example above it's used to save the extra_information field to the recently created post.
 
 ## Results
 
