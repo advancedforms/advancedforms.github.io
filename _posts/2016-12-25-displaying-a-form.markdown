@@ -54,6 +54,12 @@ $args = array(
     
     // The URL to redirect to after a successful submission. Defaults to false for no redirection.
     'redirect' => false,
+    
+    // ID to use for form element. Defaults to form key.
+    'id' => FORM_KEY,
+    
+    // Filter mode disables the success message after submission and instead displays all fields again with their submitted values.
+    'filter_mode' => false,
 );
 
 advanced_form( 'form_key', $args );

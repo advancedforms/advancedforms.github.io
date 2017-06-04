@@ -41,7 +41,7 @@ function generate_post_from_form_submission() {
 	$post_id = wp_insert_post( $post_data );
 	
 	// Save extra_information field directly to custom field on post
-	af_save_field_to_post( 'extra_information', $post_id );
+	af_save_field( 'extra_information', $post_id );
     
 }
 add_action( 'af/form/submission/key=YOUR_FORM_KEY', 'generate_post_from_form_submission', 10 );
@@ -52,7 +52,7 @@ The code runs after our form has been submitted, retrieves the field values and 
 
 ## Saving custom fields
 
-Because Advanced Forms uses ACF fields it's really easy to save your form values directly to custom fields on a post. A helper function `af_save_field_to_post( $field_key_or_name, $post_id )` is provided for this exact purpose. `af_save_field_to_post` takes your field key or name as the first parameter and a post ID to save to as the second. In the example above it's used to save the extra_information field to the recently created post.
+Because Advanced Forms uses ACF fields it's really easy to save your form values directly to custom fields on a post. A helper function `af_save_field( $field_key_or_name, $object_id )` is provided for this exact purpose. `af_save_field` takes your field key or name as the first parameter and a post ID to save to as the second. In the example above it's used to save the extra_information field to the recently created post.
 
 ## Results
 
