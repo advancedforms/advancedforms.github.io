@@ -2,7 +2,7 @@
 layout: post
 title:  "af/form/email/content"
 date:   2016-12-23 00:02:00 +0100
-categories: filters emails
+category: emails
 ---
 
 Filter the contents of a form email before sending.

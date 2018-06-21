@@ -2,7 +2,7 @@
 layout: post
 title:  "af/form/before_title"
 date:   2016-12-23 00:00:00 +0100
-categories: actions form-display
+category: form-display
 ---
 
 Triggered at the beginning of a form, before the title.

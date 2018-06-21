@@ -2,7 +2,7 @@
 layout: post
 title:  "af/form/args"
 date:   2016-12-23 00:01:00 +0100
-categories: filters forms
+category: forms
 ---
 
 Alter the arguments used to display a form. The arguments are either passed to the function call or defined as attributes on a shortcode.

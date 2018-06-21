@@ -13,7 +13,7 @@
 	<div class="main container">
 		<div class="post">
 			<div class="breadcrumb">
-				<a href="/">Home</a> › {{ page.categories[0] | capitalize }} › {{ page.title }}
+				<a href="/">Home</a> › {{ page.title }}
 			</div>
 			<h1>{{ page.title }}</h1>
 			{{ page.tags }}
@@ -24,7 +24,15 @@
 			<div class="related">
 				<p class="heading">Related</p>
 				<ul>
-					{% for post in site.categories[page.categories.last] reversed %}
+					{% if page.collection == "actions" %}
+						{% assign collection = site.actions | where: "category", page.category %}
+					{% elsif page.collection == "filters" %}
+						{% assign collection = site.filters | where: "category", page.category %}
+					{% else %}
+						{% assign collection = site.categories[page.categories.last] | reverse %}
+					{% endif %}
+
+					{% for post in collection %}
 						{% if post.url == page.url %}
 					    	<li>{{ post.title }}</li>
 					    {% else %}

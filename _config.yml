@@ -22,6 +22,12 @@ url: "https://advancedforms.github.io" # the base hostname & protocol for your s
 
 permalink: /:categories/:title/
 
+collections:
+  actions:
+    output: true
+  filters:
+    output: true
+
 sass:
   sass_dir: _sass
   style: compressed

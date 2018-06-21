@@ -2,7 +2,7 @@
 layout: post
 title:  "af/form/restriction"
 date:   2016-12-23 00:03:00 +0100
-categories: filters forms
+category: forms
 ---
 
 Restrict a form based on custom conditions. Return false to display form normally or return a message which should be displayed instead of the form fields.

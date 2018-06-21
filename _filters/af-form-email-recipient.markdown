@@ -2,7 +2,7 @@
 layout: post
 title:  "af/form/email/recipient"
 date:   2016-12-23 00:00:00 +0100
-categories: filters emails
+category: emails
 ---
 
 Filter the recipient of a form email before sending. Should be a comma-separated list of email addresses.

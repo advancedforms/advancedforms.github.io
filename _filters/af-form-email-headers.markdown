@@ -2,7 +2,7 @@
 layout: post
 title:  "af/form/email/headers"
 date:   2016-12-23 00:04:00 +0100
-categories: filters emails
+category: emails
 ---
 
 Filter the headers of a form email before sending. `$headers` should be an array of email headers.

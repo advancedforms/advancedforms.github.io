@@ -2,7 +2,7 @@
 layout: post
 title:  "af/form/before_render"
 date:   2016-12-23 00:00:00 +0100
-categories: filters forms
+category: forms
 ---
 
 Make changes to a form before it's rendered. Parameter `$form` is a form array.

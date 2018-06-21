@@ -2,7 +2,7 @@
 layout: post
 title:  "af/form/email/subject"
 date:   2016-12-23 00:01:00 +0100
-categories: filters emails
+category: emails
 ---
 
 Filter the subect line of a form email before sending.

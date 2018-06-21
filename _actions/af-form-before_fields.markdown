@@ -2,7 +2,7 @@
 layout: post
 title:  "af/form/before_fields"
 date:   2016-12-23 00:01:00 +0100
-categories: actions form-display
+category: form-display
 ---
 
 Triggered right before the fields and after the description.

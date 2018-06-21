@@ -2,7 +2,7 @@
 layout: post
 title:  "af/form/hidden_fields"
 date:   2016-12-23 00:02:00 +0100
-categories: actions form-display
+category: form-display
 ---
 
 Triggered right before the fields and after the description.

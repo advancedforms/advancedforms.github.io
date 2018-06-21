@@ -2,7 +2,7 @@
 layout: post
 title:  "af/form/after_fields"
 date:   2016-12-23 00:03:00 +0100
-categories: actions form-display
+category: form-display
 ---
 
 Triggered after the submit button.

@@ -2,7 +2,7 @@
 layout: post
 title:  "af/form/email/attachments"
 date:   2016-12-23 00:05:00 +0100
-categories: filters emails
+category: emails
 ---
 
 Filter the attachments of a form email before sending. `$attachments` should be an array of file paths similar to the attachments parameter for `wp_mail`.
