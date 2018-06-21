@@ -9,7 +9,6 @@ $offblack: #222;
 $gray: #555;
 $midgray: #999;
 $lightgray: #ececec;
-$blue: #4989d1;
 $blue: #318cf3;
 $darkblue: #2b5584;
 
@@ -280,18 +279,30 @@ header {
 	text-decoration: none;
 	background: $blue;
 	color: #fff;
-	padding: 15px;
+	padding: 15px 20px;
 	border-radius: 5px;
 	box-shadow: 0px 2px 5px rgba($darkblue, 0.5);
+	margin-right: 10px;
+	margin-bottom: 10px;
 	transition: box-shadow .2s ease-in-out;
 	border: 0;
 	font-family: 'Nunito Sans', sans-serif;
+
+	transform: translateY(0);
+	transition: transform .1s ease-in-out, box-shadow .1s ease-in-out;
 	
+	&.wordpress {
+		background-image: url('/assets/images/wordpress.png');
+		background-repeat: no-repeat;
+		background-size: 30%;
+		background-position: -10% center;
+	}
+
 	.subtext {
 		display: block;
-		font-size: 0.8rem;
+		font-size: 0.9rem;
 		margin-top: 8px;
-		color: $darkblue;
+		color: rgba(0, 0, 0, 0.6);
 	}
 	
 	&.small {
@@ -302,6 +313,7 @@ header {
 	&:hover {
 		box-shadow: 0px 2px 8px rgba($darkblue, 0.5);
 		text-decoration: none;
+		transform: translateY(-2px);
 	}
 }
 
