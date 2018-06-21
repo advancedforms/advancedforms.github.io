@@ -3,6 +3,8 @@ layout: post
 title:  "Displaying a form"
 date:   2016-12-23 00:01:00 +0100
 categories: guides basic
+filters: ["af/form/args", "af/form/before_render"]
+actions: ["af/form/before_title", "af/form/before_fields", "af/form/after_fields", "af/field/attributes", "af/form/hidden_fields"]
 ---
 
 Once a form has been added and fields have been assigned you can display the form either using a shortcode or with a function call.

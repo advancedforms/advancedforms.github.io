@@ -204,6 +204,27 @@ header {
 	}
 }
 
+.related-hooks {
+	border-top: 3px solid $lightgray;
+	margin-top: 50px;
+	padding-top: 50px;
+
+	h2 {
+		font-size: 1.5rem;
+		margin-top: 0;
+	}
+
+	.detail {
+		background: $lightgray;
+		border-radius: 3px;
+		font-size: 0.7rem;
+		margin-left: 5px;
+		opacity: 0.75;
+		padding: 1px 6px;
+		vertical-align: middle;
+	}
+}
+
 .sidebar {
 	float: left;
 	width: 33.33%;

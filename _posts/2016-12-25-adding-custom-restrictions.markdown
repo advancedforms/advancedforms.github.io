@@ -3,6 +3,7 @@ layout: post
 title:  "Adding custom restrictions"
 date:   2016-12-23 00:01:00 +0100
 categories: guides advanced
+filters: "af/form/restriction"
 ---
 
 Advanced Forms comes with the option to hide a form unless certain conditions are meet. Included is the ability to limit the number of entries created by a form, to restrict a form from non-logged in users, and to set a schedule during which the form should be available.

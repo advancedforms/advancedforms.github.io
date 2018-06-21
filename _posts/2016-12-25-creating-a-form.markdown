@@ -3,6 +3,7 @@ layout: post
 title:  "Creating a form"
 date:   2016-12-23 00:00:00 +0100
 categories: guides basic
+filters: ["af/form/email/recipient","af/form/email/subject","af/form/email/content","af/form/email/attachments","af/form/email/headers"]
 ---
 
 Forms can be created either using the UI provided or programmatically.
