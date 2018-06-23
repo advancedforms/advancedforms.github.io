@@ -11,6 +11,7 @@ $midgray: #999;
 $lightgray: #ececec;
 $blue: #318cf3;
 $darkblue: #2b5584;
+$purple: #9b4c9d;
 
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1.4em;
@@ -188,18 +189,27 @@ header {
 	}
 	
 	img {
-		max-width: 100%;
+		max-width: 80%;
 		margin-bottom: 1rem;
 	}
 	
 	ul {
+		list-style: disc;
+	}
+
+	ol {
+		list-style: decimal;
+	}
+
+	ul, ol {
 		margin-bottom: 1rem;
 		font-size: 18px;
-		list-style: disc;
 		margin-left: 1.5em;
 	}
-	
-	ul li {
+
+	ul li,
+	ol li {
+		line-height: 1.5;
 		margin-bottom: 5px;
 	}
 }
@@ -308,6 +318,15 @@ header {
 	&.small {
 		padding: 10px 15px;
 		font-size: 14px;
+	}
+
+	&.hookturn {
+		background: $purple;
+
+		background-image: url('/assets/images/hookturn.png');
+		background-repeat: no-repeat;
+		background-size: 20%;
+		background-position: 0% center;
 	}
 	
 	&:hover {
