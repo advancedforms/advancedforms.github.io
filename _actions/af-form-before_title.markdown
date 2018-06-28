@@ -13,8 +13,8 @@ Triggered at the beginning of a form, before the title.
 function before_title( $form, $args ) {
     echo 'Before title';
 }
-add_action( 'af/form/before_title', 'before_title' );
-add_action( 'af/form/before_title/id=FORM_ID', 'before_title' );
-add_action( 'af/form/before_title/key=FORM_KEY', 'before_title' );
+add_action( 'af/form/before_title', 'before_title', 10, 2 );
+add_action( 'af/form/before_title/id=FORM_ID', 'before_title', 10, 2 );
+add_action( 'af/form/before_title/key=FORM_KEY', 'before_title', 10, 2 );
 
 {% endhighlight %}

@@ -13,8 +13,8 @@ Triggered right before the fields and after the description.
 function before_fields( $form, $args ) {
     echo 'Before fields and after description';
 }
-add_action( 'af/form/before_fields', 'before_fields' );
-add_action( 'af/form/before_fields/id=FORM_ID', 'before_fields' );
-add_action( 'af/form/before_fields/key=FORM_KEY', 'before_fields' );
+add_action( 'af/form/before_fields', 'before_fields', 10, 2 );
+add_action( 'af/form/before_fields/id=FORM_ID', 'before_fields', 10, 2 );
+add_action( 'af/form/before_fields/key=FORM_KEY', 'before_fields', 10, 2 );
 
 {% endhighlight %}

@@ -13,8 +13,8 @@ Triggered after the submit button.
 function after_fields( $form, $args ) {
     echo 'After fields';
 }
-add_action( 'af/form/after_fields', 'after_fields' );
-add_action( 'af/form/after_fields/id=FORM_ID', 'after_fields' );
-add_action( 'af/form/after_fields/key=FORM_KEY', 'after_fields' );
+add_action( 'af/form/after_fields', 'after_fields', 10 ,2 );
+add_action( 'af/form/after_fields/id=FORM_ID', 'after_fields', 10 ,2 );
+add_action( 'af/form/after_fields/key=FORM_KEY', 'after_fields', 10 ,2 );
 
 {% endhighlight %}

@@ -13,8 +13,8 @@ Triggered right before the fields and after the description.
 function hidden_field( $form, $args ) {
     echo '<input type="hidden" name="some_hidden_field" value="with some value">';
 }
-add_action( 'af/form/hidden_fields', 'hidden_field' );
-add_action( 'af/form/hidden_fields/id=FORM_ID', 'hidden_field' );
-add_action( 'af/form/hidden_fields/key=FORM_KEY', 'hidden_field' );
+add_action( 'af/form/hidden_fields', 'hidden_field', 10, 2 );
+add_action( 'af/form/hidden_fields/id=FORM_ID', 'hidden_field', 10, 2 );
+add_action( 'af/form/hidden_fields/key=FORM_KEY', 'hidden_field', 10, 2 );
 
 {% endhighlight %}

@@ -17,8 +17,8 @@ function filter_field_attributes( $attributes, $field, $form, $args ) {
     
     return $attributes;
 }
-add_filter( 'af/form/field_attributes', 'filter_field_attributes' );
-add_filter( 'af/form/field_attributes/id=FORM_ID', 'filter_field_attributes' );
-add_filter( 'af/form/field_attributes/key=FORM_KEY', 'filter_field_attributes' );
+add_filter( 'af/form/field_attributes', 'filter_field_attributes', 10, 4 );
+add_filter( 'af/form/field_attributes/id=FORM_ID', 'filter_field_attributes', 10, 4 );
+add_filter( 'af/form/field_attributes/key=FORM_KEY', 'filter_field_attributes', 10, 4 );
 
 {% endhighlight %}
