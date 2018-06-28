@@ -19,9 +19,11 @@ There is also a setting for "Custom fields" which allows you to map fields from 
 
 ## Displaying your form
 
-If editing has been configured for a form it will by default create a new user with a submission. If you instead want to edit a user you need to pass a user ID with the form argument `user`. With a shortcode this would look like
+If editing has been configured for a form you will also need to specify whether to create a new user or edit an existing one. If you want to edit a user you need to pass a user ID with the form argument `user`. For creating a user, the form argument `user` should be set to `new`. With a shortcode this would look like
 
 `[advanced_form form="form_key" user="1"]`
+
+`[advanced_form form="form_key" user="new"]`
 
 And the function call equivalent is
 

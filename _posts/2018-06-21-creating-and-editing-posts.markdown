@@ -19,9 +19,11 @@ There is also a setting for "Custom fields" which allows you to map fields from 
 
 ## Displaying your form
 
-If editing has been configured for a form it will by default create a new post with a submission. If you instead want to edit a post you need to pass a post ID with the form argument `post`. With a shortcode this would look like
+If editing has been configured for a form you will also need to specify whether to create a new post or edit an existing one. If you  want to edit a post you need to pass a post ID with the form argument `post`. For creating a post, the form argument `post` should be set to `new`. With a shortcode this would look like
 
 `[advanced_form form="form_key" post="1"]`
+
+`[advanced_form form="form_key" post="new"]`
 
 And the function call equivalent is
 
