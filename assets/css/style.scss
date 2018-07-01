@@ -1,7 +1,7 @@
 ---
 ---
 
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,600');
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono|Nunito+Sans:400,600');
 
 @import 'reset';
 
@@ -116,6 +116,11 @@ header {
 .documentation-block {
 	padding: 70px 0;
 	border-bottom: 1px solid $lightgray;
+
+	&.actions a,
+	&.filters a {
+		font-family: 'Fira Mono', monospace;
+	}
 	
 	.title-wrapper {
 		width: 40%;
@@ -127,9 +132,23 @@ header {
 			font-size: 2rem;
 		}
 	}
+
+	.documentation-wrapper {
+		width: 60%;
+		float: left;
+	}
+
+	.row {
+		margin-bottom: 20px;
+		overflow: auto;
+	}
+
+	.row:last-child {
+		margin-bottom: 0;
+	}
 	
 	.documentation-column {
-		width: 30%;
+		width: 50%;
 		float: left;
 		padding: 0 20px;
 		
@@ -354,7 +373,7 @@ input[type="email"]
  * Syntax highlight
  */
 pre, code {
-	font-family: monospace;
+	font-family: 'Fira Mono', monospace;
 	font-size: 1rem;
 	line-height: 1.4em;
 }
