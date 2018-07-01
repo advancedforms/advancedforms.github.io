@@ -7,7 +7,7 @@ categories: guides basic
 
 After a form has been submitted the field values need to be processed. The plugin comes with the ability to automatically save form data to entries and to send custom emails. Emails and entries can be configured in the form settings but are not enabled by default.
 
-If you need to process the form data further the handy action hook af/form/submission should be used. The hook can be used in three different ways.
+If you need to process the form data further the handy action hook `af/form/submission` should be used. The hook can be used in three different ways.
 
 {% highlight php startinline %}
 <?php
@@ -38,7 +38,7 @@ function handle_form_submission( $form, $fields, $args ) {
     $email = af_get_field( 'email' );
     
 }
-add_action( 'af/form/submission', 'handle_form_submission' );
+add_action( 'af/form/submission', 'handle_form_submission', 10, 3 );
 
 {% endhighlight %}
 

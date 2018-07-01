@@ -26,6 +26,6 @@ function restrict_form( $restriction, $form, $args ) {
     return false;
     
 }
-add_filter( 'af/form/restriction', 'restrict_form' );
+add_filter( 'af/form/restriction', 'restrict_form', 10, 3 );
 
 {% endhighlight %}
