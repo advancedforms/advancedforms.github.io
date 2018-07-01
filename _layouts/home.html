@@ -36,22 +36,24 @@
 				<p>Learn how to get started and go further with Advanced Forms.</p>
 			</div>
 			
-			<div class="documentation-column">
-				<h2>Basic</h2>
-				<ul>
-					{% for post in site.categories.basic reversed %}
-						<li><a href="{{ post.url }}">{{ post.title }}</a></li>
-					{% endfor %}
-				</ul>
-			</div>
-			
-			<div class="documentation-column">
-				<h2>Advanced</h2>
-				<ul>
-					{% for post in site.categories.advanced reversed %}
-						<li><a href="{{ post.url }}">{{ post.title }}</a></li>
-					{% endfor %}
-				</ul>
+			<div class="documentation-wrapper">
+				<div class="documentation-column">
+					<h2>Basic</h2>
+					<ul>
+						{% for post in site.categories.basic reversed %}
+							<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+				
+				<div class="documentation-column">
+					<h2>Advanced</h2>
+					<ul>
+						{% for post in site.categories.advanced reversed %}
+							<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -62,74 +64,100 @@
 				<h2>Pro</h2>
 				<p>Become familiar with the power of Advanced Forms Pro.</p>
 			</div>
-			
-			<div class="documentation-column">
-				<h2>Configuration</h2>
-				<ul>
-					{% for post in site.categories.configuration reversed %}
-						<li><a href="{{ post.url }}">{{ post.title }}</a></li>
-					{% endfor %}
-				</ul>
-			</div>
-			
-			<div class="documentation-column">
-				<h2>Editing</h2>
-				<ul>
-					{% for post in site.categories.editing reversed %}
-						<li><a href="{{ post.url }}">{{ post.title }}</a></li>
-					{% endfor %}
-				</ul>
+
+			<div class="documentation-wrapper">
+				<div class="documentation-column">
+					<h2>Configuration</h2>
+					<ul>
+						{% for post in site.categories.configuration reversed %}
+							<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+				
+				<div class="documentation-column">
+					<h2>Editing</h2>
+					<ul>
+						{% for post in site.categories.editing reversed %}
+							<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
 	
-	<div class="documentation-block">
+	<div class="documentation-block actions">
 		<div class="container">
 			<div class="title-wrapper">
 				<h2>Actions</h2>
 				<p>Customize and extend your forms using these actions.</p>
 			</div>
-			
-			<div class="documentation-column">
-				<h2>Form display</h2>
-				<ul>
-					{% assign hooks = site.actions | where: "category", "form-display" %}
-					{% for hook in hooks %}
-						<li><a href="{{ hook.url }}">{{ hook.title }}</a></li>
-					{% endfor %}
-				</ul>
-			</div>
-			
-			<div class="documentation-column">
+			<div class="documentation-wrapper">
+				<div class="row">
+					<div class="documentation-column">
+						<h2>Form display</h2>
+						<ul>
+							{% assign hooks = site.actions | where: "category", "form-display" %}
+							{% for hook in hooks %}
+								<li><a href="{{ hook.url }}">{{ hook.title }}</a></li>
+							{% endfor %}
+						</ul>
+					</div>
+
+					<div class="documentation-column">
+						<h2>Events</h2>
+						<ul>
+							{% assign hooks = site.actions | where: "category", "events" %}
+							{% for hook in hooks %}
+								<li><a href="{{ hook.url }}">{{ hook.title }}</a></li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="documentation-column">
+						<h2>Pro</h2>
+						<ul>
+							{% assign hooks = site.actions | where: "category", "pro" %}
+							{% for hook in hooks %}
+								<li><a href="{{ hook.url }}">{{ hook.title }}</a></li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 	
-	<div class="documentation-block">
+	<div class="documentation-block filters">
 		<div class="container">
 			<div class="title-wrapper">
 				<h2>Filters</h2>
 				<p>Customize and extend your forms using these filters.</p>
 			</div>
 			
-			<div class="documentation-column">
-				<h2>Forms</h2>
-				<ul>
-					{% assign hooks = site.filters | where: "category", "forms" %}
-					{% for hook in hooks %}
-						<li><a href="{{ hook.url }}">{{ hook.title }}</a></li>
-					{% endfor %}
-				</ul>
-			</div>
-			
-			<div class="documentation-column">
-				<h2>Emails</h2>
-				<ul>
-					{% assign hooks = site.filters | where: "category", "emails" %}
-					{% for hook in hooks %}
-						<li><a href="{{ hook.url }}">{{ hook.title }}</a></li>
-					{% endfor %}
-				</ul>
+			<div class="documentation-wrapper">
+				<div class="documentation-column">
+					<h2>Forms</h2>
+					<ul>
+						{% assign hooks = site.filters | where: "category", "forms" %}
+						{% for hook in hooks %}
+							<li><a href="{{ hook.url }}">{{ hook.title }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+				
+				<div class="documentation-column">
+					<h2>Emails</h2>
+					<ul>
+						{% assign hooks = site.filters | where: "category", "emails" %}
+						{% for hook in hooks %}
+							<li><a href="{{ hook.url }}">{{ hook.title }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>

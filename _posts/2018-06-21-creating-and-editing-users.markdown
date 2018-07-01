@@ -3,6 +3,7 @@ layout: post
 title:  "Creating and editing users"
 date:   2018-06-21 00:01:00 +0100
 categories: pro editing
+actions: ["af/form/editing/user_created","af/form/editing/user_updated"]
 ---
 
 A common use case for front-end forms is allowing visitors to create and edit users. Maybe you want to let users upload a picture gallery to their own profile. Or you want a sign up form where users can provide extra information which is saved as fields on their profiles. Advanced Forms Pro makes user creation and editing super easy to setup.

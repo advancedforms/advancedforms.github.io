@@ -3,6 +3,7 @@ layout: post
 title:  "Creating and editing posts"
 date:   2018-06-21 00:00:00 +0100
 categories: pro editing
+actions: ["af/form/editing/post_created","af/form/editing/post_updated"]
 ---
 
 A common use case for front-end forms is allowing users to create and edit posts. Maybe you want to let users submit post drafts which administrators can review and publish. Or have a post type for support issues which customers can submit and edit. Advanced Forms Pro makes it dead-simple to make forms which create and edit posts.
