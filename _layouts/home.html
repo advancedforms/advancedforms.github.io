@@ -139,24 +139,38 @@
 			</div>
 			
 			<div class="documentation-wrapper">
-				<div class="documentation-column">
-					<h2>Forms</h2>
-					<ul>
-						{% assign hooks = site.filters | where: "category", "forms" %}
-						{% for hook in hooks %}
-							<li><a href="{{ hook.url }}">{{ hook.title }}</a></li>
-						{% endfor %}
-					</ul>
+				<div class="row">
+					<div class="documentation-column">
+						<h2>Forms</h2>
+						<ul>
+							{% assign hooks = site.filters | where: "category", "forms" %}
+							{% for hook in hooks %}
+								<li><a href="{{ hook.url }}">{{ hook.title }}</a></li>
+							{% endfor %}
+						</ul>
+					</div>
+
+					<div class="documentation-column">
+						<h2>Form display</h2>
+						<ul>
+							{% assign hooks = site.filters | where: "category", "form-display" %}
+							{% for hook in hooks %}
+								<li><a href="{{ hook.url }}">{{ hook.title }}</a></li>
+							{% endfor %}
+						</ul>
+					</div>
 				</div>
-				
-				<div class="documentation-column">
-					<h2>Emails</h2>
-					<ul>
-						{% assign hooks = site.filters | where: "category", "emails" %}
-						{% for hook in hooks %}
-							<li><a href="{{ hook.url }}">{{ hook.title }}</a></li>
-						{% endfor %}
-					</ul>
+
+				<div class="row">
+					<div class="documentation-column">
+						<h2>Emails</h2>
+						<ul>
+							{% assign hooks = site.filters | where: "category", "emails" %}
+							{% for hook in hooks %}
+								<li><a href="{{ hook.url }}">{{ hook.title }}</a></li>
+							{% endfor %}
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
