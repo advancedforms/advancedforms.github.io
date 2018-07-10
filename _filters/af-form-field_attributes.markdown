@@ -2,7 +2,7 @@
 layout: post
 title:  "af/form/field_attributes"
 date:   2016-12-23 00:04:00 +0100
-category: forms
+category: form-display
 ---
 
 Filter attributes on field wrappers. Use to add classes, set an ID, or add new attributes.
