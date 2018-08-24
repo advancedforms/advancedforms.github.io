@@ -38,7 +38,7 @@ $args = array(
     // Text used for the submit button
     'submit_text' => 'Submit',
     
-    // The URL to which the form points. Defaults to the current URL which will automatically display a success message after submission
+    // The URL to which the form points. Defaults to the current URL which will redirect and automatically display a success message after submission
     // If this is overriden you may use af_has_submission to check for a form submission
     'target' => CURRENT_URL,
     
@@ -54,8 +54,8 @@ $args = array(
     // Either 'wp' or 'basic'. Whether to use the Wordpress media uploader or a regular file input for file/image fields.
     'uploader' => 'wp',
     
-    // The URL to redirect to after a successful submission. Defaults to false for no redirection.
-    'redirect' => false,
+    // The URL to redirect to after a successful submission. Defaults to the current URL which will display a success message after submission.
+    'redirect' => CURRENT_URL,
     
     // ID to use for form element. Defaults to form key.
     'id' => FORM_KEY,
