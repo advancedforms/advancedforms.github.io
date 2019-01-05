@@ -171,6 +171,16 @@
 							{% endfor %}
 						</ul>
 					</div>
+
+					<div class="documentation-column">
+						<h2>Pro</h2>
+						<ul>
+							{% assign hooks = site.filters | where: "category", "pro" %}
+							{% for hook in hooks %}
+								<li><a href="{{ hook.url }}">{{ hook.title }}</a></li>
+							{% endfor %}
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
