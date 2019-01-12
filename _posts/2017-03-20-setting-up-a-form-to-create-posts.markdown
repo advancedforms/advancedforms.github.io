@@ -1,9 +1,11 @@
 ---
 layout: post
-title:  "Setting up a form which creates posts"
-date:   2017-03-20 21:00:00 +0100
+title: "Setting up a form which creates posts"
+date: 2017-03-20 21:00:00 +0100
 categories: guides advanced
 ---
+
+> The easiest way to create posts with a form is to use Advanced Forms Pro. It supports creating and editing both posts and users. You can read more about post editing [here]({% post_url 2018-06-21-creating-and-editing-posts %}) and Pro is available from [hookturn.io](https://hookturn.io/downloads/advanced-forms-pro/).
 
 A common use for front-end forms is to create posts with submitted form data. Advanced Forms is perfect for this use case and in this guide we'll cover how to set up a form which generates a new post from its field values.
 
@@ -20,6 +22,7 @@ Next we need to add fields to our form. Create a new ACF field group and set its
 The next step is customizing our form to make it generate a post after submission. For this we'll use the `af/form/submission` action ([documentation]({{ site.url }}/guides/basic/processing-form-submissions/)). Add the following code to your theme's functions.php or a plugin:
 
 {% highlight php startinline %}
+
 <?php
 
 function generate_post_from_form_submission() {
