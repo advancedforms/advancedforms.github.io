@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Creating and editing posts"
-date:   2018-06-21 00:00:00 +0100
+title: "Creating and editing posts"
+date: 2018-06-21 00:00:00 +0100
 categories: pro editing
-actions: ["af/form/editing/post_created","af/form/editing/post_updated"]
+actions: ["af/form/editing/post_created", "af/form/editing/post_updated"]
 ---
 
 A common use case for front-end forms is allowing users to create and edit posts. Maybe you want to let users submit post drafts which administrators can review and publish. Or have a post type for support issues which customers can submit and edit. Advanced Forms Pro makes it dead-simple to make forms which create and edit posts.
@@ -20,11 +20,13 @@ There is also a setting for "Custom fields" which allows you to map fields from 
 
 ## Displaying your form
 
-If editing has been configured for a form you will also need to specify whether to create a new post or edit an existing one. If you  want to edit a post you need to pass a post ID with the form argument `post`. For creating a post, the form argument `post` should be set to `new`. With a shortcode this would look like
+If editing has been configured for a form you will also need to specify whether to create a new post or edit an existing one. If you want to edit a post you need to pass a post ID with the form argument `post`. For creating a post, the form argument `post` should be set to `new`. The current post can be edited by using `current`. With a shortcode this would look like.
+
+`[advanced_form form="form_key" post="new"]`
 
 `[advanced_form form="form_key" post="1"]`
 
-`[advanced_form form="form_key" post="new"]`
+`[advanced_form form="form_key" post="current"]`
 
 And the function call equivalent is
 

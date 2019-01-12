@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Creating and editing users"
-date:   2018-06-21 00:01:00 +0100
+title: "Creating and editing users"
+date: 2018-06-21 00:01:00 +0100
 categories: pro editing
-actions: ["af/form/editing/user_created","af/form/editing/user_updated"]
+actions: ["af/form/editing/user_created", "af/form/editing/user_updated"]
 ---
 
 A common use case for front-end forms is allowing visitors to create and edit users. Maybe you want to let users upload a picture gallery to their own profile. Or you want a sign up form where users can provide extra information which is saved as fields on their profiles. Advanced Forms Pro makes user creation and editing super easy to setup.
@@ -20,11 +20,13 @@ There is also a setting for "Custom fields" which allows you to map fields from 
 
 ## Displaying your form
 
-If editing has been configured for a form you will also need to specify whether to create a new user or edit an existing one. If you want to edit a user you need to pass a user ID with the form argument `user`. For creating a user, the form argument `user` should be set to `new`. With a shortcode this would look like
+If editing has been configured for a form you will also need to specify whether to create a new user or edit an existing one. If you want to edit a user you need to pass a user ID with the form argument `user`. For creating a user, the form argument `user` should be set to `new`. The current user can be edited by using `current`. With a shortcode this would look like
+
+`[advanced_form form="form_key" user="new"]`
 
 `[advanced_form form="form_key" user="1"]`
 
-`[advanced_form form="form_key" user="new"]`
+`[advanced_form form="form_key" user="current"]`
 
 And the function call equivalent is
 
