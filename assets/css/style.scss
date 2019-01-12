@@ -242,6 +242,17 @@ header {
     line-height: 1.5;
     margin-bottom: 5px;
   }
+
+  blockquote {
+    background: #f9f9f9;
+    border-left: 6px solid $lightgray;
+    padding: 20px;
+    margin-bottom: 2rem;
+  }
+
+  blockquote p {
+    margin: 0;
+  }
 }
 
 .related-hooks {
