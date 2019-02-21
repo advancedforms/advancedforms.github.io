@@ -5,7 +5,7 @@ date: 2017-03-20 21:00:00 +0100
 categories: guides advanced
 ---
 
-> The easiest way to create posts with a form is to use Advanced Forms Pro. It supports creating and editing both posts and users. You can read more about post editing [here]({% post_url 2018-06-21-creating-and-editing-posts %}) and Pro is available from [hookturn.io](https://hookturn.io/downloads/advanced-forms-pro/).
+> This guide is only applicable if you're using the free version of Advanced Forms. The easiest way to create posts with a form is to use Advanced Forms Pro. It supports creating and editing both posts and users. You can read more about post editing [here]({% post_url 2018-06-21-creating-and-editing-posts %}) and Pro is available from [hookturn.io](https://hookturn.io/downloads/advanced-forms-pro/).
 
 A common use for front-end forms is to create posts with submitted form data. Advanced Forms is perfect for this use case and in this guide we'll cover how to set up a form which generates a new post from its field values.
 
