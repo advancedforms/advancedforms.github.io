@@ -62,6 +62,9 @@ $args = array(
     
     // Filter mode disables the success message after submission and instead displays all fields again with their submitted values.
     'filter_mode' => false,
+
+    // 'label' to place instructions right below label or 'field' to place them after the field.
+    'instruction_placement' => 'label',
 );
 
 advanced_form( 'form_key', $args );
