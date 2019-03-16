@@ -12,8 +12,28 @@ Calculated fields are updated live when a form is filled and can contain any con
 
 Calculated fields are just regular ACF fields. Go to your field group and add a new field of type "Calculated". Next we need to configure what value this field should display which is done in the form settings. Head on over to your form settings and switch to the "Calculated" tab.
 
-Here you'll find a WYSIWYG editor for each calculated field. You can add regular content and mix in field values which will be updated in real-time.
+Under the "Calculated" tab you will find a WYSIWYG editor for each calculated field. You can add regular content and mix in field values which will be updated in real-time, similar to how field values can be included in email notifications and success messages. Mathematical arithmetic, such as addition, is not currently supported through the admin interface but can easily be achieved with a little bit of code. Read the next section for an example on how this can be done.
 
 ## Customizing calculated value
 
-Field are not limited to static content with mixed in fields but also support providing your own content through code. Use the `af/field/calculate_value` filter to provide your own content or edit it before it's displayed.
+Field are not limited to static content with mixed in fields but also support using code to define more complex calculations, for example including arithmetic. Use the `af/field/calculate_value` filter to provide your own calculation logic.
+
+Below is an example of a calculated field which display the sum of two other fields in the form called `number_field_1` and `number_field_2`. Replace `FIELD_NAME` in the example below with the name of your calculated field.
+
+{% highlight php startinline %}
+<?php
+
+function calculated_field_value() {
+  // Get field values (these will be updated in real-time)
+  $val1 = af_get_field( 'number_field_1' );
+  $val2 = af_get_field( 'number_field_2' );
+
+  // Calculate the sum of the current field values
+  $sum = $val1 + $val2;
+
+  // Display the sum in the calculated field
+  return 'Sum: ' . $sum;
+}
+//add_filter( 'af/field/calculate_value/name=FIELD_NAME', 'calculated_field_value', 10, 0 );
+
+{% endhighlight %}
