@@ -31,3 +31,20 @@ If editing has been configured for a form you will also need to specify whether 
 And the function call equivalent is
 
 `advanced_form( 'form_key', array( 'post' => 1 ) );`
+
+## Creating posts as draft
+
+By default posts will be created with a status of published. This might not always be desirable if the posts first needs to be reviewed. The following code snippet can be used to create posts as drafts by default, remember to replace `FORM_KEY` with your actual form key.
+
+{% highlight php startinline %}
+<?php
+
+function create_post_as_draft() {
+    // Set post status to draft
+    $post_data['post_status'] = 'draft';
+
+    return $post_data;
+}
+add_filter( 'af/form/editing/post_data/key=FORM_KEY', 'create_post_as_draft');
+
+{% endhighlight %}
