@@ -39,12 +39,12 @@ By default posts will be created with a status of published. This might not alwa
 {% highlight php startinline %}
 <?php
 
-function create_post_as_draft() {
+function create_post_as_draft( $post_data ) {
     // Set post status to draft
     $post_data['post_status'] = 'draft';
 
     return $post_data;
 }
-add_filter( 'af/form/editing/post_data/key=FORM_KEY', 'create_post_as_draft');
+add_filter( 'af/form/editing/post_data/key=FORM_KEY', 'create_post_as_draft', 10, 1 );
 
 {% endhighlight %}
