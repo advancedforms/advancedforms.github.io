@@ -34,7 +34,7 @@ And the function call equivalent is
 
 ## Creating posts as draft
 
-By default posts will be created with a status of published. This might not always be desirable if the posts first needs to be reviewed. The following code snippet can be used to create posts as drafts by default, remember to replace `FORM_KEY` with your actual form key.
+By default posts will be created with a status of published. This might not always be desirable if the posts first needs to be reviewed. The following code snippet can be used to create posts as drafts by default. Remember to replace `FORM_KEY` with your actual form key.
 
 {% highlight php startinline %}
 <?php
