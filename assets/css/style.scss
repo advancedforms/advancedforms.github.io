@@ -663,10 +663,6 @@ code {
     padding: 30px 0;
   }
 
-  .documentation-wrapper {
-    width: 100%;
-  }
-
   .documentation-block {
     padding: 50px 0;
     padding-bottom: 30px;
@@ -675,6 +671,10 @@ code {
       width: 100%;
       margin-bottom: 20px;
     }
+
+    .documentation-wrapper {
+      width: 100%;
+    } 
   }
 
   .post {
