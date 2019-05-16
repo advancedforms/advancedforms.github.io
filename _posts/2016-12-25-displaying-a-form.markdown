@@ -65,6 +65,9 @@ $args = array(
 
     // 'label' to place instructions right below label or 'field' to place them after the field.
     'instruction_placement' => 'label',
+
+    // Add a honeypot to prevent spam submissions. Enabled by default.
+    'honeypot' => true,
 );
 
 advanced_form( 'form_key', $args );
