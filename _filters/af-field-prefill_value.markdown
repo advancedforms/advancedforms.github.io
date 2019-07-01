@@ -10,7 +10,7 @@ Prefill field values before displaying form. Can be used for example to provide 
 {% highlight php startinline %}
 <?php
 
-function filter_args( $value, $field, $form, $args ) {
+function prefill_form_field( $value, $field, $form, $args ) {
     return 'Pre-filled value';
 }
 add_filter( 'af/field/prefill_value', 'prefill_form_field', 10, 4 );
