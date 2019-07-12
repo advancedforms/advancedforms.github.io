@@ -8,6 +8,8 @@ filters: "af/field/calculate_value"
 
 Calculated fields are updated live when a form is filled and can contain any content you'd like to. They are perfect for providing previews or to show calculated values before submission.
 
+Calculated fields are currently not supported in success messages or email notifications. They are best used for providing live feedback to users as they are filling out a form.
+
 ## Adding a calculated field
 
 Calculated fields are just regular ACF fields. Go to your field group and add a new field of type "Calculated". Next we need to configure what value this field should display which is done in the form settings. Head on over to your form settings and switch to the "Calculated" tab.
