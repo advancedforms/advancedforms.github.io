@@ -8,8 +8,6 @@ filters: "af/field/calculate_value"
 
 Calculated fields are updated live when a form is filled and can contain any content you'd like to. They are perfect for providing previews or to show calculated values before submission.
 
-Calculated fields are currently not supported in success messages or email notifications. They are best used for providing live feedback to users as they are filling out a form.
-
 ## Adding a calculated field
 
 Calculated fields are just regular ACF fields. Go to your field group and add a new field of type "Calculated". Next we need to configure what value this field should display which is done in the form settings. Head on over to your form settings and switch to the "Calculated" tab.
@@ -36,6 +34,34 @@ function calculated_field_value() {
   // Display the sum in the calculated field
   return 'Sum: ' . $sum;
 }
-//add_filter( 'af/field/calculate_value/name=FIELD_NAME', 'calculated_field_value', 10, 0 );
+add_filter( 'af/field/calculate_value/name=FIELD_NAME', 'calculated_field_value', 10, 0 );
 
+{% endhighlight %}
+
+## Extending calculated fields with Javascript
+
+Using the ACF Javascript API the behaviour of calculated fields can be customized. The `af/field/calculated/value_updated` is triggered when a calculated field is updated and can be used to when you want to do use the calculated value for something more than just the field.
+
+{% highlight js startinline %}
+
+// Intercept the rendered calculated field and insert the markup
+// into an element with the id `#preview-container`
+acf.addAction( 'af/field/calculated/value_updated/name=FIELD_NAME', function( value, field, form ) {
+  $('#preview-container').html(value);
+});
+
+{% endhighlight %}
+
+If you want to cause an update of a calculated field you can use trigger the `af/field/calculated/update_value`. This is convenient for example when you want to update a calculated field when the user interacts with something outside the form.
+
+{% highlight js startinline %}
+// This is the simplest format available and will trigger the update for 
+// all calculated fields on the page
+acf.doAction( 'af/field/calculated/update_value' );
+
+// You may target specific fields by field name
+acf.doAction( 'af/field/calculated/update_value/name=FIELD_NAME' );
+
+// You may also target specific fields by field key
+acf.doAction( 'af/field/calculated/update_value/key=FIELD_KEY' );
 {% endhighlight %}
