@@ -48,3 +48,18 @@ function create_post_as_draft( $post_data ) {
 add_filter( 'af/form/editing/post_data/key=FORM_KEY', 'create_post_as_draft', 10, 1 );
 
 {% endhighlight %}
+
+## Setting the post thumbnail
+
+The post thumbnail (also called featured image) can be set from a field using the `af/form/editing/post_created` action. Make sure your image field is configured to return an attachment ID.
+
+{% highlight php startinline %}
+<?php
+
+function form_created_post_thumbnail( $post_id ) {
+  $image_id = af_get_field( 'IMAGE_FIELD_NAME' );
+  set_post_thumbnail( $post_id, $image_id );
+}
+add_action( 'af/form/editing/post_created/key=FORM_KEY', 'form_created_post_thumbnail', 10, 1 );
+
+{% endhighlight %}
