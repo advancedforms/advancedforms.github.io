@@ -126,6 +126,16 @@
 							{% endfor %}
 						</ul>
 					</div>
+
+					<div class="documentation-column">
+						<h2>Javascript</h2>
+						<ul>
+							{% assign hooks = site.actions | where: "category", "javascript" %}
+							{% for hook in hooks %}
+								<li><a href="{{ hook.url }}">{{ hook.title }}</a></li>
+							{% endfor %}
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
