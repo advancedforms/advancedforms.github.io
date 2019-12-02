@@ -72,4 +72,8 @@ $args = array(
 
 advanced_form( 'form_key', $args );
 
+## Validation with the basic uploader
+
+Validation of file size and image dimensions for uploads will only work when using the WP media uploader, which is only available to logged in users. If validation fails for an upload not using the media uploader then the file won't be uploaded but the form will still submit successfully. This limitation is a result of how ACF handles the basic uploader.
+
 {% endhighlight %}
