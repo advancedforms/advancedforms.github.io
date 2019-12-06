@@ -31,3 +31,16 @@ If editing has been configured for a form you will also need to specify whether 
 And the function call equivalent is
 
 `advanced_form( 'form_key', array( 'user' => 1 ) );`
+
+## Sign in user after registration
+
+If you want users to be automatically signed in after registering you can use the following snippet.
+
+{% highlight php startinline %}
+<?php
+
+function form_sign_in_user( $user ) {
+  wp_set_auth_cookie( $user->ID );
+}
+add_action( 'af/form/editing/user_created/key=FORM_KEY', 'form_sign_in_user', 10, 1 );
+{% endhighlight %}
