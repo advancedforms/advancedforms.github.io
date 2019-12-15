@@ -155,6 +155,10 @@ header {
     float: left;
     padding: 0 15px;
 
+    &.full {
+      width: 100%;
+    }
+
     h2 {
       color: $midgray;
       font-weight: 600;
@@ -164,7 +168,8 @@ header {
     }
 
     li {
-      margin-bottom: 15px;
+      margin-bottom: 10px;
+      line-height: 1.2;
     }
   }
 }
@@ -681,7 +686,7 @@ code {
 
     .documentation-wrapper {
       width: 100%;
-    } 
+    }
   }
 
   .post {
