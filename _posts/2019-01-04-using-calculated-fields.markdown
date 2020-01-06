@@ -40,7 +40,7 @@ add_filter( 'af/field/calculate_value/name=FIELD_NAME', 'calculated_field_value'
 
 ## Extending calculated fields with Javascript
 
-Using the ACF Javascript API the behaviour of calculated fields can be customized. The `af/field/calculated/value_updated` is triggered when a calculated field is updated and can be used to when you want to do use the calculated value for something more than just the field.
+Using the ACF Javascript API the behaviour of calculated fields can be customized. The `af/field/calculated/value_updated` action is triggered when a calculated field is updated and can be used when you want use the calculated value for something more than just the field.
 
 {% highlight js startinline %}
 
