@@ -14,11 +14,11 @@ To create a form using the UI navigate to the "Forms" admin page and create a ne
 
 ![Editing a form using the admin interface]({{ site.url }}/assets/images/form-interface.png)
 
-The fields connected to a form are fully defined by Advanced Custom Fields allowing you to use the full range of field types offered by ACF. To connect a field group to your form set its location rule to match. This can be done in the ACF field group UI by adding a location rule and setting it to "Form" -> "is equal to" -> your form title.
+The fields connected to a form are set up through Advanced Custom Fields allowing you to use the full range of field types offered by ACF. To connect a field group to your form set its location rule to match. This can be done in the ACF field group UI by adding a location rule and setting it to "Form" -> "is equal to" -> your form title.
 
 ## Programmatically
 
-Registering your forms programmatically is great if you want to integrate Advanced Forms with your theme or plugin. In the future the plugin will include an export feature to generate form code from a form created using the admin interface.
+Registering your forms programmatically is great if you want to integrate Advanced Forms with your theme or plugin. The plugin also has an export feature which will generate the registration code for you. This tools can be found by editing a form in the admin panel and then clicking the "Export" button.
 
 To create a form programmatically the function `af_register_form( $form )` is provided. The $form parameter should be an array matching the structure in the following example.
 

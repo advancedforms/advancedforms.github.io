@@ -5,7 +5,7 @@ date:   2018-03-18 00:01:00 +0100
 categories: pro configuration
 ---
 
-With the help of [Zapier](https://zapier.com) you can connect your form to thousand of services and create automated workflows. You could create a form that accepts files from users and automatically uploads them to your Dropbox. Or you could automatically save form submissions to a Google Spreadsheet. There are literally thousand of possibilities.
+With the help of [Zapier](https://zapier.com) you can connect your form to thousand of services and create automated workflows. You could create a form that accepts files from users and automatically uploads them to your Dropbox. Or you could automatically save form submissions to a Google Spreadsheet. There are literally thousands of possibilities.
 
 ## Creating a Zap
 

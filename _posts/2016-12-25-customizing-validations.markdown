@@ -12,7 +12,7 @@ Advanced Forms uses ACF to render and validate fields. This means that any custo
 
 ## Validating forms
 
-Sometimes it's not sufficient to validate individual fields. From version 1.5 and onwards, Advanced Forms includes the ability to add custom validation logic for full forms. This is made possible with the `af/form/validate` action combined with the `af_add_error` function. `af/form/validate` is invoked before submission and has access to the submitted data through `af_get_field`.
+Sometimes it's not sufficient to validate individual fields. From version 1.5 and onwards Advanced Forms includes the ability to add custom validation logic for full forms. This is made possible with the `af/form/validate` action combined with the `af_add_error` function. `af/form/validate` is invoked before submission and has access to the submitted data through `af_get_field`.
 
 The following is an example of custom validation involving two separate fields. The `af_add_error` functions takes a field name (or key) as its first parameter and an error message as its second.
 

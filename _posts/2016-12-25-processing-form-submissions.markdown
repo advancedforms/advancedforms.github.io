@@ -34,12 +34,8 @@ The following is an example of processing a form submission and extracting the v
 <?php
 
 function handle_form_submission( $form, $fields, $args ) {
-    
     $email = af_get_field( 'email' );
-    
 }
 add_action( 'af/form/submission', 'handle_form_submission', 10, 3 );
 
 {% endhighlight %}
-
-***Note:** Previously `af_get_field` required you to pass the `$field` array as a second parameter. As of AF 1.1 this is no longer required or recommended.*

@@ -12,7 +12,7 @@ A common use case for front-end forms is allowing users to create and edit posts
 
 Go to the Wordpress admin and edit the form which you want to configure. Under "Editing", select "Posts" and you should be presented with a wide array of settings.
 
-The "Post type" settings specifies which post type created post will be assigned and won't be used when editing existing posts. For the post title and content it's possible to either select a field from which to retrieve a value or use a more complex, custom format. A custom format won't work with post editing and should only be used for creating new posts.
+The "Post type" setting specifies which post type new posts will have. When editing a post instead the post type setting will be ignored. For the post title and content it's possible to either select a field from which to retrieve a value or use a more complex, custom format. A custom format won't work with post editing and should only be used for creating new posts.
 
 There is also a setting for "Custom fields" which allows you to map fields from a form to a post. This enables you to create an ACF field group which is shared between a form and a post type. The selected fields will the automatically be mapped without any code.
 
@@ -20,17 +20,20 @@ There is also a setting for "Custom fields" which allows you to map fields from 
 
 ## Displaying your form
 
-If editing has been configured for a form you will also need to specify whether to create a new post or edit an existing one. If you want to edit a post you need to pass a post ID with the form argument `post`. For creating a post, the form argument `post` should be set to `new`. The current post can be edited by using `current`. With a shortcode this would look like.
+If editing has been configured for a form you will also need to specify whether to create a new post or edit an existing one. If you want to create a new post you don't have to anything in particular. If you want to edit a post though you need to pass a post ID with the form argument `post`. The current post can be edited by using `current` instead.
 
-`[advanced_form form="form_key" post="new"]`
+Create a new post:
+`[advanced_form form="form_key"]`
 
+Edit a post with a specific ID:
 `[advanced_form form="form_key" post="1"]`
 
+Edit the currently displayed post:
 `[advanced_form form="form_key" post="current"]`
 
-And the function call equivalent is
-
+Of course it's also possible to pass these arguments when using a function call:
 `advanced_form( 'form_key', array( 'post' => 1 ) );`
+
 
 ## Creating posts as draft
 

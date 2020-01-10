@@ -14,7 +14,8 @@ Go to the Wordpress admin and edit the form which you want to configure. Under "
 
 The first setting is for user role which will only be used for new users. The rest specify how to map between form fields and user fields. For the field mappings you can either chose a field to retrieve values from or a custom format. The custom format will only work for new users. If the "Send notification" setting is enabled, created users will receive the standard Wordpress email with a password-reset link.
 
-There is also a setting for "Custom fields" which allows you to map fields from a form to a user. This enables you to create an ACF field group which is shared between a form and users. The selected fields will the automatically be mapped without any code.
+There is also a setting for "Custom fields" which allows you to map fields from a form to a user.
+This will only work if the same ACF field group is used both for the form and user profiles.
 
 ![Example form configuration]({{ site.url }}/assets/images/editing-user-settings.png)
 

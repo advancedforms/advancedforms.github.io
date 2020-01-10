@@ -7,7 +7,7 @@ categories: guides advanced
 
 Advanced Forms has a variety of built-in merge tags which can be used in success messages, emails, and calculated fields. Examples include `{field:NAME}` and `{entry_id}`. Sometimes it's desirable to add custom merge tags which we'll cover in this guide.
 
-To add merge tags we use the `af/merge_tags/resolve` filter. This filter will be invoked for every merge tag, that is all occurences of two braces (`{}`) with content in between. Because the filter is invoked for every merge tag we first need to check that we're targeting the right tag with `'hello' != $tag`.
+To add merge tags we use the `af/merge_tags/resolve` filter. This filter will be invoked for every merge tag, that is all occurences of two braces (`{}`) with content in between. Because the filter is invoked for every merge tag we first need to check that we're targeting the right tag.
 
 The following snippet adds a new merge tag `{hello}` which will be replaced with the text "Hello" followed by the submitted value for a field named `first_name`.
 

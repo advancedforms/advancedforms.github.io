@@ -14,7 +14,6 @@ Custom restrictions may be applied using the filter `af/form/restriction` which 
 <?php
 
 function restrict_form( $restriction, $form, $args ) {
-    
     if ( $restriction ) {
         return $restriction;
     }
@@ -24,7 +23,6 @@ function restrict_form( $restriction, $form, $args ) {
     }
     
     return false;
-    
 }
 add_filter( 'af/form/restriction', 'restrict_form', 10, 3 );
 

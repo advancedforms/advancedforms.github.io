@@ -6,7 +6,7 @@ categories: pro configuration
 filters: "af/field/calculate_value"
 ---
 
-Calculated fields are updated live when a form is filled and can contain any content you'd like to. They are perfect for providing previews or to show calculated values before submission.
+Calculated fields are updated live when a form is filled out and can contain any content you'd like to. They are perfect for providing previews or to show calculated values before submission.
 
 ## Adding a calculated field
 
@@ -16,7 +16,7 @@ Under the "Calculated" tab you will find a WYSIWYG editor for each calculated fi
 
 ## Customizing calculated value
 
-Field are not limited to static content with mixed in fields but also support using code to define more complex calculations, for example including arithmetic. Use the `af/field/calculate_value` filter to provide your own calculation logic.
+Calculated fields are not limited to static content with mixed in fields but also support using code to define more complex calculations, for example arithmetic. Use the `af/field/calculate_value` filter to provide your own calculation logic.
 
 Below is an example of a calculated field which display the sum of two other fields in the form called `number_field_1` and `number_field_2`. Replace `FIELD_NAME` in the example below with the name of your calculated field.
 
