@@ -1,14 +1,42 @@
 ---
 ---
 
-@import url("https://fonts.googleapis.com/css?family=Fira+Mono|Nunito+Sans:400,600");
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono");
 
 @import "reset";
 
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/Inter-Regular.woff2?v=3.11") format("woff2"),
+    url("/assets/fonts/Inter-Regular.woff?v=3.11") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/Inter-Medium.woff2?v=3.11") format("woff2"),
+    url("/assets/fonts/Inter-Medium.woff?v=3.11") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/fonts/Inter-SemiBold.woff2?v=3.11") format("woff2"),
+    url("/assets/fonts/Inter-SemiBold.woff?v=3.11") format("woff");
+}
+
 $offblack: #222;
 $gray: #555;
-$midgray: #999;
+$midgray: #888;
 $lightgray: #ececec;
+$border: #ccc;
 $blue: #318cf3;
 $darkblue: #2b5584;
 $purple: #9b4c9d;
@@ -47,7 +75,7 @@ em {
 }
 
 body {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   color: $gray;
   font-size: 18px;
 }
@@ -110,6 +138,7 @@ header {
   }
 
   h2 {
+    font-weight: 500;
     color: $gray;
     font-size: 1.5rem;
     margin-bottom: 1.5em;
@@ -161,7 +190,7 @@ header {
 
     h2 {
       color: $midgray;
-      font-weight: 600;
+      font-weight: 500;
       text-transform: uppercase;
       font-size: 0.875rem;
       margin-bottom: 1rem;
@@ -186,7 +215,7 @@ header {
     color: $midgray;
     font-size: 0.875rem;
     margin-bottom: 20px;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   h1,
@@ -294,7 +323,7 @@ header {
     color: $midgray;
     font-size: 1rem;
     margin-bottom: 1rem;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .related {
@@ -330,7 +359,7 @@ header {
  */
 .btn {
   display: inline-block;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
@@ -343,7 +372,7 @@ header {
   margin-bottom: 10px;
   transition: box-shadow 0.2s ease-in-out;
   border: 0;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
 
   transform: translateY(0);
   transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
@@ -392,7 +421,11 @@ input[type="email"] {
   border-radius: 5px;
   border: 1px solid $lightgray;
   margin-bottom: 1rem;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
+}
+
+::placeholder {
+  font-family: "Inter", sans-serif;
 }
 
 /**
