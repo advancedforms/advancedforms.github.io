@@ -42,6 +42,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    redcarpet (3.5.0)
     rouge (2.2.1)
     safe_yaml (1.0.5)
     sass (3.7.4)
@@ -59,9 +60,10 @@ DEPENDENCIES
   jekyll-sitemap
   minima (~> 2.0)
   pygments.rb
+  redcarpet
 
 RUBY VERSION
-   ruby 2.6.0p0
+   ruby 2.6.3p62
 
 BUNDLED WITH
    1.17.2

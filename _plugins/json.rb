@@ -32,7 +32,8 @@ module Jekyll
         @items << {
           type: type,
           title: doc.data["title"],
-          content: content
+          content: content,
+          url: doc.url
         }
       end
     end
