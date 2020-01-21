@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://advancedforms.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.6.3">Jekyll</generator><link href="https://advancedforms.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://advancedforms.github.io/" rel="alternate" type="text/html" /><updated>2020-01-21T10:11:02+00:00</updated><id>https://advancedforms.github.io//</id><title type="html">Advanced Forms Documentation</title><subtitle>Wordpress plugin for creating flexible and developer-friendly forms using the power of Advanced Custom Fields
+</subtitle><entry><title type="html">Decreasing number of scripts and styles</title><link href="https://advancedforms.github.io/guides/advanced/decreasing-scripts-and-styles/" rel="alternate" type="text/html" title="Decreasing number of scripts and styles" /><published>2019-12-14T23:00:00+00:00</published><updated>2019-12-14T23:00:00+00:00</updated><id>https://advancedforms.github.io/guides/advanced/decreasing-scripts-and-styles</id><content type="html" xml:base="https://advancedforms.github.io/guides/advanced/decreasing-scripts-and-styles/">&lt;p&gt;Advanced Custom Fields has the unfortunate habit of enqueuing scripts and styles for all field types even when not in use. As a result there are normally scripts and styles included when displaying a form which are not actually in use.&lt;/p&gt;
+
+&lt;p&gt;It’s possible to manually dequeue unecessary resources with a bit of care. The following snippet can be used to dequeue some things which are included by ACF. The comments explain which field types use which enqueues. If you’re actually using one of the field types please remove the corresponding dequeue.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;form_remove_enqueues&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Stylized select (including user and post fields)
+&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;wp_dequeue_script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'select2'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;wp_dequeue_style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'select2'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// Date picker
+&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;wp_dequeue_script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'jquery-ui-datepicker'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;wp_dequeue_style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'acf-datepicker'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// Date and time picker
+&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;wp_dequeue_script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'acf-timepicker'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;wp_dequeue_style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'acf-timepicker'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// Color picker
+&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;wp_dequeue_script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'wp-color-picker'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;wp_dequeue_style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'wp-color-picker'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;add_action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'af/form/before_title/key=FORM_KEY'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'form_remove_enqueues'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;In the future Advanced Forms will be able to automatically dequeue unused resources. Until then it’s recommended to use this snippet and manually determine which enqueues are unnecessary.&lt;/p&gt;</content><summary type="html">Advanced Custom Fields has the unfortunate habit of enqueuing scripts and styles for all field types even when not in use. As a result there are normally scripts and styles included when displaying a form which are not actually in use.</summary></entry><entry><title type="html">Adding custom merge tags</title><link href="https://advancedforms.github.io/guides/advanced/adding-custom-merge-tags/" rel="alternate" type="text/html" title="Adding custom merge tags" /><published>2019-12-12T23:00:00+00:00</published><updated>2019-12-12T23:00:00+00:00</updated><id>https://advancedforms.github.io/guides/advanced/adding-custom-merge-tags</id><content type="html" xml:base="https://advancedforms.github.io/guides/advanced/adding-custom-merge-tags/">&lt;p&gt;Advanced Forms has a variety of built-in merge tags which can be used in success messages, emails, and calculated fields. Examples include &lt;code class=&quot;highlighter-rouge&quot;&gt;{field:NAME}&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;{entry_id}&lt;/code&gt;. Sometimes it’s desirable to add custom merge tags which we’ll cover in this guide.&lt;/p&gt;
+
+&lt;p&gt;To add merge tags we use the &lt;code class=&quot;highlighter-rouge&quot;&gt;af/merge_tags/resolve&lt;/code&gt; filter. This filter will be invoked for every merge tag, that is all occurences of two braces (&lt;code class=&quot;highlighter-rouge&quot;&gt;{}&lt;/code&gt;) with content in between. Because the filter is invoked for every merge tag we first need to check that we’re targeting the right tag.&lt;/p&gt;
+
+&lt;p&gt;The following snippet adds a new merge tag &lt;code class=&quot;highlighter-rouge&quot;&gt;{hello}&lt;/code&gt; which will be replaced with the text “Hello” followed by the submitted value for a field named &lt;code class=&quot;highlighter-rouge&quot;&gt;first_name&lt;/code&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;add_hello_merge_tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$tag&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'hello'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$tag&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;af_get_field&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'first_name'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;add_filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'af/merge_tags/resolve'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'add_hello_merge_tag'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;adding-merge-tags-to-the-ui&quot;&gt;Adding merge tags to the UI&lt;/h2&gt;
+
+&lt;p&gt;When editing success messages and emails there is a dropdown which can be used to insert merge tags without having to remember their syntax. Using the &lt;code class=&quot;highlighter-rouge&quot;&gt;af/merge_tags/custom&lt;/code&gt; it’s possible to add custom merge tags to this dropdown. Here’s an example of adding the previously created &lt;code class=&quot;highlighter-rouge&quot;&gt;{hello}&lt;/code&gt; tag:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;register_hello_merge_tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$tags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$form&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$tags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;'value'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;'label'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$tags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;add_filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'af/merge_tags/custom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'register_hello_merge_tag'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><summary type="html">Advanced Forms has a variety of built-in merge tags which can be used in success messages, emails, and calculated fields. Examples include {field:NAME} and {entry_id}. Sometimes it’s desirable to add custom merge tags which we’ll cover in this guide.</summary></entry><entry><title type="html">Using calculated fields</title><link href="https://advancedforms.github.io/pro/configuration/using-calculated-fields/" rel="alternate" type="text/html" title="Using calculated fields" /><published>2019-01-03T23:00:00+00:00</published><updated>2019-01-03T23:00:00+00:00</updated><id>https://advancedforms.github.io/pro/configuration/using-calculated-fields</id><content type="html" xml:base="https://advancedforms.github.io/pro/configuration/using-calculated-fields/">&lt;p&gt;Calculated fields are updated live when a form is filled out and can contain any content you’d like to. They are perfect for providing previews or to show calculated values before submission.&lt;/p&gt;
+
+&lt;h2 id=&quot;adding-a-calculated-field&quot;&gt;Adding a calculated field&lt;/h2&gt;
+
+&lt;p&gt;Calculated fields are just regular ACF fields. Go to your field group and add a new field of type “Calculated”. Next we need to configure what value this field should display which is done in the form settings. Head on over to your form settings and switch to the “Calculated” tab.&lt;/p&gt;
+
+&lt;p&gt;Under the “Calculated” tab you will find a WYSIWYG editor for each calculated field. You can add regular content and mix in field values which will be updated in real-time, similar to how field values can be included in email notifications and success messages. Mathematical arithmetic, such as addition, is not currently supported through the admin interface but can easily be achieved with a little bit of code. Read the next section for an example on how this can be done.&lt;/p&gt;
+
+&lt;h2 id=&quot;customizing-calculated-value&quot;&gt;Customizing calculated value&lt;/h2&gt;
+
+&lt;p&gt;Calculated fields are not limited to static content with mixed in fields but also support using code to define more complex calculations, for example arithmetic. Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;af/field/calculate_value&lt;/code&gt; filter to provide your own calculation logic.&lt;/p&gt;
+
+&lt;p&gt;Below is an example of a calculated field which display the sum of two other fields in the form called &lt;code class=&quot;highlighter-rouge&quot;&gt;number_field_1&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;number_field_2&lt;/code&gt;. Replace &lt;code class=&quot;highlighter-rouge&quot;&gt;FIELD_NAME&lt;/code&gt; in the example below with the name of your calculated field.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;calculated_field_value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Get field values (these will be updated in real-time)
+&lt;/span&gt;  &lt;span class=&quot;nv&quot;&gt;$val1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;af_get_field&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'number_field_1'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$val2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;af_get_field&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'number_field_2'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// Calculate the sum of the current field values
+&lt;/span&gt;  &lt;span class=&quot;nv&quot;&gt;$sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$val1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$val2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// Display the sum in the calculated field
+&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Sum: '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;add_filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'af/field/calculate_value/name=FIELD_NAME'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'calculated_field_value'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;extending-calculated-fields-with-javascript&quot;&gt;Extending calculated fields with Javascript&lt;/h2&gt;
+
+&lt;p&gt;Using the ACF Javascript API the behaviour of calculated fields can be customized. The &lt;code class=&quot;highlighter-rouge&quot;&gt;af/field/calculated/value_updated&lt;/code&gt; action is triggered when a calculated field is updated and can be used when you want use the calculated value for something more than just the field.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Intercept the rendered calculated field and insert the markup&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// into an element with the id `#preview-container`&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;acf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'af/field/calculated/value_updated/name=FIELD_NAME'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;field&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;form&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'#preview-container'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;If you want to cause an update of a calculated field you can use trigger the &lt;code class=&quot;highlighter-rouge&quot;&gt;af/field/calculated/update_value&lt;/code&gt;. This is convenient for example when you want to update a calculated field when the user interacts with something outside the form.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// This is the simplest format available and will trigger the update for &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// all calculated fields on the page&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;acf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;doAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'af/field/calculated/update_value'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// You may target specific fields by field name&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;acf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;doAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'af/field/calculated/update_value/name=FIELD_NAME'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// You may also target specific fields by field key&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;acf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;doAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'af/field/calculated/update_value/key=FIELD_KEY'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><summary type="html">Calculated fields are updated live when a form is filled out and can contain any content you’d like to. They are perfect for providing previews or to show calculated values before submission.</summary></entry><entry><title type="html">Creating and editing users</title><link href="https://advancedforms.github.io/pro/editing/creating-and-editing-users/" rel="alternate" type="text/html" title="Creating and editing users" /><published>2018-06-20T23:01:00+00:00</published><updated>2018-06-20T23:01:00+00:00</updated><id>https://advancedforms.github.io/pro/editing/creating-and-editing-users</id><content type="html" xml:base="https://advancedforms.github.io/pro/editing/creating-and-editing-users/">&lt;p&gt;A common use case for front-end forms is allowing visitors to create and edit users. Maybe you want to let users upload a picture gallery to their own profile. Or you want a sign up form where users can provide extra information which is saved as fields on their profiles. Advanced Forms Pro makes user creation and editing super easy to setup.&lt;/p&gt;
+
+&lt;h2 id=&quot;configuring-your-form&quot;&gt;Configuring your form&lt;/h2&gt;
+
+&lt;p&gt;Go to the Wordpress admin and edit the form which you want to configure. Under “Editing”, select “Users” and you should be presented with a wide array of settings.&lt;/p&gt;
+
+&lt;p&gt;The first setting is for user role which will only be used for new users. The rest specify how to map between form fields and user fields. For the field mappings you can either chose a field to retrieve values from or a custom format. The custom format will only work for new users. If the “Send notification” setting is enabled, created users will receive the standard Wordpress email with a password-reset link.&lt;/p&gt;
+
+&lt;p&gt;There is also a setting for “Custom fields” which allows you to map fields from a form to a user.
+This will only work if the same ACF field group is used both for the form and user profiles.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://advancedforms.github.io/assets/images/editing-user-settings.png&quot; alt=&quot;Example form configuration&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;displaying-your-form&quot;&gt;Displaying your form&lt;/h2&gt;
+
+&lt;p&gt;If editing has been configured for a form you will also need to specify whether to create a new user or edit an existing one. If you want to edit a user you need to pass a user ID with the form argument &lt;code class=&quot;highlighter-rouge&quot;&gt;user&lt;/code&gt;. For creating a user, the form argument &lt;code class=&quot;highlighter-rouge&quot;&gt;user&lt;/code&gt; should be set to &lt;code class=&quot;highlighter-rouge&quot;&gt;new&lt;/code&gt;. The current user can be edited by using &lt;code class=&quot;highlighter-rouge&quot;&gt;current&lt;/code&gt;. With a shortcode this would look like&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[advanced_form form=&quot;form_key&quot; user=&quot;new&quot;]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[advanced_form form=&quot;form_key&quot; user=&quot;1&quot;]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[advanced_form form=&quot;form_key&quot; user=&quot;current&quot;]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And the function call equivalent is&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;advanced_form( 'form_key', array( 'user' =&amp;gt; 1 ) );&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;sign-in-user-after-registration&quot;&gt;Sign in user after registration&lt;/h2&gt;
+
+&lt;p&gt;If you want users to be automatically signed in after registering you can use the following snippet.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;form_sign_in_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$user&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;wp_set_auth_cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$user&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ID&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;add_action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'af/form/editing/user_created/key=FORM_KEY'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'form_sign_in_user'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><summary type="html">A common use case for front-end forms is allowing visitors to create and edit users. Maybe you want to let users upload a picture gallery to their own profile. Or you want a sign up form where users can provide extra information which is saved as fields on their profiles. Advanced Forms Pro makes user creation and editing super easy to setup.</summary></entry><entry><title type="html">Creating and editing posts</title><link href="https://advancedforms.github.io/pro/editing/creating-and-editing-posts/" rel="alternate" type="text/html" title="Creating and editing posts" /><published>2018-06-20T23:00:00+00:00</published><updated>2018-06-20T23:00:00+00:00</updated><id>https://advancedforms.github.io/pro/editing/creating-and-editing-posts</id><content type="html" xml:base="https://advancedforms.github.io/pro/editing/creating-and-editing-posts/">&lt;p&gt;A common use case for front-end forms is allowing users to create and edit posts. Maybe you want to let users submit post drafts which administrators can review and publish. Or have a post type for support issues which customers can submit and edit. Advanced Forms Pro makes it dead-simple to make forms which create and edit posts.&lt;/p&gt;
+
+&lt;h2 id=&quot;configuring-your-form&quot;&gt;Configuring your form&lt;/h2&gt;
+
+&lt;p&gt;Go to the Wordpress admin and edit the form which you want to configure. Under “Editing”, select “Posts” and you should be presented with a wide array of settings.&lt;/p&gt;
+
+&lt;p&gt;The “Post type” setting specifies which post type new posts will have. When editing a post instead the post type setting will be ignored. For the post title and content it’s possible to either select a field from which to retrieve a value or use a more complex, custom format. A custom format won’t work with post editing and should only be used for creating new posts.&lt;/p&gt;
+
+&lt;p&gt;There is also a setting for “Custom fields” which allows you to map fields from a form to a post. This enables you to create an ACF field group which is shared between a form and a post type. The selected fields will the automatically be mapped without any code.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://advancedforms.github.io/assets/images/editing-post-settings.png&quot; alt=&quot;Example form configuration&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;displaying-your-form&quot;&gt;Displaying your form&lt;/h2&gt;
+
+&lt;p&gt;If editing has been configured for a form you will also need to specify whether to create a new post or edit an existing one. If you want to create a new post you don’t have to anything in particular. If you want to edit a post though you need to pass a post ID with the form argument &lt;code class=&quot;highlighter-rouge&quot;&gt;post&lt;/code&gt;. The current post can be edited by using &lt;code class=&quot;highlighter-rouge&quot;&gt;current&lt;/code&gt; instead.&lt;/p&gt;
+
+&lt;p&gt;Create a new post:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;[advanced_form form=&quot;form_key&quot;]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Edit a post with a specific ID:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;[advanced_form form=&quot;form_key&quot; post=&quot;1&quot;]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Edit the currently displayed post:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;[advanced_form form=&quot;form_key&quot; post=&quot;current&quot;]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Of course it’s also possible to pass these arguments when using a function call:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;advanced_form( 'form_key', array( 'post' =&amp;gt; 1 ) );&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;creating-posts-as-draft&quot;&gt;Creating posts as draft&lt;/h2&gt;
+
+&lt;p&gt;By default posts will be created with a status of published. This might not always be desirable if the posts first needs to be reviewed. The following code snippet can be used to create posts as drafts by default. Remember to replace &lt;code class=&quot;highlighter-rouge&quot;&gt;FORM_KEY&lt;/code&gt; with your actual form key.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;create_post_as_draft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$post_data&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Set post status to draft
+&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$post_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'post_status'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'draft'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$post_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;add_filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'af/form/editing/post_data/key=FORM_KEY'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'create_post_as_draft'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;setting-the-post-thumbnail&quot;&gt;Setting the post thumbnail&lt;/h2&gt;
+
+&lt;p&gt;The post thumbnail (also called featured image) can be set from a field using the &lt;code class=&quot;highlighter-rouge&quot;&gt;af/form/editing/post_created&lt;/code&gt; action. Make sure your image field is configured to return an attachment ID.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;form_created_post_thumbnail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$post_id&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$image_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;af_get_field&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'IMAGE_FIELD_NAME'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;set_post_thumbnail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$post_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$image_id&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;add_action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'af/form/editing/post_created/key=FORM_KEY'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'form_created_post_thumbnail'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><summary type="html">A common use case for front-end forms is allowing users to create and edit posts. Maybe you want to let users submit post drafts which administrators can review and publish. Or have a post type for support issues which customers can submit and edit. Advanced Forms Pro makes it dead-simple to make forms which create and edit posts.</summary></entry><entry><title type="html">Setting up Slack notifications</title><link href="https://advancedforms.github.io/pro/configuration/setting-up-slack-notifications/" rel="alternate" type="text/html" title="Setting up Slack notifications" /><published>2018-03-17T23:01:00+00:00</published><updated>2018-03-17T23:01:00+00:00</updated><id>https://advancedforms.github.io/pro/configuration/setting-up-slack-notifications</id><content type="html" xml:base="https://advancedforms.github.io/pro/configuration/setting-up-slack-notifications/">&lt;p&gt;By connecting your Slack workspace to a form you will instantly get a message whenever a visitor sends a submission. A perfect way to be notified whether you’re creating a simple contact form or building a full-blown helpdesk.&lt;/p&gt;
+
+&lt;h2 id=&quot;creating-a-webhook&quot;&gt;Creating a webhook&lt;/h2&gt;
+
+&lt;p&gt;All you need to connect your form to Slack is a single URL called a webhook. Here’s how you get one:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Navigate to &lt;a href=&quot;https://my.slack.com/services/new/incoming-webhook/&quot;&gt;my.slack.com/services/new/incoming-webhook/&lt;/a&gt; and make sure you are logged in to your Slack workspace.&lt;/li&gt;
+  &lt;li&gt;Select the channel you want notifications to be sent to and click &lt;em&gt;Add Incoming WebHooks integration&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Copy your fresh webhook URL.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;configuring-your-form&quot;&gt;Configuring your form&lt;/h2&gt;
+
+&lt;p&gt;Once a webhook has been generated you’re ready to set up your form. In the Wordpress admin find your form, edit it, and enable the Slack integration under &lt;em&gt;Integrations&lt;/em&gt;. Fill in your webhook URL and type a little message which will be included with each notification. Also select any fields which you would like included. That’s it!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://advancedforms.github.io/assets/images/slack-notification.png&quot; alt=&quot;Example of a Slack notification&quot; /&gt;&lt;/p&gt;</content><summary type="html">By connecting your Slack workspace to a form you will instantly get a message whenever a visitor sends a submission. A perfect way to be notified whether you’re creating a simple contact form or building a full-blown helpdesk.</summary></entry><entry><title type="html">Connecting to Zapier</title><link href="https://advancedforms.github.io/pro/configuration/connecting-zapier/" rel="alternate" type="text/html" title="Connecting to Zapier" /><published>2018-03-17T23:01:00+00:00</published><updated>2018-03-17T23:01:00+00:00</updated><id>https://advancedforms.github.io/pro/configuration/connecting-zapier</id><content type="html" xml:base="https://advancedforms.github.io/pro/configuration/connecting-zapier/">&lt;p&gt;With the help of &lt;a href=&quot;https://zapier.com&quot;&gt;Zapier&lt;/a&gt; you can connect your form to thousand of services and create automated workflows. You could create a form that accepts files from users and automatically uploads them to your Dropbox. Or you could automatically save form submissions to a Google Spreadsheet. There are literally thousands of possibilities.&lt;/p&gt;
+
+&lt;h2 id=&quot;creating-a-zap&quot;&gt;Creating a Zap&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Set up a form with all the fields you want to pass on to Zapier.&lt;/li&gt;
+  &lt;li&gt;Follow this &lt;a href=&quot;https://zapier.com/developer/invite/66711/01f290c023c6caeb5201b57663c0af01/&quot;&gt;link&lt;/a&gt; to create a new Zap for your form.&lt;/li&gt;
+  &lt;li&gt;Choose the “New Submission” trigger and continue.&lt;/li&gt;
+  &lt;li&gt;Copy the provided URL,  and jump over to your form in the Wordpress admin.&lt;/li&gt;
+  &lt;li&gt;Under “Integrations”, enable the Zapier integration and the paste the URL from step 5. Finishing by clicking the “Send test submission” button.&lt;/li&gt;
+  &lt;li&gt;Hop back to Zapier and continue with the Zap creation process. Zapier should pick up some sample data with your form fields within a few seconds.&lt;/li&gt;
+  &lt;li&gt;Complete your Zap by connecting it to an action!&lt;/li&gt;
+&lt;/ol&gt;</content><summary type="html">With the help of Zapier you can connect your form to thousand of services and create automated workflows. You could create a form that accepts files from users and automatically uploads them to your Dropbox. Or you could automatically save form submissions to a Google Spreadsheet. There are literally thousands of possibilities.</summary></entry><entry><title type="html">Configuring Mailchimp</title><link href="https://advancedforms.github.io/pro/configuration/configuring-mailchimp/" rel="alternate" type="text/html" title="Configuring Mailchimp" /><published>2018-03-17T23:01:00+00:00</published><updated>2018-03-17T23:01:00+00:00</updated><id>https://advancedforms.github.io/pro/configuration/configuring-mailchimp</id><content type="html" xml:base="https://advancedforms.github.io/pro/configuration/configuring-mailchimp/">&lt;p&gt;Advanced Forms Pro enables you to connect forms to Mailchimp and subscribe your visitors to Mailchimp lists. Configuring Mailchimp is easy, all you need is an API key.&lt;/p&gt;
+
+&lt;h2 id=&quot;generating-an-api-key&quot;&gt;Generating an API Key&lt;/h2&gt;
+
+&lt;p&gt;Start by logging in to your Mailchimp account on mailchimp.com. Click your profile name in the top right corner and select &lt;em&gt;Account&lt;/em&gt;. Navigate to &lt;em&gt;API Keys&lt;/em&gt; under the &lt;em&gt;Extras&lt;/em&gt; tab and press the &lt;em&gt;Create a Key&lt;/em&gt; button. Lastly, copy the newly generated key.&lt;/p&gt;
+
+&lt;iframe src=&quot;//fast.wistia.net/embed/iframe/0x8n36j330&quot; allowtransparency=&quot;true&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; class=&quot;wistia_embed&quot; name=&quot;wistia_embed&quot; allowfullscreen=&quot;allowfullscreen&quot; mozallowfullscreen=&quot;mozallowfullscreen&quot; webkitallowfullscreen=&quot;webkitallowfullscreen&quot; oallowfullscreen=&quot;oallowfullscreen&quot; msallowfullscreen=&quot;msallowfullscreen&quot; width=&quot;600&quot; height=&quot;400&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;connecting-your-form-to-mailchimp&quot;&gt;Connecting your form to Mailchimp&lt;/h2&gt;
+
+&lt;p&gt;Once you have your API key it’s time to configure Advanced Forms. Log in to the Wordpress admin panel and navigate to &lt;em&gt;Forms&lt;/em&gt; → &lt;em&gt;Settings&lt;/em&gt;. Paste your API key in the &lt;em&gt;Mailchimp API key&lt;/em&gt; and save. Advanced Forms is now connected to your Mailchimp account and ready to start adding some subscribers.&lt;/p&gt;
+
+&lt;p&gt;Find and edit the form you want to connect. Navigate to the &lt;em&gt;Integrations&lt;/em&gt; tab and enable the Mailchimp integration. You should now be faced with a few settings. The list field lets you configure which Mailchimp list to subscribe users to and the email field lets you select which form field to get an email address from. Remember that this needs to be a valid email address and hence it’s recommended to use an ACF email field. Optionally you may also configure first name and last name to make your subscriber info more complete.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://advancedforms.github.io/assets/images/mailchimp-settings.png&quot; alt=&quot;Mailchimp form settings&quot; /&gt;&lt;/p&gt;</content><summary type="html">Advanced Forms Pro enables you to connect forms to Mailchimp and subscribe your visitors to Mailchimp lists. Configuring Mailchimp is easy, all you need is an API key.</summary></entry><entry><title type="html">Installing and activating</title><link href="https://advancedforms.github.io/pro/configuration/installing-and-activating/" rel="alternate" type="text/html" title="Installing and activating" /><published>2018-03-17T23:00:00+00:00</published><updated>2018-03-17T23:00:00+00:00</updated><id>https://advancedforms.github.io/pro/configuration/installing-and-activating</id><content type="html" xml:base="https://advancedforms.github.io/pro/configuration/installing-and-activating/">&lt;p&gt;Advanced Forms Pro can be purchased from hookturn.io &lt;a href=&quot;https://hookturn.io/downloads/advanced-forms-pro/&quot;&gt;here&lt;/a&gt;. After purchasing you will get get a license key as well as a download link to the plugin. The license key grants updates and support for one year.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Download the plugin zip file.&lt;/li&gt;
+  &lt;li&gt;Install and activate using the downloaded file. If you have the free version installed, disable it before activating the Pro plugin.&lt;/li&gt;
+  &lt;li&gt;Navigate to “Settings” below “Forms”.&lt;/li&gt;
+  &lt;li&gt;Enter your license key and click “Update”. Make sure a message reading “License valid and active” is shown after saving.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If you have any issues, questions, or suggestions; contact us directly through &lt;a href=&quot;https://hookturn.io/contact/&quot;&gt;https://hookturn.io/contact/&lt;/a&gt;. We are always happy to help!&lt;/p&gt;</content><summary type="html">Advanced Forms Pro can be purchased from hookturn.io here. After purchasing you will get get a license key as well as a download link to the plugin. The license key grants updates and support for one year.</summary></entry><entry><title type="html">Configuring a multi-page form</title><link href="https://advancedforms.github.io/guides/basic/making-a-multi-page-form/" rel="alternate" type="text/html" title="Configuring a multi-page form" /><published>2017-07-08T23:00:00+00:00</published><updated>2017-07-08T23:00:00+00:00</updated><id>https://advancedforms.github.io/guides/basic/making-a-multi-page-form</id><content type="html" xml:base="https://advancedforms.github.io/guides/basic/making-a-multi-page-form/">&lt;p&gt;From version 1.5 and onwards Advanced Forms supports multi-page forms. Setting them up is similar to configuring tabs in a regular ACF field group. To create a paged form simply insert “Page” fields to divide your form. The “Page” field has settings for numbering and button text as well. Only the settings on the first page field will be used.&lt;/p&gt;
+
+&lt;p&gt;After setting up the page fields your form should now be split over multiple forms. Users can navigate the form by clicking the previous and next buttons as well as the progression indicator at the top. When navigating forward each page will be validated and any error messages will be displayed before progressing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://advancedforms.github.io/assets/images/paged-form.png&quot; alt=&quot;Multi-page form&quot; /&gt;&lt;/p&gt;</content><summary type="html">From version 1.5 and onwards Advanced Forms supports multi-page forms. Setting them up is similar to configuring tabs in a regular ACF field group. To create a paged form simply insert “Page” fields to divide your form. The “Page” field has settings for numbering and button text as well. Only the settings on the first page field will be used.</summary></entry></feed>

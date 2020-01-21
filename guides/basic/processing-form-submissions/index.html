@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+
+<title>Processing form submissions &#8211; Advanced Forms Documentation</title>
+
+
+<link rel="canonical" href="" />
+<link
+  href="https://advancedforms.github.io/feed.xml"
+  type="application/atom+xml"
+  rel="alternate"
+  title="Advanced Forms Documentation Feed"
+/>
+
+<meta name="description" content="Wordpress plugin for creating flexible and developer-friendly forms using the power of Advanced Custom Fields
+" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://advancedforms.github.io/assets/css/style.css" />
+
+<meta http-equiv="cleartype" content="on" />
+
+<meta property="og:title" content="Advanced Forms Documentation" />
+<meta property="og:description" content="Wordpress plugin for creating flexible and developer-friendly forms using the power of Advanced Custom Fields
+" />
+<meta property="og:site_name" content="Advanced Forms" />
+<meta property="og:type" content="website" />
+<meta
+  property="og:image"
+  content="https://advancedforms.github.io/assets/images/icon-128x128.png"
+/>
+
+<script src="https://advancedforms.github.io/assets/js/autocomplete.min.js"></script>
+<script src="https://advancedforms.github.io/assets/js/elasticlunr.min.js"></script>
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="https://advancedforms.github.io/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="https://advancedforms.github.io/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+  </head>
+
+  <body>
+    <header>
+  <div class="container flex">
+    <a class="logo-wrapper" href="/"
+      ><img
+        src="/assets/images/icon-128x128.png"
+        class="logo"
+        alt="Advanced Forms logo"
+    /></a>
+
+    <div class="search-wrapper">
+      <input
+        type="text"
+        class="search"
+        id="search"
+        placeholder="Search guides, actions and filters..."
+      />
+    </div>
+  </div>
+</header>
+
+
+    <div class="main container">
+      <div class="post">
+        <div class="breadcrumb"><a href="/">Home</a> › Processing form submissions</div>
+        <h1>Processing form submissions</h1>
+         <p>After a form has been submitted the field values need to be processed. The plugin comes with the ability to automatically save form data to entries and to send custom emails. Emails and entries can be configured in the form settings but are not enabled by default.</p>
+
+<p>If you need to process the form data further the handy action hook <code class="highlighter-rouge">af/form/submission</code> should be used. The hook can be used in three different ways.</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="nx">add_action</span><span class="p">(</span> <span class="s1">'af/form/submission'</span><span class="p">,</span> <span class="s1">'your_callback_function'</span> <span class="p">);</span>
+<span class="nx">add_action</span><span class="p">(</span> <span class="s1">'af/form/submission/id=FORM_ID'</span><span class="p">,</span> <span class="s1">'your_callback_function'</span> <span class="p">);</span>
+<span class="nx">add_action</span><span class="p">(</span> <span class="s1">'af/form/submission/key=FORM_KEY'</span><span class="p">,</span> <span class="s1">'your_callback_function'</span> <span class="p">);</span></code></pre></figure>
+
+<p>The first hook is invoked for all form submissions while the two last ones allow you to specify a form using either the form post ID or form key. It’s recommended to use the form key.</p>
+
+<p>The action passes three different parameters:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">$form</code> – The form object</li>
+  <li><code class="highlighter-rouge">$fields</code> – Array of the submitted fields and their processed values</li>
+  <li><code class="highlighter-rouge">$args</code> – Array of arguments used to display the form</li>
+</ul>
+
+<p>To simplify the retrieval of field values a helper function <code class="highlighter-rouge">af_get_field</code> is provided which takes the field name/key to find. The function returns a processed value in the same format as ACF’s <code class="highlighter-rouge">get_field</code> would.</p>
+
+<p>The following is an example of processing a form submission and extracting the value entered into the field with name “email”.</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">function</span> <span class="nf">handle_form_submission</span><span class="p">(</span> <span class="nv">$form</span><span class="p">,</span> <span class="nv">$fields</span><span class="p">,</span> <span class="nv">$args</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$email</span> <span class="o">=</span> <span class="nx">af_get_field</span><span class="p">(</span> <span class="s1">'email'</span> <span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">add_action</span><span class="p">(</span> <span class="s1">'af/form/submission'</span><span class="p">,</span> <span class="s1">'handle_form_submission'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span> <span class="p">);</span></code></pre></figure>
+
+ 
+      </div>
+
+      <aside class="sidebar">
+        <div class="related">
+          <p class="heading">Related</p>
+          <ul>
+              
+            <li><a href="/guides/basic/creating-a-form/">Creating a form</a></li>
+              
+            <li><a href="/guides/basic/displaying-a-form/">Displaying a form</a></li>
+              
+            <li>Processing form submissions</li>
+              
+            <li><a href="/guides/basic/making-a-multi-page-form/">Configuring a multi-page form</a></li>
+             
+          </ul>
+        </div>
+
+        <!-- Begin MailChimp Signup Form -->
+        <div id="mc_embed_signup" class="newsletter-signup">
+          <form
+            action="//github.us14.list-manage.com/subscribe/post?u=76d2abc9cd9c93679023ba4de&amp;id=d1d49ef515"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            class="validate"
+            target="_blank"
+            novalidate
+          >
+            <div id="mc_embed_signup_scroll">
+              <p class="heading">
+                Want occasional updates about Advanced Forms?
+              </p>
+
+              <div class="mc-field-group">
+                <input
+                  type="email"
+                  value=""
+                  name="EMAIL"
+                  class="required email"
+                  placeholder="Your email address"
+                  id="mce-EMAIL"
+                />
+              </div>
+
+              <div id="mce-responses" class="clear">
+                <div
+                  class="response"
+                  id="mce-error-response"
+                  style="display:none"
+                ></div>
+                <div
+                  class="response"
+                  id="mce-success-response"
+                  style="display:none"
+                ></div>
+              </div>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div
+                style="position: absolute; left: -5000px;"
+                aria-hidden="true"
+              >
+                <input
+                  type="text"
+                  name="b_76d2abc9cd9c93679023ba4de_d1d49ef515"
+                  tabindex="-1"
+                  value=""
+                />
+              </div>
+              <div class="clear">
+                <input
+                  type="submit"
+                  value="Subscribe to updates"
+                  name="subscribe"
+                  id="mc-embedded-subscribe"
+                  class="btn small"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <script
+          type="text/javascript"
+          src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
+        ></script>
+        <script type="text/javascript">
+          (function($) {
+            window.fnames = new Array();
+            window.ftypes = new Array();
+            fnames[0] = "EMAIL";
+            ftypes[0] = "email";
+            fnames[1] = "FNAME";
+            ftypes[1] = "text";
+            fnames[2] = "LNAME";
+            ftypes[2] = "text";
+          })(jQuery);
+          var $mcj = jQuery.noConflict(true);
+        </script>
+        <!--End mc_embed_signup-->
+      </aside>
+    </div>
+
+    <script src="https://advancedforms.github.io/assets/js/script.js"></script>
+
+<script>
+  (function(i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    (i[r] =
+      i[r] ||
+      function() {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    "script",
+    "https://www.google-analytics.com/analytics.js",
+    "ga"
+  );
+
+  ga("create", "UA-45755328-16", "auto");
+  ga("send", "pageview");
+</script>
+
+  </body>
+</html>
