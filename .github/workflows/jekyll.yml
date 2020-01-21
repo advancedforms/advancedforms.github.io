@@ -14,7 +14,11 @@ jobs:
     #    docker run \
     #    -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
     #    jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
-    - name: Build and Deploy
+    - name: Build Jekyll
+      uses: gha-utilities/jekyll-build@v0.0.2
+      with:
+        destination: _site
+    - name: Publish to Github Pages
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
