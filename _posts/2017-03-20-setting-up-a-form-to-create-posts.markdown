@@ -3,6 +3,7 @@ layout: post
 title: "Setting up a form which creates posts"
 date: 2017-03-20 21:00:00 +0100
 categories: guides advanced
+published: false
 ---
 
 > This guide is only applicable if you're using the free version of Advanced Forms. The easiest way to create posts with a form is to use Advanced Forms Pro. It supports creating and editing both posts and users. You can read more about post editing [here]({% post_url 2018-06-21-creating-and-editing-posts %}) and Pro is available from [hookturn.io](https://hookturn.io/downloads/advanced-forms-pro/).
