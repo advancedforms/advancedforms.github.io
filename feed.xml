@@ -1,5 +1,75 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://advancedforms.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.6.3">Jekyll</generator><link href="https://advancedforms.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://advancedforms.github.io/" rel="alternate" type="text/html" /><updated>2020-01-21T10:11:02+00:00</updated><id>https://advancedforms.github.io//</id><title type="html">Advanced Forms Documentation</title><subtitle>Wordpress plugin for creating flexible and developer-friendly forms using the power of Advanced Custom Fields
-</subtitle><entry><title type="html">Decreasing number of scripts and styles</title><link href="https://advancedforms.github.io/guides/advanced/decreasing-scripts-and-styles/" rel="alternate" type="text/html" title="Decreasing number of scripts and styles" /><published>2019-12-14T23:00:00+00:00</published><updated>2019-12-14T23:00:00+00:00</updated><id>https://advancedforms.github.io/guides/advanced/decreasing-scripts-and-styles</id><content type="html" xml:base="https://advancedforms.github.io/guides/advanced/decreasing-scripts-and-styles/">&lt;p&gt;Advanced Custom Fields has the unfortunate habit of enqueuing scripts and styles for all field types even when not in use. As a result there are normally scripts and styles included when displaying a form which are not actually in use.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://advancedforms.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.6.3">Jekyll</generator><link href="https://advancedforms.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://advancedforms.github.io/" rel="alternate" type="text/html" /><updated>2020-02-10T00:14:36+00:00</updated><id>https://advancedforms.github.io//</id><title type="html">Advanced Forms Documentation</title><subtitle>Wordpress plugin for creating flexible and developer-friendly forms using the power of Advanced Custom Fields
+</subtitle><entry><title type="html">Customizing the form template</title><link href="https://advancedforms.github.io/guides/advanced/customizing-form-template/" rel="alternate" type="text/html" title="Customizing the form template" /><published>2020-02-08T23:00:00+00:00</published><updated>2020-02-08T23:00:00+00:00</updated><id>https://advancedforms.github.io/guides/advanced/customizing-form-template</id><content type="html" xml:base="https://advancedforms.github.io/guides/advanced/customizing-form-template/">&lt;p&gt;This guide is intended to give an overview of what the markup for a form looks like and what options are available to customize it. The visualization below shows the different HTML elements that make up a form, classes that can be used to style them and hooks that might be useful.&lt;/p&gt;
+
+&lt;p&gt;Some customization can be achieved with the &lt;a href=&quot;/guides/basic/displaying-a-form/&quot;&gt;form arguments&lt;/a&gt;, for example changing the submit button text. If you want to programmatically change the arguments then use the &lt;a href=&quot;/filters/af-form-args&quot;&gt;af/form/args&lt;/a&gt; filter.&lt;/p&gt;
+
+&lt;div class=&quot;form-template-visual section&quot;&gt;
+  &lt;div class=&quot;section&quot;&gt;
+    &lt;div class=&quot;action&quot;&gt;
+      &lt;p class=&quot;text&quot;&gt;&lt;a href=&quot;/actions/af-form-before_title&quot;&gt;af/form/before_title&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;section alternate no-children&quot;&gt;
+      &lt;div class=&quot;element-description&quot;&gt;af-title&lt;/div&gt;
+      &lt;p class=&quot;text with-description&quot;&gt;Title&lt;/p&gt;
+      &lt;p class=&quot;description&quot;&gt;Only shown if argument &lt;code&gt;display_title&lt;/code&gt; is true&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;section alternate no-children&quot;&gt;
+      &lt;div class=&quot;element-description&quot;&gt;af-description&lt;/div&gt;
+      &lt;p class=&quot;text with-description&quot;&gt;Description&lt;/p&gt;
+      &lt;p class=&quot;description&quot;&gt;Only shown if argument &lt;code&gt;display_description&lt;/code&gt; is true&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;section alternate&quot;&gt;
+      &lt;div class=&quot;element-description&quot;&gt;af-fields acf-fields acf-form-fields&lt;/div&gt;
+      &lt;div class=&quot;action&quot;&gt;
+        &lt;p class=&quot;text&quot;&gt;&lt;a href=&quot;/actions/af-form-before_fields&quot;&gt;af/form/before_fields&lt;/a&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;!--&lt;div class=&quot;action&quot;&gt;
+        &lt;p class=&quot;text&quot;&gt;af/field/before_field&lt;/p&gt;
+        &lt;p class=&quot;description&quot;&gt;Triggered before each field&lt;/p&gt;
+      &lt;/div&gt;--&gt;
+      &lt;div class=&quot;section&quot;&gt;
+        &lt;div class=&quot;element-description&quot;&gt;
+          af-field af-field-{NAME} af-field-type-{TYPE}
+        &lt;/div&gt;
+        &lt;div class=&quot;filter&quot;&gt;
+          &lt;p class=&quot;text&quot;&gt;&lt;a href=&quot;/filters/af-form-field_attributes&quot;&gt;af/form/field_attributes&lt;/a&gt;&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;section alternate no-children&quot;&gt;
+          &lt;div class=&quot;element-description&quot;&gt;af-label&lt;/div&gt;
+          &lt;p class=&quot;text&quot;&gt;Label&lt;/p&gt;
+          &lt;div class=&quot;section top-margin alternate no-children&quot;&gt;
+            &lt;div class=&quot;element-description&quot;&gt;af-field-instructions&lt;/div&gt;
+            &lt;p class=&quot;text&quot;&gt;Instructions&lt;/p&gt;
+            &lt;p class=&quot;description&quot;&gt;Can be moved after the field by setting the &lt;code&gt;instruction_placement&lt;/code&gt; argument or using the &lt;code&gt;af/field/instructions_placement&lt;/code&gt; filter&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;section alternate no-children&quot;&gt;
+          &lt;div class=&quot;element-description&quot;&gt;af-input&lt;/div&gt;
+          &lt;p class=&quot;text&quot;&gt;Rendered by ACF&lt;/p&gt;
+          &lt;p class=&quot;description&quot;&gt;Refer to the &lt;a href=&quot;https://www.advancedcustomfields.com/resources/&quot;&gt;ACF documentation&lt;/a&gt; for information on how to customize fields. The &lt;a href=&quot;/filters/af-field-before_render&quot;&gt;af/field/before_render&lt;/a&gt; filter can be used to alter the field object before it's rendered by ACF.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!--&lt;div class=&quot;action&quot;&gt;
+        &lt;p class=&quot;text&quot;&gt;af/field/after_field&lt;/p&gt;
+        &lt;p class=&quot;description&quot;&gt;Triggered after each field&lt;/p&gt;
+      &lt;/div&gt;--&gt;
+      &lt;div class=&quot;action&quot;&gt;
+        &lt;p class=&quot;text&quot;&gt;&lt;a href=&quot;/actions/af-form-after_fields&quot;&gt;af/form/after_fields&lt;/a&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;section&quot;&gt;
+        &lt;div class=&quot;element-description&quot;&gt;af-submit&lt;/div&gt;
+        &lt;div class=&quot;section alternate no-children&quot;&gt;
+          &lt;div class=&quot;element-description&quot;&gt;af-submit-button&lt;/div&gt;
+          &lt;p class=&quot;text with-description&quot;&gt;Submit button&lt;/p&gt;
+          &lt;p class=&quot;description&quot;&gt;Button text can be changed using the &lt;code&gt;submit_text&lt;/code&gt; argument&lt;/p&gt;
+          &lt;div class=&quot;filter top-margin&quot;&gt;
+            &lt;p class=&quot;text&quot;&gt;&lt;a href=&quot;/filters/af-form-button_attributes&quot;&gt;af/form/button_attributes&lt;/a&gt;&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</content><summary type="html">This guide is intended to give an overview of what the markup for a form looks like and what options are available to customize it. The visualization below shows the different HTML elements that make up a form, classes that can be used to style them and hooks that might be useful.</summary></entry><entry><title type="html">Decreasing number of scripts and styles</title><link href="https://advancedforms.github.io/guides/advanced/decreasing-scripts-and-styles/" rel="alternate" type="text/html" title="Decreasing number of scripts and styles" /><published>2019-12-14T23:00:00+00:00</published><updated>2019-12-14T23:00:00+00:00</updated><id>https://advancedforms.github.io/guides/advanced/decreasing-scripts-and-styles</id><content type="html" xml:base="https://advancedforms.github.io/guides/advanced/decreasing-scripts-and-styles/">&lt;p&gt;Advanced Custom Fields has the unfortunate habit of enqueuing scripts and styles for all field types even when not in use. As a result there are normally scripts and styles included when displaying a form which are not actually in use.&lt;/p&gt;
 
 &lt;p&gt;It’s possible to manually dequeue unecessary resources with a bit of care. The following snippet can be used to dequeue some things which are included by ACF. The comments explain which field types use which enqueues. If you’re actually using one of the field types please remove the corresponding dequeue.&lt;/p&gt;
 
@@ -243,8 +313,4 @@ This will only work if the same ACF field group is used both for the form and us
   &lt;li&gt;Enter your license key and click “Update”. Make sure a message reading “License valid and active” is shown after saving.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;If you have any issues, questions, or suggestions; contact us directly through &lt;a href=&quot;https://hookturn.io/contact/&quot;&gt;https://hookturn.io/contact/&lt;/a&gt;. We are always happy to help!&lt;/p&gt;</content><summary type="html">Advanced Forms Pro can be purchased from hookturn.io here. After purchasing you will get get a license key as well as a download link to the plugin. The license key grants updates and support for one year.</summary></entry><entry><title type="html">Configuring a multi-page form</title><link href="https://advancedforms.github.io/guides/basic/making-a-multi-page-form/" rel="alternate" type="text/html" title="Configuring a multi-page form" /><published>2017-07-08T23:00:00+00:00</published><updated>2017-07-08T23:00:00+00:00</updated><id>https://advancedforms.github.io/guides/basic/making-a-multi-page-form</id><content type="html" xml:base="https://advancedforms.github.io/guides/basic/making-a-multi-page-form/">&lt;p&gt;From version 1.5 and onwards Advanced Forms supports multi-page forms. Setting them up is similar to configuring tabs in a regular ACF field group. To create a paged form simply insert “Page” fields to divide your form. The “Page” field has settings for numbering and button text as well. Only the settings on the first page field will be used.&lt;/p&gt;
-
-&lt;p&gt;After setting up the page fields your form should now be split over multiple forms. Users can navigate the form by clicking the previous and next buttons as well as the progression indicator at the top. When navigating forward each page will be validated and any error messages will be displayed before progressing.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://advancedforms.github.io/assets/images/paged-form.png&quot; alt=&quot;Multi-page form&quot; /&gt;&lt;/p&gt;</content><summary type="html">From version 1.5 and onwards Advanced Forms supports multi-page forms. Setting them up is similar to configuring tabs in a regular ACF field group. To create a paged form simply insert “Page” fields to divide your form. The “Page” field has settings for numbering and button text as well. Only the settings on the first page field will be used.</summary></entry></feed>
+&lt;p&gt;If you have any issues, questions, or suggestions; contact us directly through &lt;a href=&quot;https://hookturn.io/contact/&quot;&gt;https://hookturn.io/contact/&lt;/a&gt;. We are always happy to help!&lt;/p&gt;</content><summary type="html">Advanced Forms Pro can be purchased from hookturn.io here. After purchasing you will get get a license key as well as a download link to the plugin. The license key grants updates and support for one year.</summary></entry></feed>

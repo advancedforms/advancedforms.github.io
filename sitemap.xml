@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://advancedforms.github.io/guides/advanced/customizing-form-template/</loc>
+<lastmod>2020-02-08T23:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>https://advancedforms.github.io/guides/advanced/decreasing-scripts-and-styles/</loc>
 <lastmod>2019-12-14T23:00:00+00:00</lastmod>
 </url>
@@ -39,10 +43,6 @@
 <url>
 <loc>https://advancedforms.github.io/guides/basic/making-a-multi-page-form/</loc>
 <lastmod>2017-07-08T23:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>https://advancedforms.github.io/guides/advanced/setting-up-a-form-to-create-posts/</loc>
-<lastmod>2017-03-20T20:00:00+00:00</lastmod>
 </url>
 <url>
 <loc>https://advancedforms.github.io/guides/basic/processing-form-submissions/</loc>

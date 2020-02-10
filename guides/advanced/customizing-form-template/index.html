@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
 
-<title>Decreasing number of scripts and styles &#8211; Advanced Forms Documentation</title>
+<title>Customizing the form template &#8211; Advanced Forms Documentation</title>
 
 
 <link rel="canonical" href="" />
@@ -74,34 +74,79 @@
 
     <div class="main container">
       <div class="post">
-        <div class="breadcrumb"><a href="/">Home</a> › Decreasing number of scripts and styles</div>
-        <h1>Decreasing number of scripts and styles</h1>
-         <p>Advanced Custom Fields has the unfortunate habit of enqueuing scripts and styles for all field types even when not in use. As a result there are normally scripts and styles included when displaying a form which are not actually in use.</p>
+        <div class="breadcrumb"><a href="/">Home</a> › Customizing the form template</div>
+        <h1>Customizing the form template</h1>
+         <p>This guide is intended to give an overview of what the markup for a form looks like and what options are available to customize it. The visualization below shows the different HTML elements that make up a form, classes that can be used to style them and hooks that might be useful.</p>
 
-<p>It’s possible to manually dequeue unecessary resources with a bit of care. The following snippet can be used to dequeue some things which are included by ACF. The comments explain which field types use which enqueues. If you’re actually using one of the field types please remove the corresponding dequeue.</p>
+<p>Some customization can be achieved with the <a href="/guides/basic/displaying-a-form/">form arguments</a>, for example changing the submit button text. If you want to programmatically change the arguments then use the <a href="/filters/af-form-args">af/form/args</a> filter.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">function</span> <span class="nf">form_remove_enqueues</span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">// Stylized select (including user and post fields)
-</span>  <span class="nx">wp_dequeue_script</span><span class="p">(</span> <span class="s1">'select2'</span> <span class="p">);</span>
-  <span class="nx">wp_dequeue_style</span><span class="p">(</span> <span class="s1">'select2'</span> <span class="p">);</span>
-
-  <span class="c1">// Date picker
-</span>  <span class="nx">wp_dequeue_script</span><span class="p">(</span> <span class="s1">'jquery-ui-datepicker'</span> <span class="p">);</span>
-  <span class="nx">wp_dequeue_style</span><span class="p">(</span> <span class="s1">'acf-datepicker'</span> <span class="p">);</span>
-
-  <span class="c1">// Date and time picker
-</span>  <span class="nx">wp_dequeue_script</span><span class="p">(</span> <span class="s1">'acf-timepicker'</span> <span class="p">);</span>
-  <span class="nx">wp_dequeue_style</span><span class="p">(</span> <span class="s1">'acf-timepicker'</span> <span class="p">);</span>
-
-  <span class="c1">// Color picker
-</span>  <span class="nx">wp_dequeue_script</span><span class="p">(</span> <span class="s1">'wp-color-picker'</span> <span class="p">);</span>
-  <span class="nx">wp_dequeue_style</span><span class="p">(</span> <span class="s1">'wp-color-picker'</span> <span class="p">);</span>
-<span class="p">}</span>
-<span class="nx">add_action</span><span class="p">(</span> <span class="s1">'af/form/before_title/key=FORM_KEY'</span><span class="p">,</span> <span class="s1">'form_remove_enqueues'</span> <span class="p">);</span></code></pre></figure>
-
-<p>In the future Advanced Forms will be able to automatically dequeue unused resources. Until then it’s recommended to use this snippet and manually determine which enqueues are unnecessary.</p>
+<div class="form-template-visual section">
+  <div class="section">
+    <div class="action">
+      <p class="text"><a href="/actions/af-form-before_title">af/form/before_title</a></p>
+    </div>
+    <div class="section alternate no-children">
+      <div class="element-description">af-title</div>
+      <p class="text with-description">Title</p>
+      <p class="description">Only shown if argument <code>display_title</code> is true</p>
+    </div>
+    <div class="section alternate no-children">
+      <div class="element-description">af-description</div>
+      <p class="text with-description">Description</p>
+      <p class="description">Only shown if argument <code>display_description</code> is true</p>
+    </div>
+    <div class="section alternate">
+      <div class="element-description">af-fields acf-fields acf-form-fields</div>
+      <div class="action">
+        <p class="text"><a href="/actions/af-form-before_fields">af/form/before_fields</a></p>
+      </div>
+      <!--<div class="action">
+        <p class="text">af/field/before_field</p>
+        <p class="description">Triggered before each field</p>
+      </div>-->
+      <div class="section">
+        <div class="element-description">
+          af-field af-field-{NAME} af-field-type-{TYPE}
+        </div>
+        <div class="filter">
+          <p class="text"><a href="/filters/af-form-field_attributes">af/form/field_attributes</a></p>
+        </div>
+        <div class="section alternate no-children">
+          <div class="element-description">af-label</div>
+          <p class="text">Label</p>
+          <div class="section top-margin alternate no-children">
+            <div class="element-description">af-field-instructions</div>
+            <p class="text">Instructions</p>
+            <p class="description">Can be moved after the field by setting the <code>instruction_placement</code> argument or using the <code>af/field/instructions_placement</code> filter</p>
+          </div>
+        </div>
+        <div class="section alternate no-children">
+          <div class="element-description">af-input</div>
+          <p class="text">Rendered by ACF</p>
+          <p class="description">Refer to the <a href="https://www.advancedcustomfields.com/resources/">ACF documentation</a> for information on how to customize fields. The <a href="/filters/af-field-before_render">af/field/before_render</a> filter can be used to alter the field object before it's rendered by ACF.</p>
+        </div>
+      </div>
+      <!--<div class="action">
+        <p class="text">af/field/after_field</p>
+        <p class="description">Triggered after each field</p>
+      </div>-->
+      <div class="action">
+        <p class="text"><a href="/actions/af-form-after_fields">af/form/after_fields</a></p>
+      </div>
+      <div class="section">
+        <div class="element-description">af-submit</div>
+        <div class="section alternate no-children">
+          <div class="element-description">af-submit-button</div>
+          <p class="text with-description">Submit button</p>
+          <p class="description">Button text can be changed using the <code>submit_text</code> argument</p>
+          <div class="filter top-margin">
+            <p class="text"><a href="/filters/af-form-button_attributes">af/form/button_attributes</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
  
       </div>
 
@@ -116,9 +161,9 @@
               
             <li><a href="/guides/advanced/adding-custom-merge-tags/">Adding custom merge tags</a></li>
               
-            <li>Decreasing number of scripts and styles</li>
+            <li><a href="/guides/advanced/decreasing-scripts-and-styles/">Decreasing number of scripts and styles</a></li>
               
-            <li><a href="/guides/advanced/customizing-form-template/">Customizing the form template</a></li>
+            <li>Customizing the form template</li>
              
           </ul>
         </div>
