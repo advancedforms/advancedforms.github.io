@@ -66,3 +66,21 @@ function form_created_post_thumbnail( $post_id ) {
 add_action( 'af/form/editing/post_created/key=FORM_KEY', 'form_created_post_thumbnail', 10, 1 );
 
 {% endhighlight %}
+
+## Redirecting to post after creation
+
+To redirect to a post after creation it's recommended to use `af/form/submission` with a high priority instead of `af/form/editing/post_created`. Otherwise there is a risk of stopping emails from being sent and integrations from working. The created post ID can be accessed by using `AF()->submission['post']`.
+
+{% highlight php startinline %}
+<?php
+
+function form_redirect_to_post() {
+  $post_id = AF()->submission['post'];
+  $url = get_permalink( $post_id );
+
+  wp_redirect( $url );
+  exit;
+}
+add_action( 'af/form/submission/key=FORM_KEY', 'form_redirect_to_post', 20 );
+
+{% endhighlight %}
