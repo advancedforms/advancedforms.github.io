@@ -59,9 +59,9 @@ The post thumbnail (also called featured image) can be set from a field using th
 {% highlight php startinline %}
 <?php
 
-function form_created_post_thumbnail( $post_id ) {
+function form_created_post_thumbnail( $post ) {
   $image_id = af_get_field( 'IMAGE_FIELD_NAME' );
-  set_post_thumbnail( $post_id, $image_id );
+  set_post_thumbnail( $post->ID, $image_id );
 }
 add_action( 'af/form/editing/post_created/key=FORM_KEY', 'form_created_post_thumbnail', 10, 1 );
 
