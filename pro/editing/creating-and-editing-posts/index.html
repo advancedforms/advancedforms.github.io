@@ -124,9 +124,9 @@
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
-<span class="k">function</span> <span class="nf">form_created_post_thumbnail</span><span class="p">(</span> <span class="nv">$post_id</span> <span class="p">)</span> <span class="p">{</span>
+<span class="k">function</span> <span class="nf">form_created_post_thumbnail</span><span class="p">(</span> <span class="nv">$post</span> <span class="p">)</span> <span class="p">{</span>
   <span class="nv">$image_id</span> <span class="o">=</span> <span class="nx">af_get_field</span><span class="p">(</span> <span class="s1">'IMAGE_FIELD_NAME'</span> <span class="p">);</span>
-  <span class="nx">set_post_thumbnail</span><span class="p">(</span> <span class="nv">$post_id</span><span class="p">,</span> <span class="nv">$image_id</span> <span class="p">);</span>
+  <span class="nx">set_post_thumbnail</span><span class="p">(</span> <span class="nv">$post</span><span class="o">-&gt;</span><span class="na">ID</span><span class="p">,</span> <span class="nv">$image_id</span> <span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">add_action</span><span class="p">(</span> <span class="s1">'af/form/editing/post_created/key=FORM_KEY'</span><span class="p">,</span> <span class="s1">'form_created_post_thumbnail'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span></code></pre></figure>
 
@@ -144,6 +144,7 @@
   <span class="k">exit</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nx">add_action</span><span class="p">(</span> <span class="s1">'af/form/submission/key=FORM_KEY'</span><span class="p">,</span> <span class="s1">'form_redirect_to_post'</span><span class="p">,</span> <span class="mi">20</span> <span class="p">);</span></code></pre></figure>
+
  
         <div class="related-hooks">
           <h2>Related hooks</h2>
