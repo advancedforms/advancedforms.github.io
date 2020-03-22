@@ -78,27 +78,9 @@
         <h1>Processing form submissions</h1>
          <p>After a form has been submitted the field values need to be processed. The plugin comes with the ability to automatically save form data to entries and to send custom emails. Emails and entries can be configured in the form settings but are not enabled by default.</p>
 
-<p>If you need to process the form data further the handy action hook <code class="highlighter-rouge">af/form/submission</code> should be used. The hook can be used in three different ways.</p>
+<p>If you need to process the form data further the handy action hook <code class="highlighter-rouge">af/form/submission</code> should be used. To simplify the retrieval of field values a helper function <code class="highlighter-rouge">af_get_field</code> is provided which takes the field name/key to find. The function returns a processed value in the same format as ACF’s <code class="highlighter-rouge">get_field</code> would.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="nx">add_action</span><span class="p">(</span> <span class="s1">'af/form/submission'</span><span class="p">,</span> <span class="s1">'your_callback_function'</span> <span class="p">);</span>
-<span class="nx">add_action</span><span class="p">(</span> <span class="s1">'af/form/submission/id=FORM_ID'</span><span class="p">,</span> <span class="s1">'your_callback_function'</span> <span class="p">);</span>
-<span class="nx">add_action</span><span class="p">(</span> <span class="s1">'af/form/submission/key=FORM_KEY'</span><span class="p">,</span> <span class="s1">'your_callback_function'</span> <span class="p">);</span></code></pre></figure>
-
-<p>The first hook is invoked for all form submissions while the two last ones allow you to specify a form using either the form post ID or form key. It’s recommended to use the form key.</p>
-
-<p>The action passes three different parameters:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">$form</code> – The form object</li>
-  <li><code class="highlighter-rouge">$fields</code> – Array of the submitted fields and their processed values</li>
-  <li><code class="highlighter-rouge">$args</code> – Array of arguments used to display the form</li>
-</ul>
-
-<p>To simplify the retrieval of field values a helper function <code class="highlighter-rouge">af_get_field</code> is provided which takes the field name/key to find. The function returns a processed value in the same format as ACF’s <code class="highlighter-rouge">get_field</code> would.</p>
-
-<p>The following is an example of processing a form submission and extracting the value entered into the field with name “email”.</p>
+<p>Following is an example of how to process a form submission and extract the value entered into the field with name <code class="highlighter-rouge">email</code>.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -107,6 +89,27 @@
 <span class="p">}</span>
 <span class="nx">add_action</span><span class="p">(</span> <span class="s1">'af/form/submission'</span><span class="p">,</span> <span class="s1">'handle_form_submission'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span> <span class="p">);</span></code></pre></figure>
 
+<p>The <code class="highlighter-rouge">$fields</code> parameter has been deprecated and <code class="highlighter-rouge">af_get_field</code> should be used instead. It remains for backwards compatibility.</p>
+
+<h2 id="using-repeater-fields">Using repeater fields</h2>
+
+<p><code class="highlighter-rouge">af_get_field</code> works with all ACF field types including repeaters. Let’s say we have a repeater field called <code class="highlighter-rouge">people</code> containing two sub fields, <code class="highlighter-rouge">first_name</code> and <code class="highlighter-rouge">last_name</code>. The following code can be used to iterate over all the repeater rows and process them one by one.</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">function</span> <span class="nf">handle_form_repeater_submission</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nv">$people</span> <span class="o">=</span> <span class="nx">af_get_field</span><span class="p">(</span> <span class="s1">'people'</span> <span class="p">);</span>
+
+    <span class="c1">// Iterate over all the rows
+</span>    <span class="k">foreach</span> <span class="p">(</span> <span class="nv">$people</span> <span class="k">as</span> <span class="nv">$person</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Get the sub field values for the row
+</span>        <span class="nv">$first_name</span> <span class="o">=</span> <span class="nv">$person</span><span class="p">[</span><span class="s1">'first_name'</span><span class="p">];</span>
+        <span class="nv">$last_name</span> <span class="o">=</span> <span class="nv">$person</span><span class="p">[</span><span class="s1">'last_name'</span><span class="p">];</span>
+
+        <span class="c1">// Use $first_name and $last_name
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">add_action</span><span class="p">(</span> <span class="s1">'af/form/submission'</span><span class="p">,</span> <span class="s1">'handle_form_repeater_submission'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span> <span class="p">);</span></code></pre></figure>
  
       </div>
 
