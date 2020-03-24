@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
 
-<title>Customizing validations &#8211; Advanced Forms Documentation</title>
+<title>af/form/page_changed &#8211; Advanced Forms Documentation</title>
 
 
 <link rel="canonical" href="" />
@@ -74,42 +74,14 @@
 
     <div class="main container">
       <div class="post">
-        <div class="breadcrumb"><a href="/">Home</a> › Customizing validations</div>
-        <h1>Customizing validations</h1>
-         <h2 id="validating-individual-fields">Validating individual fields</h2>
+        <div class="breadcrumb"><a href="/">Home</a> › af/form/page_changed</div>
+        <h1>af/form/page_changed</h1>
+         <p>This Javascript action will be triggered when the current page is changed in a multi-page form.</p>
 
-<p>Advanced Forms uses ACF to render and validate fields. This means that any custom field validations will also work with your forms. ACF provides the <code class="highlighter-rouge">acf/validate_value</code> to add extra validation logic for specific fields and it’s the recommended way to add validation logic for form fields as well. Refer to the <a href="https://www.advancedcustomfields.com/resources/">ACF documentation</a> for more info.</p>
-
-<h2 id="validating-forms">Validating forms</h2>
-
-<p>Sometimes it’s not sufficient to validate individual fields. From version 1.5 and onwards Advanced Forms includes the ability to add custom validation logic for full forms. This is made possible with the <code class="highlighter-rouge">af/form/validate</code> action combined with the <code class="highlighter-rouge">af_add_error</code> function. <code class="highlighter-rouge">af/form/validate</code> is invoked before submission and has access to the submitted data through <code class="highlighter-rouge">af_get_field</code>.</p>
-
-<p>The following is an example of custom validation involving two separate fields. The <code class="highlighter-rouge">af_add_error</code> functions takes a field name (or key) as its first parameter and an error message as its second.</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="k">function</span> <span class="nf">validate_name</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nv">$first_name</span> <span class="o">=</span> <span class="nx">af_get_field</span><span class="p">(</span> <span class="s1">'first_name'</span> <span class="p">);</span>
-    <span class="nv">$last_name</span> <span class="o">=</span> <span class="nx">af_get_field</span><span class="p">(</span> <span class="s1">'last_name'</span> <span class="p">);</span>
-
-    <span class="k">if</span> <span class="p">(</span> <span class="s1">'Fabian Lindfors'</span> <span class="o">!=</span> <span class="nv">$first_name</span> <span class="o">.</span> <span class="s1">' '</span> <span class="o">.</span> <span class="nv">$last_name</span> <span class="p">)</span> <span class="p">{</span>
-        <span class="nx">af_add_error</span><span class="p">(</span> <span class="s1">'first_name'</span><span class="p">,</span> <span class="s1">'Full name must be Fabian Lindfors!'</span> <span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="nx">add_action</span><span class="p">(</span> <span class="s1">'af/form/validate/key=FORM_KEY'</span><span class="p">,</span> <span class="s1">'validate_name'</span> <span class="p">);</span></code></pre></figure>
-
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">acf</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span> <span class="s1">'af/form/page_changed'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">newPage</span><span class="p">,</span> <span class="nx">previousPage</span><span class="p">,</span> <span class="nx">form</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Changed page from %d to %d"</span><span class="p">,</span> <span class="nx">previousPage</span><span class="p">,</span> <span class="nx">newPage</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
  
-        <div class="related-hooks">
-          <h2>Related hooks</h2>
-          <ul>
-                                                                    
-            <li>
-              <a href="/actions/af-form-validate/">af/form/validate</a>
-              <span class="detail">Action</span>
-            </li>
-                 
-          </ul>
-        </div>
-        
       </div>
 
       <aside class="sidebar">
@@ -117,15 +89,9 @@
           <p class="heading">Related</p>
           <ul>
               
-            <li>Customizing validations</li>
+            <li><a href="/actions/js-af-field-calculated-update_value/">af/field/calculated/update_value</a></li>
               
-            <li><a href="/guides/advanced/adding-custom-restrictions/">Adding custom restrictions</a></li>
-              
-            <li><a href="/guides/advanced/adding-custom-merge-tags/">Adding custom merge tags</a></li>
-              
-            <li><a href="/guides/advanced/decreasing-scripts-and-styles/">Decreasing number of scripts and styles</a></li>
-              
-            <li><a href="/guides/advanced/customizing-form-template/">Customizing the form template</a></li>
+            <li>af/form/page_changed</li>
              
           </ul>
         </div>

@@ -99,7 +99,7 @@
 </span>  <span class="nx">wp_dequeue_script</span><span class="p">(</span> <span class="s1">'wp-color-picker'</span> <span class="p">);</span>
   <span class="nx">wp_dequeue_style</span><span class="p">(</span> <span class="s1">'wp-color-picker'</span> <span class="p">);</span>
 <span class="p">}</span>
-<span class="nx">add_action</span><span class="p">(</span> <span class="s1">'af/form/before_title/key=FORM_KEY'</span><span class="p">,</span> <span class="s1">'form_remove_enqueues'</span> <span class="p">);</span></code></pre></figure>
+<span class="nx">add_action</span><span class="p">(</span> <span class="s1">'af/form/enqueue/key=FORM_KEY'</span><span class="p">,</span> <span class="s1">'form_remove_enqueues'</span> <span class="p">);</span></code></pre></figure>
 
 <p>In the future Advanced Forms will be able to automatically dequeue unused resources. Until then it’s recommended to use this snippet and manually determine which enqueues are unnecessary.</p>
  
