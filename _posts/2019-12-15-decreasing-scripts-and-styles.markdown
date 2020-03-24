@@ -29,7 +29,7 @@ function form_remove_enqueues() {
   wp_dequeue_script( 'wp-color-picker' );
   wp_dequeue_style( 'wp-color-picker' );
 }
-add_action( 'af/form/before_title/key=FORM_KEY', 'form_remove_enqueues' );
+add_action( 'af/form/enqueue/key=FORM_KEY', 'form_remove_enqueues' );
 
 {% endhighlight %}
 
