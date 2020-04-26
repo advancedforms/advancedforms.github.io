@@ -18,6 +18,8 @@ gem 'pygments.rb'
 
 gem 'jekyll-sitemap'
 
+gem 'jekyll-redirect-from'
+
 gem 'redcarpet'
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and

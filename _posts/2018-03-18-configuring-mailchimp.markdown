@@ -2,7 +2,9 @@
 layout: post
 title:  "Configuring Mailchimp"
 date:   2018-03-18 00:01:00 +0100
-categories: pro configuration
+categories: pro integrations
+redirect_from:
+- /pro/configuration/configuring-mailchimp/
 ---
 
 Advanced Forms Pro enables you to connect forms to Mailchimp and subscribe your visitors to Mailchimp lists. Configuring Mailchimp is easy, all you need is an API key.

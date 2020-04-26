@@ -2,7 +2,9 @@
 layout: post
 title:  "Setting up Slack notifications"
 date:   2018-03-18 00:01:00 +0100
-categories: pro configuration
+categories: pro integrations
+redirect_from:
+- /pro/configuration/setting-up-slack-notifications/
 ---
 
 By connecting your Slack workspace to a form you will instantly get a message whenever a visitor sends a submission. A perfect way to be notified whether you're creating a simple contact form or building a full-blown helpdesk.
