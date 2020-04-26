@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
 
-<title>Installing and activating &#8211; Advanced Forms Documentation</title>
+<title>Setting up Slack notifications &#8211; Advanced Forms Documentation</title>
 
 
 <link rel="canonical" href="" />
@@ -74,19 +74,25 @@
 
     <div class="main container">
       <div class="post">
-        <div class="breadcrumb"><a href="/">Home</a> › Installing and activating</div>
-        <h1>Installing and activating</h1>
-         <p>Advanced Forms Pro can be purchased from hookturn.io <a href="https://hookturn.io/downloads/advanced-forms-pro/">here</a>. After purchasing you will get get a license key as well as a download link to the plugin. The license key grants updates and support for one year.</p>
+        <div class="breadcrumb"><a href="/">Home</a> › Setting up Slack notifications</div>
+        <h1>Setting up Slack notifications</h1>
+         <p>By connecting your Slack workspace to a form you will instantly get a message whenever a visitor sends a submission. A perfect way to be notified whether you’re creating a simple contact form or building a full-blown helpdesk.</p>
+
+<h2 id="creating-a-webhook">Creating a webhook</h2>
+
+<p>All you need to connect your form to Slack is a single URL called a webhook. Here’s how you get one:</p>
 
 <ol>
-  <li>Download the plugin zip file.</li>
-  <li>Install and activate using the downloaded file. If you have the free version installed, disable it before activating the Pro plugin.</li>
-  <li>Navigate to “Settings” below “Forms”.</li>
-  <li>Enter your license key and click “Update”. Make sure a message reading “License valid and active” is shown after saving.</li>
+  <li>Navigate to <a href="https://my.slack.com/services/new/incoming-webhook/">my.slack.com/services/new/incoming-webhook/</a> and make sure you are logged in to your Slack workspace.</li>
+  <li>Select the channel you want notifications to be sent to and click <em>Add Incoming WebHooks integration</em>.</li>
+  <li>Copy your fresh webhook URL.</li>
 </ol>
 
-<p>If you have any issues, questions, or suggestions; contact us directly through <a href="https://hookturn.io/contact/">https://hookturn.io/contact/</a>. We are always happy to help!</p>
+<h2 id="configuring-your-form">Configuring your form</h2>
 
+<p>Once a webhook has been generated you’re ready to set up your form. In the Wordpress admin find your form, edit it, and enable the Slack integration under <em>Integrations</em>. Fill in your webhook URL and type a little message which will be included with each notification. Also select any fields which you would like included. That’s it!</p>
+
+<p><img src="https://advancedforms.github.io/assets/images/slack-notification.png" alt="Example of a Slack notification" /></p>
  
       </div>
 
@@ -95,9 +101,11 @@
           <p class="heading">Related</p>
           <ul>
               
-            <li>Installing and activating</li>
+            <li><a href="/pro/integrations/configuring-mailchimp/">Configuring Mailchimp</a></li>
               
-            <li><a href="/pro/configuration/using-calculated-fields/">Using calculated fields</a></li>
+            <li><a href="/pro/integrations/connecting-zapier/">Connecting to Zapier</a></li>
+              
+            <li>Setting up Slack notifications</li>
              
           </ul>
         </div>
