@@ -7,6 +7,8 @@ category: emails
 
 Filter the recipient of a form email before sending. Should be a comma-separated list of email addresses.
 
+This filter can also be used to stop an email by returning `false`. In combination with `af_get_field( 'FIELD_NAME' )` this can be used to conditionally send emails based on submitted values.
+
 {% highlight php startinline %}
 <?php
 
