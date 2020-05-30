@@ -13,7 +13,6 @@ The first conditional in the example should always be included in order to not o
 <?php
 
 function restrict_form( $restriction, $form, $args ) {
-	
 	// Added in case another restriction already applies
 	if ( $restriction ) {
 	    return $restriction;
