@@ -78,6 +78,8 @@
         <h1>af/form/email/recipient</h1>
          <p>Filter the recipient of a form email before sending. Should be a comma-separated list of email addresses.</p>
 
+<p>This filter can also be used to stop an email by returning <code class="highlighter-rouge">false</code>. In combination with <code class="highlighter-rouge">af_get_field( 'FIELD_NAME' )</code> this can be used to conditionally send emails based on submitted values.</p>
+
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
 <span class="k">function</span> <span class="nf">filter_email_recipient</span><span class="p">(</span> <span class="nv">$recipient</span><span class="p">,</span> <span class="nv">$email</span><span class="p">,</span> <span class="nv">$form</span><span class="p">,</span> <span class="nv">$fields</span> <span class="p">)</span> <span class="p">{</span>
