@@ -20,7 +20,7 @@ The fields connected to a form are set up through Advanced Custom Fields allowin
 
 Registering your forms programmatically is great if you want to integrate Advanced Forms with your theme or plugin. The plugin also has an export feature which will generate the registration code for you. This tools can be found by editing a form in the admin panel and then clicking the "Export" button.
 
-To create a form programmatically the function `af_register_form( $form )` is provided. The $form parameter should be an array matching the structure in the following example.
+To create a form programmatically the function `af_register_form( $form )` is provided. We recommend using the form export feature to determine the structure of the `$form` array.
 
 Note that the only required attribute is **key** which should be a unique identifier for your form starting with `"form_"`. Setting the title attribute is recommended.
 
