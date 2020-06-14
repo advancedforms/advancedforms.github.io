@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
 
-<title>Creating and editing users &#8211; Advanced Forms Documentation</title>
+<title>af/form/editing/user_data &#8211; Advanced Forms Documentation</title>
 
 
 <link rel="canonical" href="" />
@@ -74,64 +74,22 @@
 
     <div class="main container">
       <div class="post">
-        <div class="breadcrumb"><a href="/">Home</a> › Creating and editing users</div>
-        <h1>Creating and editing users</h1>
-         <p>A common use case for front-end forms is allowing visitors to create and edit users. Maybe you want to let users upload a picture gallery to their own profile. Or you want a sign up form where users can provide extra information which is saved as fields on their profiles. Advanced Forms Pro makes user creation and editing super easy to setup.</p>
-
-<h2 id="configuring-your-form">Configuring your form</h2>
-
-<p>Go to the Wordpress admin and edit the form which you want to configure. Under “Editing”, select “Users” and you should be presented with a wide array of settings.</p>
-
-<p>The first setting is for user role which will only be used for new users. The rest specify how to map between form fields and user fields. For the field mappings you can either chose a field to retrieve values from or a custom format. The custom format will only work for new users. If the “Send notification” setting is enabled, created users will receive the standard Wordpress email with a password-reset link.</p>
-
-<p>There is also a setting for “Custom fields” which allows you to map fields from a form to a user.
-This will only work if the same ACF field group is used both for the form and user profiles.</p>
-
-<p><img src="https://advancedforms.github.io/assets/images/editing-user-settings.png" alt="Example form configuration" /></p>
-
-<h2 id="displaying-your-form">Displaying your form</h2>
-
-<p>If editing has been configured for a form you will also need to specify whether to create a new user or edit an existing one. If you want to edit a user you need to pass a user ID with the form argument <code class="highlighter-rouge">user</code>. For creating a user, the form argument <code class="highlighter-rouge">user</code> should be set to <code class="highlighter-rouge">new</code>. The current user can be edited by using <code class="highlighter-rouge">current</code>. With a shortcode this would look like</p>
-
-<p><code class="highlighter-rouge">[advanced_form form="form_key" user="new"]</code></p>
-
-<p><code class="highlighter-rouge">[advanced_form form="form_key" user="1"]</code></p>
-
-<p><code class="highlighter-rouge">[advanced_form form="form_key" user="current"]</code></p>
-
-<p>And the function call equivalent is</p>
-
-<p><code class="highlighter-rouge">advanced_form( 'form_key', array( 'user' =&gt; 1 ) );</code></p>
-
-<h2 id="sign-in-user-after-registration">Sign in user after registration</h2>
-
-<p>If you want users to be automatically signed in after registering you can use the following snippet.</p>
+        <div class="breadcrumb"><a href="/">Home</a> › af/form/editing/user_data</div>
+        <h1>af/form/editing/user_data</h1>
+         <p>Override the user data used when a user is created or updated. User data is the <code class="highlighter-rouge">$userdata</code> argument passed to <a href="https://developer.wordpress.org/reference/functions/wp_insert_user/"><code class="highlighter-rouge">wp_insert_user</code></a>.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
-<span class="k">function</span> <span class="nf">form_sign_in_user</span><span class="p">(</span> <span class="nv">$user</span> <span class="p">)</span> <span class="p">{</span>
-  <span class="nx">wp_set_auth_cookie</span><span class="p">(</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">ID</span> <span class="p">);</span>
-<span class="p">}</span>
-<span class="nx">add_action</span><span class="p">(</span> <span class="s1">'af/form/editing/user_created/key=FORM_KEY'</span><span class="p">,</span> <span class="s1">'form_sign_in_user'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span></code></pre></figure>
+<span class="k">function</span> <span class="nf">modify_user_data</span><span class="p">(</span> <span class="nv">$user_data</span><span class="p">,</span> <span class="nv">$form</span><span class="p">,</span> <span class="nv">$args</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Override user role
+</span>    <span class="nv">$user_data</span><span class="p">[</span><span class="s1">'user_role'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'administrator'</span><span class="p">;</span>
 
+    <span class="k">return</span> <span class="nv">$user_data</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">add_filter</span><span class="p">(</span> <span class="s1">'af/form/editing/user_data'</span><span class="p">,</span> <span class="s1">'modify_user_data'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span> <span class="p">);</span>
+<span class="nx">add_filter</span><span class="p">(</span> <span class="s1">'af/form/editing/user_data/id=FORM_ID'</span><span class="p">,</span> <span class="s1">'modify_user_data'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span> <span class="p">);</span>
+<span class="nx">add_filter</span><span class="p">(</span> <span class="s1">'af/form/editing/user_data/key=FORM_KEY'</span><span class="p">,</span> <span class="s1">'modify_user_data'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span> <span class="p">);</span></code></pre></figure>
  
-        <div class="related-hooks">
-          <h2>Related hooks</h2>
-          <ul>
-                                                                
-            <li>
-              <a href="/actions/af-form-editing-user_created/">af/form/editing/user_created</a>
-              <span class="detail">Action</span>
-            </li>
-              
-            <li>
-              <a href="/actions/af-form-editing-user_updated/">af/form/editing/user_updated</a>
-              <span class="detail">Action</span>
-            </li>
-                     
-          </ul>
-        </div>
-        
       </div>
 
       <aside class="sidebar">
@@ -139,9 +97,11 @@ This will only work if the same ACF field group is used both for the form and us
           <p class="heading">Related</p>
           <ul>
               
-            <li><a href="/pro/editing/creating-and-editing-posts/">Creating and editing posts</a></li>
+            <li><a href="/filters/af-field-calculate_value/">af/field/calculate_value</a></li>
               
-            <li>Creating and editing users</li>
+            <li><a href="/filters/af-form-editing-post-data/">af/form/editing/post_data</a></li>
+              
+            <li>af/form/editing/user_data</li>
              
           </ul>
         </div>
