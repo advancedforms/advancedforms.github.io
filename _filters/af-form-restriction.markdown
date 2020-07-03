@@ -24,8 +24,8 @@ function restrict_form( $restriction, $form, $args ) {
 	
 	return false;
 }
-add_filter( 'af/form/restriction', 'restrict_form', 10, 4 );
-add_filter( 'af/form/restriction/id=FORM_ID', 'restrict_form', 10, 4 );
-add_filter( 'af/form/restriction/key=FORM_KEY', 'restrict_form', 10, 4 );
+add_filter( 'af/form/restriction', 'restrict_form', 10, 3 );
+add_filter( 'af/form/restriction/id=FORM_ID', 'restrict_form', 10, 3 );
+add_filter( 'af/form/restriction/key=FORM_KEY', 'restrict_form', 10, 3 );
 
 {% endhighlight %}
