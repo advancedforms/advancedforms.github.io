@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
 
-<title>Setting up Slack notifications &#8211; Advanced Forms Documentation</title>
+<title>Configuring Google reCAPTCHA &#8211; Advanced Forms Documentation</title>
 
 
 <link rel="canonical" href="" />
@@ -74,25 +74,25 @@
 
     <div class="main container">
       <div class="post">
-        <div class="breadcrumb"><a href="/">Home</a> › Setting up Slack notifications</div>
-        <h1>Setting up Slack notifications</h1>
-         <p>By connecting your Slack workspace to a form you will instantly get a message whenever a visitor sends a submission. A perfect way to be notified whether you’re creating a simple contact form or building a full-blown helpdesk.</p>
+        <div class="breadcrumb"><a href="/">Home</a> › Configuring Google reCAPTCHA</div>
+        <h1>Configuring Google reCAPTCHA</h1>
+         <p>Basic spam protection is built into all forms using a honeypot. Sometimes more sophisticated spam protection is necessary and for these situations Advanced Forms Pro supports Google reCAPTCHA. Once configured, the user will be presented with a challenge when submitting a form if they are suspected of being a bot. Because Advanced Forms uses the invisible reCAPTCHA, most users won’t have to click anything to prove that they are human.</p>
 
-<h2 id="creating-a-webhook">Creating a webhook</h2>
+<h2 id="getting-api-keys">Getting API keys</h2>
 
-<p>All you need to connect your form to Slack is a single URL called a webhook. Here’s how you get one:</p>
+<p>Google requires a set of API keys which you’ll have to create using a Google account.</p>
 
 <ol>
-  <li>Navigate to <a href="https://my.slack.com/services/new/incoming-webhook/">my.slack.com/services/new/incoming-webhook/</a> and make sure you are logged in to your Slack workspace.</li>
-  <li>Select the channel you want notifications to be sent to and click <em>Add Incoming WebHooks integration</em>.</li>
-  <li>Copy your fresh webhook URL.</li>
+  <li>Navigate to <a href="https://www.google.com/recaptcha/admin/create">this page</a> and sign in with your Google account.</li>
+  <li>For “reCAPTCHA type”, select “reCAPTCHA v2” and “Invisible reCAPTCHA badge” from the options that appear.</li>
+  <li>Fill in the rest of the form and then click “Submit”. Make note of the generated site key and secret key.</li>
 </ol>
 
 <h2 id="configuring-your-form">Configuring your form</h2>
 
-<p>Once a webhook has been generated you’re ready to set up your form. In the Wordpress admin find your form, edit it, and enable the Slack integration under <em>Integrations</em>. Fill in your webhook URL and type a little message which will be included with each notification. Also select any fields which you would like included. That’s it!</p>
+<p>Once you have your API keys it’s time to configure the plugin and the forms you want to protect. Log in to the WordPress admin panel and navigate to <em>Forms</em> → <em>Settings</em>. Fill in the site key and secret key you generated in the previous step and save.</p>
 
-<p><img src="https://advancedforms.github.io/assets/images/slack-notification.png" alt="Example of a Slack notification" /></p>
+<p>Every form you want to protect must be enabled manually. Go to the edit panel of your form and navigate to the <em>Integrations</em> tab. If you have added your API keys to the plugin settings you should be able to enable the <em>Google reCAPTCHA</em> integration.</p>
  
       </div>
 
@@ -105,9 +105,9 @@
               
             <li><a href="/pro/integrations/connecting-zapier/">Connecting to Zapier</a></li>
               
-            <li>Setting up Slack notifications</li>
+            <li><a href="/pro/integrations/setting-up-slack-notifications/">Setting up Slack notifications</a></li>
               
-            <li><a href="/pro/integrations/configuring-google-recaptcha/">Configuring Google reCAPTCHA</a></li>
+            <li>Configuring Google reCAPTCHA</li>
              
           </ul>
         </div>
