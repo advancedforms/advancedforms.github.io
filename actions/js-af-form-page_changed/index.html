@@ -81,6 +81,14 @@
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">acf</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span> <span class="s1">'af/form/page_changed'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">newPage</span><span class="p">,</span> <span class="nx">previousPage</span><span class="p">,</span> <span class="nx">form</span> <span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Changed page from %d to %d"</span><span class="p">,</span> <span class="nx">previousPage</span><span class="p">,</span> <span class="nx">newPage</span><span class="p">);</span>
 <span class="p">});</span></code></pre></figure>
+
+<h2 id="scroll-to-top-of-form-when-page-changes">Scroll to top of form when page changes</h2>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">acf</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span> <span class="s1">'af/form/page_changed'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">newPage</span><span class="p">,</span> <span class="nx">previousPage</span><span class="p">,</span> <span class="nx">form</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span> <span class="s1">'html, body'</span> <span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
+        <span class="na">scrollTop</span><span class="p">:</span> <span class="nx">form</span><span class="p">.</span><span class="nx">$el</span><span class="p">.</span><span class="nx">offset</span><span class="p">().</span><span class="nx">top</span><span class="p">,</span>
+    <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
  
       </div>
 
