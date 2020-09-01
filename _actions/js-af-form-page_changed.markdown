@@ -12,3 +12,13 @@ acf.addAction( 'af/form/page_changed', function( newPage, previousPage, form ) {
     console.log("Changed page from %d to %d", previousPage, newPage);
 });
 {% endhighlight %}
+
+## Scroll to top of form when page changes
+
+{% highlight js startinline %}
+acf.addAction( 'af/form/page_changed', function( newPage, previousPage, form ) {
+    $( 'html, body' ).animate({
+        scrollTop: form.$el.offset().top,
+    }, 1000);
+});
+{% endhighlight %}
