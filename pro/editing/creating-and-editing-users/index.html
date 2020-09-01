@@ -91,13 +91,16 @@ This will only work if the same ACF field group is used both for the form and us
 
 <h2 id="displaying-your-form">Displaying your form</h2>
 
-<p>If editing has been configured for a form you will also need to specify whether to create a new user or edit an existing one. If you want to edit a user you need to pass a user ID with the form argument <code class="highlighter-rouge">user</code>. For creating a user, the form argument <code class="highlighter-rouge">user</code> should be set to <code class="highlighter-rouge">new</code>. The current user can be edited by using <code class="highlighter-rouge">current</code>. With a shortcode this would look like</p>
+<p>If editing has been configured for a form you will also need to specify whether to create a new user or edit an existing one. To create a new user, omit the <code class="highlighter-rouge">user</code> argument or set it to <code class="highlighter-rouge">new</code>. For creating a user, the form argument <code class="highlighter-rouge">user</code> should be set to <code class="highlighter-rouge">new</code>. The current user can be edited by using <code class="highlighter-rouge">current</code>. With a shortcode this would look like</p>
 
-<p><code class="highlighter-rouge">[advanced_form form="form_key" user="new"]</code></p>
+<p>Register a new user:
+<code class="highlighter-rouge">[advanced_form form="form_key"]</code></p>
 
-<p><code class="highlighter-rouge">[advanced_form form="form_key" user="1"]</code></p>
+<p>Edit user with ID 1:
+<code class="highlighter-rouge">[advanced_form form="form_key" user="1"]</code></p>
 
-<p><code class="highlighter-rouge">[advanced_form form="form_key" user="current"]</code></p>
+<p>Edit the currently signed in user:
+<code class="highlighter-rouge">[advanced_form form="form_key" user="current"]</code></p>
 
 <p>And the function call equivalent is</p>
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://advancedforms.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.6.3">Jekyll</generator><link href="https://advancedforms.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://advancedforms.github.io/" rel="alternate" type="text/html" /><updated>2020-08-19T20:16:55+00:00</updated><id>https://advancedforms.github.io//</id><title type="html">Advanced Forms Documentation</title><subtitle>Wordpress plugin for creating flexible and developer-friendly forms using the power of Advanced Custom Fields
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://advancedforms.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.6.3">Jekyll</generator><link href="https://advancedforms.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://advancedforms.github.io/" rel="alternate" type="text/html" /><updated>2020-09-01T15:34:00+00:00</updated><id>https://advancedforms.github.io//</id><title type="html">Advanced Forms Documentation</title><subtitle>Wordpress plugin for creating flexible and developer-friendly forms using the power of Advanced Custom Fields
 </subtitle><entry><title type="html">Configuring Google reCAPTCHA</title><link href="https://advancedforms.github.io/pro/integrations/configuring-google-recaptcha/" rel="alternate" type="text/html" title="Configuring Google reCAPTCHA" /><published>2020-04-25T23:00:00+00:00</published><updated>2020-04-25T23:00:00+00:00</updated><id>https://advancedforms.github.io/pro/integrations/configuring-google-recaptcha</id><content type="html" xml:base="https://advancedforms.github.io/pro/integrations/configuring-google-recaptcha/">&lt;p&gt;Basic spam protection is built into all forms using a honeypot. Sometimes more sophisticated spam protection is necessary and for these situations Advanced Forms Pro supports Google reCAPTCHA. Once configured, the user will be presented with a challenge when submitting a form if they are suspected of being a bot. Because Advanced Forms uses the invisible reCAPTCHA, most users won’t have to click anything to prove that they are human.&lt;/p&gt;
 
 &lt;h2 id=&quot;getting-api-keys&quot;&gt;Getting API keys&lt;/h2&gt;
@@ -205,13 +205,16 @@ This will only work if the same ACF field group is used both for the form and us
 
 &lt;h2 id=&quot;displaying-your-form&quot;&gt;Displaying your form&lt;/h2&gt;
 
-&lt;p&gt;If editing has been configured for a form you will also need to specify whether to create a new user or edit an existing one. If you want to edit a user you need to pass a user ID with the form argument &lt;code class=&quot;highlighter-rouge&quot;&gt;user&lt;/code&gt;. For creating a user, the form argument &lt;code class=&quot;highlighter-rouge&quot;&gt;user&lt;/code&gt; should be set to &lt;code class=&quot;highlighter-rouge&quot;&gt;new&lt;/code&gt;. The current user can be edited by using &lt;code class=&quot;highlighter-rouge&quot;&gt;current&lt;/code&gt;. With a shortcode this would look like&lt;/p&gt;
+&lt;p&gt;If editing has been configured for a form you will also need to specify whether to create a new user or edit an existing one. To create a new user, omit the &lt;code class=&quot;highlighter-rouge&quot;&gt;user&lt;/code&gt; argument or set it to &lt;code class=&quot;highlighter-rouge&quot;&gt;new&lt;/code&gt;. For creating a user, the form argument &lt;code class=&quot;highlighter-rouge&quot;&gt;user&lt;/code&gt; should be set to &lt;code class=&quot;highlighter-rouge&quot;&gt;new&lt;/code&gt;. The current user can be edited by using &lt;code class=&quot;highlighter-rouge&quot;&gt;current&lt;/code&gt;. With a shortcode this would look like&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[advanced_form form=&quot;form_key&quot; user=&quot;new&quot;]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Register a new user:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;[advanced_form form=&quot;form_key&quot;]&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[advanced_form form=&quot;form_key&quot; user=&quot;1&quot;]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Edit user with ID 1:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;[advanced_form form=&quot;form_key&quot; user=&quot;1&quot;]&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[advanced_form form=&quot;form_key&quot; user=&quot;current&quot;]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Edit the currently signed in user:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;[advanced_form form=&quot;form_key&quot; user=&quot;current&quot;]&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;And the function call equivalent is&lt;/p&gt;
 
