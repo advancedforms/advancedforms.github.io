@@ -21,12 +21,15 @@ This will only work if the same ACF field group is used both for the form and us
 
 ## Displaying your form
 
-If editing has been configured for a form you will also need to specify whether to create a new user or edit an existing one. If you want to edit a user you need to pass a user ID with the form argument `user`. For creating a user, the form argument `user` should be set to `new`. The current user can be edited by using `current`. With a shortcode this would look like
+If editing has been configured for a form you will also need to specify whether to create a new user or edit an existing one. To create a new user, omit the `user` argument or set it to `new`. For creating a user, the form argument `user` should be set to `new`. The current user can be edited by using `current`. With a shortcode this would look like
 
-`[advanced_form form="form_key" user="new"]`
+Register a new user:
+`[advanced_form form="form_key"]`
 
+Edit user with ID 1:
 `[advanced_form form="form_key" user="1"]`
 
+Edit the currently signed in user:
 `[advanced_form form="form_key" user="current"]`
 
 And the function call equivalent is
