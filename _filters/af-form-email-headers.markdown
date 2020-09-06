@@ -11,10 +11,10 @@ Filter the headers of a form email before sending. `$headers` should be an array
 <?php
 
 function filter_email_headers( $headers, $email, $form, $fields ) {
-	// Add a copy to john@doe.com
-	$headers[] = 'Cc: john@doe.com';
-    
-    return $headers;
+	// Set the reply-to address
+	$headers[] = 'Reply-To: john@doe.com';
+  
+  eturn $headers;
 }
 add_filter( 'af/form/email/headers', 'filter_email_headers', 10, 4 );
 add_filter( 'af/form/email/headers/id=FORM_ID', 'filter_email_headers', 10, 4 );
