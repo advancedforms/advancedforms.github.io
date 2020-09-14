@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
 
-<title>Setting up a form which creates posts &#8211; Advanced Forms Documentation</title>
+<title>af/form/email/styles &#8211; Advanced Forms Documentation</title>
 
 
 <link rel="canonical" href="" />
@@ -74,63 +74,19 @@
 
     <div class="main container">
       <div class="post">
-        <div class="breadcrumb"><a href="/">Home</a> › Setting up a form which creates posts</div>
-        <h1>Setting up a form which creates posts</h1>
-         <blockquote>
-  <p>This guide is only applicable if you’re using the free version of Advanced Forms. The easiest way to create posts with a form is to use Advanced Forms Pro. It supports creating and editing both posts and users. You can read more about post editing <a href="/pro/editing/creating-and-editing-posts/">here</a> and Pro is available from <a href="https://hookturn.io/downloads/advanced-forms-pro/">hookturn.io</a>.</p>
-</blockquote>
-
-<p>A common use for front-end forms is to create posts with submitted form data. Advanced Forms is perfect for this use case and in this guide we’ll cover how to set up a form which generates a new post from its field values.</p>
-
-<h2 id="setting-up-form-and-fields">Setting up form and fields</h2>
-
-<p>The first step is creating a form which we’ll later customize. Create a new form through the admin panel and leave all settings to their defaults. Make note of the unique form key shown beneath the title field, the form key will be used to target our form in code later.</p>
-
-<p>Next we need to add fields to our form. Create a new ACF field group and set its location to match our form. Add one field for the post title and another for the post content and also set the location to match posts because we want to use the same fields there. Here’s an example of a configured field group:</p>
-
-<p><img src="https://advancedforms.github.io/assets/images/post-generating-form-group.png" alt="Example field configuration" /></p>
-
-<h2 id="generating-a-post-after-submission">Generating a post after submission</h2>
-
-<p>The next step is customizing our form to make it generate a post after submission. For this we’ll use the <code class="highlighter-rouge">af/form/submission</code> action (<a href="https://advancedforms.github.io/guides/basic/processing-form-submissions/">documentation</a>). Add the following code to your theme’s functions.php or a plugin:</p>
+        <div class="breadcrumb"><a href="/">Home</a> › af/form/email/styles</div>
+        <h1>af/form/email/styles</h1>
+         <p>Alter the CSS used for email notifications.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
-<span class="k">function</span> <span class="nf">generate_post_from_form_submission</span><span class="p">()</span> <span class="p">{</span>
-    
-	<span class="c1">// Get the submitted field values
-</span>	<span class="nv">$post_title</span> <span class="o">=</span> <span class="nx">af_get_field</span><span class="p">(</span> <span class="s1">'post_title'</span> <span class="p">);</span>
-	<span class="nv">$post_content</span> <span class="o">=</span> <span class="nx">af_get_field</span><span class="p">(</span> <span class="s1">'post_content'</span> <span class="p">);</span>
-    
-	<span class="c1">// Set up a form using the values for post title and content
-</span>	<span class="c1">// Replace post_type with whatever type of post you want to generate
-</span>	<span class="nv">$post_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-		<span class="s1">'post_type'</span> <span class="o">=&gt;</span> <span class="s1">'post'</span><span class="p">,</span>
-		<span class="s1">'post_status'</span> <span class="o">=&gt;</span> <span class="s1">'publish'</span><span class="p">,</span>
-		<span class="s1">'post_title'</span> <span class="o">=&gt;</span> <span class="nv">$post_title</span><span class="p">,</span>
-		<span class="s1">'post_content'</span> <span class="o">=&gt;</span> <span class="nv">$post_content</span><span class="p">,</span>
-	<span class="p">);</span>
-	
-	<span class="c1">// Create post with the previously retrieved values
-</span>	<span class="nv">$post_id</span> <span class="o">=</span> <span class="nx">wp_insert_post</span><span class="p">(</span> <span class="nv">$post_data</span> <span class="p">);</span>
-	
-	<span class="c1">// Save extra_information field directly to custom field on post
-</span>	<span class="nx">af_save_field</span><span class="p">(</span> <span class="s1">'extra_information'</span><span class="p">,</span> <span class="nv">$post_id</span> <span class="p">);</span>
-    
+<span class="k">function</span> <span class="nf">filter_email_styles</span><span class="p">(</span> <span class="nv">$styles</span><span class="p">,</span> <span class="nv">$email</span><span class="p">,</span> <span class="nv">$form</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Remove all default styles
+</span>    <span class="k">return</span> <span class="s1">''</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nx">add_action</span><span class="p">(</span> <span class="s1">'af/form/submission/key=YOUR_FORM_KEY'</span><span class="p">,</span> <span class="s1">'generate_post_from_form_submission'</span><span class="p">,</span> <span class="mi">10</span> <span class="p">);</span></code></pre></figure>
-
-<p>The code runs after our form has been submitted, retrieves the field values and generates a form from them. Make sure to replace <code class="highlighter-rouge">YOUR_FORM_KEY</code> with the key for your specific form.</p>
-
-<h2 id="saving-custom-fields">Saving custom fields</h2>
-
-<p>Because Advanced Forms uses ACF fields it’s really easy to save your form values directly to custom fields on a post. A helper function <code class="highlighter-rouge">af_save_field( $field_key_or_name, $object_id )</code> is provided for this exact purpose. <code class="highlighter-rouge">af_save_field</code> takes your field key or name as the first parameter and a post ID to save to as the second. In the example above it’s used to save the extra_information field to the recently created post.</p>
-
-<h2 id="results">Results</h2>
-
-<p>Our form should now automatically generate a new post from its field values.</p>
-
-<p><img src="https://advancedforms.github.io/assets/images/post-form-results.png" alt="Form and generated post" /></p>
+<span class="nx">add_filter</span><span class="p">(</span> <span class="s1">'af/form/email/styles'</span><span class="p">,</span> <span class="s1">'filter_email_styles'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span> <span class="p">);</span>
+<span class="nx">add_filter</span><span class="p">(</span> <span class="s1">'af/form/email/styles/id=FORM_ID'</span><span class="p">,</span> <span class="s1">'filter_email_styles'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span> <span class="p">);</span>
+<span class="nx">add_filter</span><span class="p">(</span> <span class="s1">'af/form/email/styles/key=FORM_KEY'</span><span class="p">,</span> <span class="s1">'filter_email_styles'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span> <span class="p">);</span></code></pre></figure>
  
       </div>
 
@@ -139,15 +95,17 @@
           <p class="heading">Related</p>
           <ul>
               
-            <li><a href="/guides/advanced/customizing-validations/">Customizing validations</a></li>
+            <li><a href="/filters/af-form-email-recipient/">af/form/email/recipient</a></li>
               
-            <li><a href="/guides/advanced/adding-custom-restrictions/">Adding custom restrictions</a></li>
+            <li><a href="/filters/af-form-email-subject/">af/form/email/subject</a></li>
               
-            <li>Setting up a form which creates posts</li>
+            <li><a href="/filters/af-form-email-content/">af/form/email/content</a></li>
               
-            <li><a href="/guides/advanced/adding-custom-merge-tags/">Adding custom merge tags</a></li>
+            <li><a href="/filters/af-form-email-headers/">af/form/email/headers</a></li>
               
-            <li><a href="/guides/advanced/decreasing-scripts-and-styles/">Decreasing number of scripts and styles</a></li>
+            <li><a href="/filters/af-form-email-attachments/">af/form/email/attachments</a></li>
+              
+            <li>af/form/email/styles</li>
              
           </ul>
         </div>
