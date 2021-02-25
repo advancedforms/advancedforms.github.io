@@ -13,8 +13,8 @@ Filter the headers of a form email before sending. `$headers` should be an array
 function filter_email_headers( $headers, $email, $form, $fields ) {
 	// Set the reply-to address
 	$headers[] = 'Reply-To: john@doe.com';
-  
-  eturn $headers;
+
+	return $headers;
 }
 add_filter( 'af/form/email/headers', 'filter_email_headers', 10, 4 );
 add_filter( 'af/form/email/headers/id=FORM_ID', 'filter_email_headers', 10, 4 );
