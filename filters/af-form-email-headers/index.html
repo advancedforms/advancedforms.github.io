@@ -83,8 +83,8 @@
 <span class="k">function</span> <span class="nf">filter_email_headers</span><span class="p">(</span> <span class="nv">$headers</span><span class="p">,</span> <span class="nv">$email</span><span class="p">,</span> <span class="nv">$form</span><span class="p">,</span> <span class="nv">$fields</span> <span class="p">)</span> <span class="p">{</span>
 	<span class="c1">// Set the reply-to address
 </span>	<span class="nv">$headers</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">'Reply-To: john@doe.com'</span><span class="p">;</span>
-  
-  <span class="nx">eturn</span> <span class="nv">$headers</span><span class="p">;</span>
+
+	<span class="k">return</span> <span class="nv">$headers</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nx">add_filter</span><span class="p">(</span> <span class="s1">'af/form/email/headers'</span><span class="p">,</span> <span class="s1">'filter_email_headers'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span> <span class="p">);</span>
 <span class="nx">add_filter</span><span class="p">(</span> <span class="s1">'af/form/email/headers/id=FORM_ID'</span><span class="p">,</span> <span class="s1">'filter_email_headers'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span> <span class="p">);</span>
