@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
 
-<title>Configuring a multi-page form &#8211; Advanced Forms Documentation</title>
+<title>af/form/mailchimp/request &#8211; Advanced Forms Documentation</title>
 
 
 <link rel="canonical" href="" />
@@ -74,31 +74,28 @@
 
     <div class="main container">
       <div class="post">
-        <div class="breadcrumb"><a href="/">Home</a> › Configuring a multi-page form</div>
-        <h1>Configuring a multi-page form</h1>
-         <p>From version 1.5 and onwards Advanced Forms supports multi-page forms. Setting them up is similar to configuring tabs in a regular ACF field group. To create a paged form simply insert “Page” fields to divide your form. The “Page” field has settings for numbering and button text as well. Only the settings on the first page field will be used.</p>
+        <div class="breadcrumb"><a href="/">Home</a> › af/form/mailchimp/request</div>
+        <h1>af/form/mailchimp/request</h1>
+         <p>Change the Mailchimp API request before it’s sent. The request is for the <a href="https://mailchimp.com/developer/marketing/api/list-members/add-member-to-list/">“Add member to list” endpoint</a>.</p>
 
-<p>After setting up the page fields your form should now be split over multiple forms. Users can navigate the form by clicking the previous and next buttons as well as the progression indicator at the top. When navigating forward each page will be validated and any error messages will be displayed before progressing.</p>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
-<p><img src="https://advancedforms.github.io/assets/images/paged-form.png" alt="Multi-page form" /></p>
+<span class="k">function</span> <span class="nf">modify_mailchimp_request</span><span class="p">(</span> <span class="nv">$request</span><span class="p">,</span> <span class="nv">$form</span><span class="p">,</span> <span class="nv">$args</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// The request body is JSON encoded so we must first decode it
+</span>    <span class="nv">$body</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span> <span class="nv">$request</span><span class="p">[</span><span class="s1">'body'</span><span class="p">],</span> <span class="kc">true</span> <span class="p">);</span>
+
+    <span class="c1">// Set custom merge tag named "NICKNAME" from "nickname" field 
+</span>    <span class="nv">$body</span><span class="p">[</span><span class="s1">'merge_fields'</span><span class="p">][</span><span class="s1">'NICKNAME'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">af_get_field</span><span class="p">(</span> <span class="s1">'nickname'</span> <span class="p">);</span>
+
+    <span class="c1">// Re-encode the altered body as JSON
+</span>    <span class="nv">$request</span><span class="p">[</span><span class="s1">'body'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span> <span class="nv">$body</span><span class="p">,</span> <span class="nx">JSON_FORCE_OBJECT</span> <span class="p">);</span>
+
+    <span class="k">return</span> <span class="nv">$request</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">add_filter</span><span class="p">(</span> <span class="s1">'af/form/mailchimp/request'</span><span class="p">,</span> <span class="s1">'modify_mailchimp_request'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span> <span class="p">);</span>
+<span class="nx">add_filter</span><span class="p">(</span> <span class="s1">'af/form/mailchimp/request/id=FORM_ID'</span><span class="p">,</span> <span class="s1">'modify_mailchimp_request'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span> <span class="p">);</span>
+<span class="nx">add_filter</span><span class="p">(</span> <span class="s1">'af/form/mailchimp/request/key=FORM_KEY'</span><span class="p">,</span> <span class="s1">'modify_mailchimp_request'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span> <span class="p">);</span></code></pre></figure>
  
-        <div class="related-hooks">
-          <h2>Related hooks</h2>
-          <ul>
-                                 
-            <li>
-              <a href="/filters/af-form-previous_button_atts/">af/form/previous_button_atts</a>
-              <span class="detail">Filter</span>
-            </li>
-              
-            <li>
-              <a href="/filters/af-form-next_button_atts/">af/form/next_button_atts</a>
-              <span class="detail">Filter</span>
-            </li>
-                                                        
-          </ul>
-        </div>
-        
       </div>
 
       <aside class="sidebar">
@@ -106,13 +103,13 @@
           <p class="heading">Related</p>
           <ul>
               
-            <li><a href="/guides/basic/creating-a-form/">Creating a form</a></li>
+            <li><a href="/filters/af-field-calculate_value/">af/field/calculate_value</a></li>
               
-            <li><a href="/guides/basic/displaying-a-form/">Displaying a form</a></li>
+            <li><a href="/filters/af-form-editing-post-data/">af/form/editing/post_data</a></li>
               
-            <li><a href="/guides/basic/processing-form-submissions/">Processing form submissions</a></li>
+            <li><a href="/filters/af-form-editing-user-data/">af/form/editing/user_data</a></li>
               
-            <li>Configuring a multi-page form</li>
+            <li>af/form/mailchimp/request</li>
              
           </ul>
         </div>
