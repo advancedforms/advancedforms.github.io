@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="no-js" lang="en">
+  
+  <head>
+    <title>Available arguments | Advanced Forms</title>
+    <meta name="description" content="">
+
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Available arguments">
+    <meta property="og:image" content="/images/site-logo.png">
+    <meta property="og:description" content="">
+    <meta property="og:site_name" content="Advanced Forms">
+
+    
+    <link rel="stylesheet" href="/css/style.min.edb9bcdb8b47a22c90afb5bb4021992473b46b32dc679333da2326f9c4c7a47c.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <aside>
+        <a class="logo-wrapper" href="/"
+          ><img src="/images/icon-128x128.png" class="logo" alt="Advanced Forms logo" />
+          <h1>Advanced Forms</h1>
+        </a>
+
+        <nav class="menu">
+  
+  
+  
+    
+
+    <div class="sub-menu " data-parent="home">
+      <a href="/" class="back">&larr; Go back</a>
+      <h2 class="subtitle"><i data-feather='play'></i> Home</h2>
+
+      
+    </div>
+  
+    
+      
+    
+
+    <div class="sub-menu active" data-parent="guides">
+      <a href="/" class="back">&larr; Go back</a>
+      <h2 class="subtitle"><i data-feather='align-left'></i> Guides</h2>
+
+      
+        
+          <h3 class="section-title">Basic</h3>
+
+          
+            <a class="item sub " href="/guides/creating-a-form/">Creating a form</a>
+          
+            <a class="item sub " href="/guides/configuring-your-form/">Configuring your form</a>
+          
+            <a class="item sub " href="/guides/displaying-a-form/">Displaying a form</a>
+          
+            <a class="item sub active" href="/guides/available-arguments/">Available arguments</a>
+          
+        
+      
+        
+          <h3 class="section-title">Pro</h3>
+
+          
+            <a class="item sub " href="/guides/installing-and-activating/">Installing and activating</a>
+          
+            <a class="item sub " href="/guides/creating-and-editing-posts/">Creating and editing posts</a>
+          
+            <a class="item sub " href="/guides/creating-and-editing-users/">Creating and editing users</a>
+          
+            <a class="item sub " href="/guides/configuring-integrations/">Configuring integrations</a>
+          
+            <a class="item sub " href="/guides/using-calculated-fields/">Using calculated fields</a>
+          
+        
+      
+        
+          <h3 class="section-title">Advanced</h3>
+
+          
+            <a class="item sub " href="/guides/processing-form-submissions/">Processing form submissions</a>
+          
+            <a class="item sub " href="/guides/adding-custom-merge-tags/">Adding custom merge tags</a>
+          
+            <a class="item sub " href="/guides/adding-custom-restrictions/">Adding custom restrictions</a>
+          
+            <a class="item sub " href="/guides/customizing-the-form-template/">Customizing the form template</a>
+          
+            <a class="item sub " href="/guides/decreasing-number-of-scripts-and-styles/">Decreasing number of scripts and styles</a>
+          
+            <a class="item sub " href="/guides/customizing-validations/">Customizing validations</a>
+          
+        
+      
+    </div>
+  
+    
+
+    <div class="sub-menu " data-parent="">
+      <a href="/" class="back">&larr; Go back</a>
+      <h2 class="subtitle"><i data-feather='youtube'></i> Videos</h2>
+
+      
+    </div>
+  
+    
+
+    <div class="sub-menu " data-parent="">
+      <a href="/" class="back">&larr; Go back</a>
+      <h2 class="subtitle"><i data-feather='help-circle'></i> FAQ</h2>
+
+      
+    </div>
+  
+    
+
+    <div class="sub-menu " data-parent="">
+      <a href="/" class="back">&larr; Go back</a>
+      <h2 class="subtitle"><i data-feather='message-circle'></i> Support</h2>
+
+      
+    </div>
+  
+    
+
+    <div class="sub-menu " data-parent="">
+      <a href="/" class="back">&larr; Go back</a>
+      <h2 class="subtitle"> Divider</h2>
+
+      
+    </div>
+  
+    
+
+    <div class="sub-menu " data-parent="">
+      <a href="/" class="back">&larr; Go back</a>
+      <h2 class="subtitle"><i data-feather='code'></i> Functions</h2>
+
+      
+    </div>
+  
+    
+
+    <div class="sub-menu " data-parent="actions">
+      <a href="/" class="back">&larr; Go back</a>
+      <h2 class="subtitle"><i data-feather='zap'></i> Actions</h2>
+
+      
+        
+          <h3 class="section-title">Display</h3>
+
+          
+            <a class="item sub " href="/actions/af/form/before_title/">af/form/before_title</a>
+          
+            <a class="item sub " href="/actions/af/form/before_fields/">af/form/before_fields</a>
+          
+            <a class="item sub " href="/actions/af/form/after_fields/">af/form/after_fields</a>
+          
+            <a class="item sub " href="/actions/af/form/hidden_fields/">af/form/hidden_fields</a>
+          
+        
+      
+        
+          <h3 class="section-title">Events</h3>
+
+          
+            <a class="item sub " href="/actions/af/form/email/before_send/">af/form/email/before_send</a>
+          
+            <a class="item sub " href="/actions/af/form/email/after_send/">af/form/email/after_send</a>
+          
+            <a class="item sub " href="/actions/af/form/entry_created/">af/form/entry_created</a>
+          
+            <a class="item sub " href="/actions/af/form/validate/">af/form/validate</a>
+          
+        
+      
+        
+          <h3 class="section-title">Pro</h3>
+
+          
+            <a class="item sub " href="/actions/af/form/editing/post_created/">af/form/editing/post_created</a>
+          
+            <a class="item sub " href="/actions/af/form/editing/post_updated/">af/form/editing/post_updated</a>
+          
+            <a class="item sub " href="/actions/af/form/editing/user_created/">af/form/editing/user_created</a>
+          
+            <a class="item sub " href="/actions/af/form/editing/user_updated/">af/form/editing/user_updated</a>
+          
+        
+      
+        
+          <h3 class="section-title">Javascript</h3>
+
+          
+            <a class="item sub " href="/actions/af/form/page_changed/">af/form/page_changed</a>
+          
+            <a class="item sub " href="/actions/af/field/calculated/update_value/">af/field/calculated/update_value</a>
+          
+        
+      
+    </div>
+  
+    
+
+    <div class="sub-menu " data-parent="filters">
+      <a href="/" class="back">&larr; Go back</a>
+      <h2 class="subtitle"><i data-feather='filter'></i> Filters</h2>
+
+      
+        
+          <h3 class="section-title">Forms</h3>
+
+          
+            <a class="item sub " href="/filters/af/form/args/">af/form/args</a>
+          
+            <a class="item sub " href="/filters/af/form/before_render/">af/form/before_render</a>
+          
+            <a class="item sub " href="/filters/af/form/restriction/">af/form/restriction</a>
+          
+            <a class="item sub " href="/filters/af/field/prefill_value/">af/field/prefill_value</a>
+          
+            <a class="item sub " href="/filters/af/field/before_render/">af/field/before_render</a>
+          
+        
+      
+        
+          <h3 class="section-title">Display</h3>
+
+          
+            <a class="item sub " href="/filters/af/form/field_attributes/">af/form/field_attributes</a>
+          
+            <a class="item sub " href="/filters/af/form/button_attributes/">af/form/button_attributes</a>
+          
+            <a class="item sub " href="/filters/af/form/previous_button_atts/">af/form/previous_button_atts</a>
+          
+            <a class="item sub " href="/filters/af/form/next_button_atts/">af/form/next_button_atts</a>
+          
+        
+      
+        
+          <h3 class="section-title">Emails</h3>
+
+          
+            <a class="item sub " href="/filters/af/form/email/recipients/">af/form/email/recipients</a>
+          
+            <a class="item sub " href="/filters/af/form/email/subject/">af/form/email/subject</a>
+          
+            <a class="item sub " href="/filters/af/form/email/content/">af/form/email/content</a>
+          
+            <a class="item sub " href="/filters/af/form/email/headers/">af/form/email/headers</a>
+          
+            <a class="item sub " href="/filters/af/form/email/attachments/">af/form/email/attachments</a>
+          
+            <a class="item sub " href="/filters/af/form/email/styles/">af/form/email/styles</a>
+          
+        
+      
+        
+          <h3 class="section-title">Pro</h3>
+
+          
+            <a class="item sub " href="/filters/af/field/calculate_value/">af/field/calculate_value</a>
+          
+            <a class="item sub " href="/filters/af/form/editing/post_data/">af/form/editing/post_data</a>
+          
+            <a class="item sub " href="/filters/af/form/editing/user_data/">af/form/editing/user_data</a>
+          
+            <a class="item sub " href="/filters/af/form/mailchimp/request/">af/form/mailchimp/request</a>
+          
+        
+      
+    </div>
+  
+
+  <div class="main-menu ">
+    
+      
+      <a
+        class="item  "
+        href="/"
+        data-id="home">
+        <i data-feather='play'></i> Home
+      </a>
+      
+    
+      
+      <a
+        class="item  has-sub-pages"
+        
+        data-id="guides">
+        <i data-feather='align-left'></i> Guides
+      </a>
+      
+    
+      
+      <a
+        class="item  "
+        href="/videos/"
+        data-id="">
+        <i data-feather='youtube'></i> Videos
+      </a>
+      
+    
+      
+      <a
+        class="item  "
+        href="/faq/"
+        data-id="">
+        <i data-feather='help-circle'></i> FAQ
+      </a>
+      
+    
+      
+      <a
+        class="item  "
+        href="/support/"
+        data-id="">
+        <i data-feather='message-circle'></i> Support
+      </a>
+      
+    
+      
+        <div class="divider"></div>
+      
+    
+      
+      <a
+        class="item  "
+        href="/functions/"
+        data-id="">
+        <i data-feather='code'></i> Functions
+      </a>
+      
+    
+      
+      <a
+        class="item  has-sub-pages"
+        
+        data-id="actions">
+        <i data-feather='zap'></i> Actions
+      </a>
+      
+    
+      
+      <a
+        class="item  has-sub-pages"
+        
+        data-id="filters">
+        <i data-feather='filter'></i> Filters
+      </a>
+      
+    
+  </div>
+</nav>
+
+      </aside>
+      <main>
+        <header class="regular-header">
+          <i data-feather="search"></i>
+          <input type="text" placeholder="Search documentation..." />
+        </header>
+
+        <header class="mobile-header">
+          <a href="/"><img src="/images/icon-128x128.png" class="logo" alt="Advanced Forms logo" /> </a>
+          <a class="menu-toggle">Menu <i data-feather="menu"></i></a>
+        </header>
+
+        <div class="mobile-menu">
+          <nav class="menu">
+  
+  
+  
+    
+
+    <div class="sub-menu " data-parent="home">
+      <a href="/" class="back">&larr; Go back</a>
+      <h2 class="subtitle"><i data-feather='play'></i> Home</h2>
+
+      
+    </div>
+  
+    
+      
+    
+
+    <div class="sub-menu active" data-parent="guides">
+      <a href="/" class="back">&larr; Go back</a>
+      <h2 class="subtitle"><i data-feather='align-left'></i> Guides</h2>
+
+      
+        
+          <h3 class="section-title">Basic</h3>
+
+          
+            <a class="item sub " href="/guides/creating-a-form/">Creating a form</a>
+          
+            <a class="item sub " href="/guides/configuring-your-form/">Configuring your form</a>
+          
+            <a class="item sub " href="/guides/displaying-a-form/">Displaying a form</a>
+          
+            <a class="item sub active" href="/guides/available-arguments/">Available arguments</a>
+          
+        
+      
+        
+          <h3 class="section-title">Pro</h3>
+
+          
+            <a class="item sub " href="/guides/installing-and-activating/">Installing and activating</a>
+          
+            <a class="item sub " href="/guides/creating-and-editing-posts/">Creating and editing posts</a>
+          
+            <a class="item sub " href="/guides/creating-and-editing-users/">Creating and editing users</a>
+          
+            <a class="item sub " href="/guides/configuring-integrations/">Configuring integrations</a>
+          
+            <a class="item sub " href="/guides/using-calculated-fields/">Using calculated fields</a>
+          
+        
+      
+        
+          <h3 class="section-title">Advanced</h3>
+
+          
+            <a class="item sub " href="/guides/processing-form-submissions/">Processing form submissions</a>
+          
+            <a class="item sub " href="/guides/adding-custom-merge-tags/">Adding custom merge tags</a>
+          
+            <a class="item sub " href="/guides/adding-custom-restrictions/">Adding custom restrictions</a>
+          
+            <a class="item sub " href="/guides/customizing-the-form-template/">Customizing the form template</a>
+          
+            <a class="item sub " href="/guides/decreasing-number-of-scripts-and-styles/">Decreasing number of scripts and styles</a>
+          
+            <a class="item sub " href="/guides/customizing-validations/">Customizing validations</a>
+          
+        
+      
+    </div>
+  
+    
+
+    <div class="sub-menu " data-parent="">
+      <a href="/" class="back">&larr; Go back</a>
+      <h2 class="subtitle"><i data-feather='youtube'></i> Videos</h2>
+
+      
+    </div>
+  
+    
+
+    <div class="sub-menu " data-parent="">
+      <a href="/" class="back">&larr; Go back</a>
+      <h2 class="subtitle"><i data-feather='help-circle'></i> FAQ</h2>
+
+      
+    </div>
+  
+    
+
+    <div class="sub-menu " data-parent="">
+      <a href="/" class="back">&larr; Go back</a>
+      <h2 class="subtitle"><i data-feather='message-circle'></i> Support</h2>
+
+      
+    </div>
+  
+    
+
+    <div class="sub-menu " data-parent="">
+      <a href="/" class="back">&larr; Go back</a>
+      <h2 class="subtitle"> Divider</h2>
+
+      
+    </div>
+  
+    
+
+    <div class="sub-menu " data-parent="">
+      <a href="/" class="back">&larr; Go back</a>
+      <h2 class="subtitle"><i data-feather='code'></i> Functions</h2>
+
+      
+    </div>
+  
+    
+
+    <div class="sub-menu " data-parent="actions">
+      <a href="/" class="back">&larr; Go back</a>
+      <h2 class="subtitle"><i data-feather='zap'></i> Actions</h2>
+
+      
+        
+          <h3 class="section-title">Display</h3>
+
+          
+            <a class="item sub " href="/actions/af/form/before_title/">af/form/before_title</a>
+          
+            <a class="item sub " href="/actions/af/form/before_fields/">af/form/before_fields</a>
+          
+            <a class="item sub " href="/actions/af/form/after_fields/">af/form/after_fields</a>
+          
+            <a class="item sub " href="/actions/af/form/hidden_fields/">af/form/hidden_fields</a>
+          
+        
+      
+        
+          <h3 class="section-title">Events</h3>
+
+          
+            <a class="item sub " href="/actions/af/form/email/before_send/">af/form/email/before_send</a>
+          
+            <a class="item sub " href="/actions/af/form/email/after_send/">af/form/email/after_send</a>
+          
+            <a class="item sub " href="/actions/af/form/entry_created/">af/form/entry_created</a>
+          
+            <a class="item sub " href="/actions/af/form/validate/">af/form/validate</a>
+          
+        
+      
+        
+          <h3 class="section-title">Pro</h3>
+
+          
+            <a class="item sub " href="/actions/af/form/editing/post_created/">af/form/editing/post_created</a>
+          
+            <a class="item sub " href="/actions/af/form/editing/post_updated/">af/form/editing/post_updated</a>
+          
+            <a class="item sub " href="/actions/af/form/editing/user_created/">af/form/editing/user_created</a>
+          
+            <a class="item sub " href="/actions/af/form/editing/user_updated/">af/form/editing/user_updated</a>
+          
+        
+      
+        
+          <h3 class="section-title">Javascript</h3>
+
+          
+            <a class="item sub " href="/actions/af/form/page_changed/">af/form/page_changed</a>
+          
+            <a class="item sub " href="/actions/af/field/calculated/update_value/">af/field/calculated/update_value</a>
+          
+        
+      
+    </div>
+  
+    
+
+    <div class="sub-menu " data-parent="filters">
+      <a href="/" class="back">&larr; Go back</a>
+      <h2 class="subtitle"><i data-feather='filter'></i> Filters</h2>
+
+      
+        
+          <h3 class="section-title">Forms</h3>
+
+          
+            <a class="item sub " href="/filters/af/form/args/">af/form/args</a>
+          
+            <a class="item sub " href="/filters/af/form/before_render/">af/form/before_render</a>
+          
+            <a class="item sub " href="/filters/af/form/restriction/">af/form/restriction</a>
+          
+            <a class="item sub " href="/filters/af/field/prefill_value/">af/field/prefill_value</a>
+          
+            <a class="item sub " href="/filters/af/field/before_render/">af/field/before_render</a>
+          
+        
+      
+        
+          <h3 class="section-title">Display</h3>
+
+          
+            <a class="item sub " href="/filters/af/form/field_attributes/">af/form/field_attributes</a>
+          
+            <a class="item sub " href="/filters/af/form/button_attributes/">af/form/button_attributes</a>
+          
+            <a class="item sub " href="/filters/af/form/previous_button_atts/">af/form/previous_button_atts</a>
+          
+            <a class="item sub " href="/filters/af/form/next_button_atts/">af/form/next_button_atts</a>
+          
+        
+      
+        
+          <h3 class="section-title">Emails</h3>
+
+          
+            <a class="item sub " href="/filters/af/form/email/recipients/">af/form/email/recipients</a>
+          
+            <a class="item sub " href="/filters/af/form/email/subject/">af/form/email/subject</a>
+          
+            <a class="item sub " href="/filters/af/form/email/content/">af/form/email/content</a>
+          
+            <a class="item sub " href="/filters/af/form/email/headers/">af/form/email/headers</a>
+          
+            <a class="item sub " href="/filters/af/form/email/attachments/">af/form/email/attachments</a>
+          
+            <a class="item sub " href="/filters/af/form/email/styles/">af/form/email/styles</a>
+          
+        
+      
+        
+          <h3 class="section-title">Pro</h3>
+
+          
+            <a class="item sub " href="/filters/af/field/calculate_value/">af/field/calculate_value</a>
+          
+            <a class="item sub " href="/filters/af/form/editing/post_data/">af/form/editing/post_data</a>
+          
+            <a class="item sub " href="/filters/af/form/editing/user_data/">af/form/editing/user_data</a>
+          
+            <a class="item sub " href="/filters/af/form/mailchimp/request/">af/form/mailchimp/request</a>
+          
+        
+      
+    </div>
+  
+
+  <div class="main-menu ">
+    
+      
+      <a
+        class="item  "
+        href="/"
+        data-id="home">
+        <i data-feather='play'></i> Home
+      </a>
+      
+    
+      
+      <a
+        class="item  has-sub-pages"
+        
+        data-id="guides">
+        <i data-feather='align-left'></i> Guides
+      </a>
+      
+    
+      
+      <a
+        class="item  "
+        href="/videos/"
+        data-id="">
+        <i data-feather='youtube'></i> Videos
+      </a>
+      
+    
+      
+      <a
+        class="item  "
+        href="/faq/"
+        data-id="">
+        <i data-feather='help-circle'></i> FAQ
+      </a>
+      
+    
+      
+      <a
+        class="item  "
+        href="/support/"
+        data-id="">
+        <i data-feather='message-circle'></i> Support
+      </a>
+      
+    
+      
+        <div class="divider"></div>
+      
+    
+      
+      <a
+        class="item  "
+        href="/functions/"
+        data-id="">
+        <i data-feather='code'></i> Functions
+      </a>
+      
+    
+      
+      <a
+        class="item  has-sub-pages"
+        
+        data-id="actions">
+        <i data-feather='zap'></i> Actions
+      </a>
+      
+    
+      
+      <a
+        class="item  has-sub-pages"
+        
+        data-id="filters">
+        <i data-feather='filter'></i> Filters
+      </a>
+      
+    
+  </div>
+</nav>
+
+          <a class="menu-close">Close menu <i data-feather="arrow-up"></i></a>
+        </div>
+
+        
+<div class="content section">
+  <h1>Available arguments</h1>
+
+  
+  
+  
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#submit_text">submit_text</a></li>
+    <li><a href="#redirect">redirect</a></li>
+    <li><a href="#values">values</a></li>
+    <li><a href="#exclude_fields">exclude_fields</a></li>
+    <li><a href="#uploader">uploader</a></li>
+    <li><a href="#filter_mode">filter_mode</a></li>
+    <li><a href="#instruction_placement">instruction_placement</a></li>
+    <li><a href="#display_title">display_title</a></li>
+    <li><a href="#display_description">display_description</a></li>
+    <li><a href="#id">id</a></li>
+    <li><a href="#honeypot">honeypot</a></li>
+    <li><a href="#target">target</a></li>
+  </ul>
+</nav>
+  
+
+  <p>This page lists all the available arguments that may be passed when displaying a form, either using a shortcode or a function call.</p>
+<h2 id="submit_text">submit_text</h2>
+<p>Text used for the submit button. Default to &ldquo;Submit&rdquo;.</p>
+<p><code>[advanced_form submit_text=&quot;Send&quot;]</code></p>
+<p><code>advanced_form( 'KEY', array( 'submit_text' =&gt; 'Send' ) )</code></p>
+<h2 id="redirect">redirect</h2>
+<p>URL to redirect to after successful submission. Defaults to the current URL where the success message will be displayed after submission.</p>
+<p><code>[advanced_form redirect=&quot;/thank-you&quot;]</code></p>
+<p><code>advanced_form( 'KEY', array( 'redirect' =&gt; '/thank-you' ) )</code></p>
+<h2 id="values">values</h2>
+<p>Values to pre-fill fields with. Only works for function calls where the argument should be an array mapping field names or keys to values. If you want to programmatically pre-fill some fields you might want to use the <code>af/field/prefill_value</code> filter.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#000;font-weight:bold">&lt;?</span>php
+
+advanced_form( <span style="color:#d14">&#39;FORM_KEY&#39;</span>, <span style="color:#000;font-weight:bold">array</span>(
+  <span style="color:#d14">&#39;values&#39;</span> <span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#000;font-weight:bold">array</span>(
+    <span style="color:#d14">&#39;first_name&#39;</span> <span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#d14">&#39;Fabian&#39;</span>,
+    <span style="color:#d14">&#39;last_name&#39;</span> <span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#d14">&#39;Lindfors&#39;</span>,
+  ),
+));
+</code></pre></div>
+<h2 id="exclude_fields">exclude_fields</h2>
+<p>Array of field names or keys to exclude from the form.</p>
+<p><code>[advanced_form exclude_fields=&quot;field_name&quot;]</code></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#000;font-weight:bold">&lt;?</span>php
+
+advanced_form( <span style="color:#d14">&#39;FORM_KEY&#39;</span>, <span style="color:#000;font-weight:bold">array</span>(
+  <span style="color:#d14">&#39;exclude_fields&#39;</span> <span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#000;font-weight:bold">array</span>( <span style="color:#d14">&#39;field_name_1&#39;</span>, <span style="color:#d14">&#39;field_name_2&#39;</span> ),
+));
+</code></pre></div>
+<h2 id="uploader">uploader</h2>
+<p>Whether to use the WordPress media uploader or a regular file input for file fields. Use <code>wp</code> for the media uploader and <code>basic</code> for the file input. Defaults to <code>wp</code> if the user is logged in, otherwise falls back to <code>basic</code>.</p>
+<p><code>[advanced_form uploader=&quot;basic&quot;]</code></p>
+<p><code>advanced_form( 'KEY', array( 'uploader' =&gt; 'basic' ) )</code></p>
+<h2 id="filter_mode">filter_mode</h2>
+<p>Whether to enable filter mode. Defaults to <code>false</code>. Filter mode disables the success message after submission and instead displays all fields again with their submitted values.</p>
+<p><code>[advanced_form filter_mode=&quot;1&quot;]</code></p>
+<p><code>advanced_form( 'KEY', array( 'filter_mode' =&gt; true ) )</code></p>
+<h2 id="instruction_placement">instruction_placement</h2>
+<p>Whether to place instructions right below the label (<code>label</code>) or to place them after the field (<code>field</code>). Default to <code>label</code>.</p>
+<p><code>[advanced_form instruction_placement=&quot;field&quot;]</code></p>
+<p><code>advanced_form( 'KEY', array( 'instruction_placement' =&gt; 'field' ) )</code></p>
+<h2 id="display_title">display_title</h2>
+<p>Whether to display the form title or not. Defaults to <code>false</code>.</p>
+<h2 id="display_description">display_description</h2>
+<p>Whether to display the form description or not. Defaults to <code>false</code>.</p>
+<h2 id="id">id</h2>
+<p>HTML ID to use for the form element. Default to the form key.</p>
+<p><code>[advanced_form id=&quot;your-id&quot;]</code></p>
+<p><code>advanced_form( 'KEY', array( 'id' =&gt; 'your-id' ) )</code></p>
+<h2 id="honeypot">honeypot</h2>
+<p>Whether to include a honeypot for spam prevention. Default to <code>true</code> and should normally not be changed.</p>
+<p><code>[advanced_form honeypot=&quot;0&quot;]</code></p>
+<p><code>advanced_form( 'KEY', array( 'honeypot' =&gt; false ) )</code></p>
+<h2 id="target">target</h2>
+<p>The URL to which the HTML form points. Default to the current URL and should most often not be changed. If you want to redirect to another page after submission, use <code>redirect</code> instead.</p>
+
+</div>
+
+
+        <footer class="section">
+          Created by <a href="https://fabianlindfors.se">Fabian Lindfors</a> 🇸🇪 in collaboration with <a href="https://hookturn.io">Hookturn</a> 🇦🇺
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      feather.replace();
+    </script>
+
+    
+    <script src="/js/script.js"></script>
+  </body>
+</html>
