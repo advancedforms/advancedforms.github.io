@@ -9,6 +9,8 @@
     <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
     <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.SiteDescription }}{{ end }}">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <meta property="og:locale" content="en_US">
     <meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}">
     <meta property="og:image" content="{{ if .Params.image }}{{.Site.BaseURL}}/images/{{.Params.image}}{{ else }}{{.Site.BaseURL}}/images/site-logo.png{{ end }}">
