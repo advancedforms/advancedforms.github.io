@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="content section">
+  <h1>{{ .Title }}</h1>
+
+  {{ $headers := findRE "<h[1-6].*?>(.|\n])+?</h[1-6]>" .Content }}
+  {{ $has_headers := ge (len $headers) 2 }}
+  {{ if and $has_headers ( ne .Params.toc false ) }}
+    {{ .TableOfContents }}
+  {{ end }}
+
+  {{ .Content }}
+</div>
+{{ end }}

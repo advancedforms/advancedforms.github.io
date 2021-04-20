@@ -1,0 +1,41 @@
+<nav class="menu">
+  {{ $currentPage := . }}
+  {{ $hasChild := false }}
+  {{ range .Site.Menus.main }}
+    {{ if $currentPage.HasMenuCurrent "main" . }}
+      {{ $hasChild = true }}
+    {{ end }}
+
+    <div class="sub-menu {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}" data-parent="{{ .Identifier }}">
+      <a href="/" class="back">&larr; Go back</a>
+      <h2 class="subtitle">{{ .Pre }} {{ .Name }}</h2>
+
+      {{ range .Children }}
+        {{ if not .URL }}
+          <h3 class="section-title">{{ .Name }}</h3>
+
+          {{ range .Children }}
+            <a class="item sub {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+          {{ end }}
+        {{ else }}
+          <a class="item sub {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+      {{ end }}
+    </div>
+  {{ end }}
+
+  <div class="main-menu {{ if not $hasChild }}active{{ end }}">
+    {{ range .Site.Menus.main }}
+      {{ if .URL }}
+      <a
+        class="item {{ if ($currentPage.IsMenuCurrent "main" .) }}active{{ end }} {{ if .HasChildren }}has-sub-pages{{ end }}"
+        {{ if not .HasChildren }}href="{{ .URL }}"{{ end }}
+        data-id="{{ .Identifier }}">
+        {{ .Pre }} {{ .Name }}
+      </a>
+      {{ else }}
+        <div class="divider"></div>
+      {{ end }}
+    {{ end}}
+  </div>
+</nav>

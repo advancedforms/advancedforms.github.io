@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-11-09T00:00:00+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/guides/available-arguments/</loc>
+    <lastmod>2020-11-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-11-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/guides/</loc>
+    <lastmod>2020-11-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/guides-basic/</loc>
+    <lastmod>2020-11-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/guides/customizing-the-form-template/</loc>
+    <lastmod>2020-02-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/guides-advanced/</loc>
+    <lastmod>2020-02-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/guides/decreasing-number-of-scripts-and-styles/</loc>
+    <lastmod>2019-12-15T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/guides/adding-custom-merge-tags/</loc>
+    <lastmod>2019-12-13T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/guides/configuring-integrations/</loc>
+    <lastmod>2018-03-18T00:01:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/pro-integrations/</loc>
+    <lastmod>2018-03-18T00:01:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/guides/configuring-your-form/</loc>
+    <lastmod>2017-07-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/guides/processing-form-submissions/</loc>
+    <lastmod>2016-12-23T00:02:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/guides/adding-custom-restrictions/</loc>
+    <lastmod>2016-12-23T00:01:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/guides/displaying-a-form/</loc>
+    <lastmod>2016-12-23T00:01:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/guides/creating-a-form/</loc>
+    <lastmod>2016-12-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/guides/customizing-validations/</loc>
+    <lastmod>2016-12-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/actions/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/af/field/before_render/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/af/field/calculate_value/</loc>
+  </url>
+  
+  <url>
+    <loc>/actions/af/field/calculated/update_value/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/af/field/prefill_value/</loc>
+  </url>
+  
+  <url>
+    <loc>/actions/af/form/after_fields/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/af/form/args/</loc>
+  </url>
+  
+  <url>
+    <loc>/actions/af/form/before_fields/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/af/form/before_render/</loc>
+  </url>
+  
+  <url>
+    <loc>/actions/af/form/before_title/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/af/form/button_attributes/</loc>
+  </url>
+  
+  <url>
+    <loc>/actions/af/form/editing/post_created/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/af/form/editing/post_data/</loc>
+  </url>
+  
+  <url>
+    <loc>/actions/af/form/editing/post_updated/</loc>
+  </url>
+  
+  <url>
+    <loc>/actions/af/form/editing/user_created/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/af/form/editing/user_data/</loc>
+  </url>
+  
+  <url>
+    <loc>/actions/af/form/editing/user_updated/</loc>
+  </url>
+  
+  <url>
+    <loc>/actions/af/form/email/after_send/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/af/form/email/attachments/</loc>
+  </url>
+  
+  <url>
+    <loc>/actions/af/form/email/before_send/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/af/form/email/content/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/af/form/email/headers/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/af/form/email/recipients/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/af/form/email/styles/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/af/form/email/subject/</loc>
+  </url>
+  
+  <url>
+    <loc>/actions/af/form/entry_created/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/af/form/field_attributes/</loc>
+  </url>
+  
+  <url>
+    <loc>/actions/af/form/hidden_fields/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/af/form/mailchimp/request/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/af/form/next_button_atts/</loc>
+  </url>
+  
+  <url>
+    <loc>/actions/af/form/page_changed/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/af/form/previous_button_atts/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/af/form/restriction/</loc>
+  </url>
+  
+  <url>
+    <loc>/actions/af/form/validate/</loc>
+  </url>
+  
+  <url>
+    <loc>/guides/creating-and-editing-posts/</loc>
+  </url>
+  
+  <url>
+    <loc>/guides/creating-and-editing-users/</loc>
+  </url>
+  
+  <url>
+    <loc>/filters/</loc>
+  </url>
+  
+  <url>
+    <loc>/faq/</loc>
+  </url>
+  
+  <url>
+    <loc>/functions/</loc>
+  </url>
+  
+  <url>
+    <loc>/guides/installing-and-activating/</loc>
+  </url>
+  
+  <url>
+    <loc>/support/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>/guides/using-calculated-fields/</loc>
+  </url>
+  
+  <url>
+    <loc>/videos/</loc>
+  </url>
+  
+</urlset>

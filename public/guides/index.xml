@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Guides on Advanced Forms</title>
+    <link>/guides/</link>
+    <description>Recent content in Guides on Advanced Forms</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Nov 2020 00:00:00 +0100</lastBuildDate><atom:link href="/guides/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Available arguments</title>
+      <link>/guides/available-arguments/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0100</pubDate>
+      
+      <guid>/guides/available-arguments/</guid>
+      <description>This page lists all the available arguments that may be passed when displaying a form, either using a shortcode or a function call.
+submit_text Text used for the submit button. Default to &amp;ldquo;Submit&amp;rdquo;.
+[advanced_form submit_text=&amp;quot;Send&amp;quot;]
+advanced_form( &#39;KEY&#39;, array( &#39;submit_text&#39; =&amp;gt; &#39;Send&#39; ) )
+redirect URL to redirect to after successful submission. Defaults to the current URL where the success message will be displayed after submission.
+[advanced_form redirect=&amp;quot;/thank-you&amp;quot;]
+advanced_form( &#39;KEY&#39;, array( &#39;redirect&#39; =&amp;gt; &#39;/thank-you&#39; ) )</description>
+    </item>
+    
+    <item>
+      <title>Customizing the form template</title>
+      <link>/guides/customizing-the-form-template/</link>
+      <pubDate>Sun, 09 Feb 2020 00:00:00 +0100</pubDate>
+      
+      <guid>/guides/customizing-the-form-template/</guid>
+      <description>This guide is intended to give an overview of what the markup for a form looks like and what options are available to customize it. The visualization below shows the different HTML elements that make up a form, classes that can be used to style them and hooks that might be useful.
+Some customization can be achieved with the form arguments, for example changing the submit button text. If you want to programmatically change the arguments then use the af/form/args filter.</description>
+    </item>
+    
+    <item>
+      <title>Decreasing number of scripts and styles</title>
+      <link>/guides/decreasing-number-of-scripts-and-styles/</link>
+      <pubDate>Sun, 15 Dec 2019 00:00:00 +0100</pubDate>
+      
+      <guid>/guides/decreasing-number-of-scripts-and-styles/</guid>
+      <description>Advanced Custom Fields has the unfortunate habit of enqueuing scripts and styles for all field types even when not in use. As a result there are normally scripts and styles included when displaying a form which are not actually in use.
+It&amp;rsquo;s possible to manually dequeue unecessary resources with a bit of care. The following snippet can be used to dequeue some things which are included by ACF. The comments explain which field types use which enqueues.</description>
+    </item>
+    
+    <item>
+      <title>Adding custom merge tags</title>
+      <link>/guides/adding-custom-merge-tags/</link>
+      <pubDate>Fri, 13 Dec 2019 00:00:00 +0100</pubDate>
+      
+      <guid>/guides/adding-custom-merge-tags/</guid>
+      <description>Advanced Forms has a variety of built-in merge tags which can be used in success messages, emails, and calculated fields. Examples include {field:NAME} and {entry_id}. Sometimes it&amp;rsquo;s desirable to add custom merge tags which we&amp;rsquo;ll cover in this guide.
+Registering a new merge tag To add merge tags we use the af/merge_tags/resolve filter. This filter will be invoked for every merge tag, that is all occurences of two braces ({}) with content in between.</description>
+    </item>
+    
+    <item>
+      <title>Configuring integrations</title>
+      <link>/guides/configuring-integrations/</link>
+      <pubDate>Sun, 18 Mar 2018 00:01:00 +0100</pubDate>
+      
+      <guid>/guides/configuring-integrations/</guid>
+      <description>Mailchimp Advanced Forms Pro enables you to connect forms to Mailchimp and subscribe your visitors to Mailchimp lists. Configuring Mailchimp is easy, all you need is an API key.
+Generating an API Key Start by logging in to your Mailchimp account on mailchimp.com. Click your profile name in the top right corner and select Account. Navigate to API Keys under the Extras tab and press the Create a Key button. Lastly, copy the newly generated key.</description>
+    </item>
+    
+    <item>
+      <title>Configuring your form</title>
+      <link>/guides/configuring-your-form/</link>
+      <pubDate>Sun, 09 Jul 2017 00:00:00 +0100</pubDate>
+      
+      <guid>/guides/configuring-your-form/</guid>
+      <description>Adding a success message Setting up email notifications Making a multi-page form From version 1.5 and onwards Advanced Forms supports multi-page forms. Setting them up is similar to configuring tabs in a regular ACF field group. To create a paged form simply insert &amp;ldquo;Page&amp;rdquo; fields to divide your form. The &amp;ldquo;Page&amp;rdquo; field has settings for numbering and button text as well. Only the settings on the first page field will be used.</description>
+    </item>
+    
+    <item>
+      <title>Processing form submissions</title>
+      <link>/guides/processing-form-submissions/</link>
+      <pubDate>Fri, 23 Dec 2016 00:02:00 +0100</pubDate>
+      
+      <guid>/guides/processing-form-submissions/</guid>
+      <description>Overview After a form has been submitted the field values need to be processed. The plugin comes with the ability to automatically save form data to entries and to send custom emails. Emails and entries can be configured in the form settings but are not enabled by default.
+If you need to process the form data further the handy action hook af/form/submission should be used. To simplify the retrieval of field values a helper function af_get_field is provided which takes a field name/key and returns a value.</description>
+    </item>
+    
+    <item>
+      <title>Adding custom restrictions</title>
+      <link>/guides/adding-custom-restrictions/</link>
+      <pubDate>Fri, 23 Dec 2016 00:01:00 +0100</pubDate>
+      
+      <guid>/guides/adding-custom-restrictions/</guid>
+      <description>Advanced Forms comes with the option to hide a form unless certain conditions are meet. Included is the ability to limit the number of entries created by a form, to restrict a form from non-logged in users, and to set a schedule during which the form should be available.
+Custom restrictions may be applied using the filter af/form/restriction which is documented [here]({{ site.url }}/filters/forms/af-form-restriction). The following is an example of limiting a form to only administrators.</description>
+    </item>
+    
+    <item>
+      <title>Displaying a form</title>
+      <link>/guides/displaying-a-form/</link>
+      <pubDate>Fri, 23 Dec 2016 00:01:00 +0100</pubDate>
+      
+      <guid>/guides/displaying-a-form/</guid>
+      <description>Once a form has been added and fields have been assigned you can display the form either using a shortcode or with a function call. There are a variety of available arguments that can be used to tweak how your form appears and behaves.
+Using shortcode To display a form using a shortcode use the structure below. The form key can be found right below the title on the form edit page.</description>
+    </item>
+    
+    <item>
+      <title>Creating a form</title>
+      <link>/guides/creating-a-form/</link>
+      <pubDate>Fri, 23 Dec 2016 00:00:00 +0100</pubDate>
+      
+      <guid>/guides/creating-a-form/</guid>
+      <description>Forms can be created either using the UI provided or programmatically.
+Using the admin interface To create a form using the UI navigate to the &amp;ldquo;Forms&amp;rdquo; admin page and create a new form. Use the form settings to set up entries, emails and display options. At the bottom you will find a list of all fields which are connected to your form.
+The fields connected to a form are set up through Advanced Custom Fields allowing you to use the full range of field types offered by ACF.</description>
+    </item>
+    
+    <item>
+      <title>Customizing validations</title>
+      <link>/guides/customizing-validations/</link>
+      <pubDate>Fri, 23 Dec 2016 00:00:00 +0100</pubDate>
+      
+      <guid>/guides/customizing-validations/</guid>
+      <description>Validating individual fields Advanced Forms uses ACF to render and validate fields. This means that any custom field validations will also work with your forms. ACF provides the acf/validate_value to add extra validation logic for specific fields and it&amp;rsquo;s the recommended way to add validation logic for form fields as well. Refer to the ACF documentation for more info.
+Validating forms Sometimes it&amp;rsquo;s not sufficient to validate individual fields. From version 1.</description>
+    </item>
+    
+    <item>
+      <title>Creating and editing posts</title>
+      <link>/guides/creating-and-editing-posts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/creating-and-editing-posts/</guid>
+      <description>A common use case for front-end forms is allowing users to create and edit posts. Maybe you want to let users submit post drafts which administrators can review and publish. Or have a post type for support issues which customers can submit and edit. Advanced Forms Pro makes it dead-simple to make forms which create and edit posts.
+Configuring your form Go to the Wordpress admin and edit the form which you want to configure.</description>
+    </item>
+    
+    <item>
+      <title>Creating and editing users</title>
+      <link>/guides/creating-and-editing-users/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/creating-and-editing-users/</guid>
+      <description>A common use case for front-end forms is allowing visitors to create and edit users. Maybe you want to let users upload a picture gallery to their own profile. Or you want a sign up form where users can provide extra information which is saved as fields on their profiles. Advanced Forms Pro makes user creation and editing super easy to setup.
+Configuring your form Go to the Wordpress admin and edit the form which you want to configure.</description>
+    </item>
+    
+    <item>
+      <title>Installing and activating</title>
+      <link>/guides/installing-and-activating/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/installing-and-activating/</guid>
+      <description>Advanced Forms Pro can be purchased from hookturn.io. After purchasing you will get get a license key as well as a download link to the plugin. The license key grants updates and support for one year.
+ Download the plugin zip file. Install and activate using the downloaded file. If you have the free version installed, disable it before activating the Pro plugin. Navigate to &amp;ldquo;Settings&amp;rdquo; below &amp;ldquo;Forms&amp;rdquo;. Enter your license key and click &amp;ldquo;Update&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Using calculated fields</title>
+      <link>/guides/using-calculated-fields/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/using-calculated-fields/</guid>
+      <description>Calculated fields are updated live when a form is filled out and can contain any content you&amp;rsquo;d like to. They are perfect for providing previews or to show calculated values before submission.
+Adding a calculated field Calculated fields are just regular ACF fields. Go to your field group and add a new field of type &amp;ldquo;Calculated&amp;rdquo;. Next you need to configure what value this field should display which is done in the form settings.</description>
+    </item>
+    
+  </channel>
+</rss>

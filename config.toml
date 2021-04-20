@@ -1,0 +1,116 @@
+baseURL = ""
+languageCode = "en-us"
+title = "Advanced Forms for ACF"
+theme = "advanced-forms"
+
+[permalinks]
+  guides = "/guides/:slug"
+  actions = "/actions/:slug"
+  filters = "/filters/:slug"
+
+[markup]
+  [markup.goldmark.renderer]
+    # Allow raw HTML for the form template page (maybe replace with shortcode)
+    unsafe = true
+  [markup.highlight]
+    style = "github"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+    pre = "<i data-feather='play'></i>"
+
+  [[menu.main]]
+    identifier = "guides"
+    name = "Guides"
+    url = "/guides"
+    weight = 2
+    pre = "<i data-feather='align-left'></i>"
+
+  [[menu.main]]
+    identifier = "guides/basic"
+    name = "Basic"
+    parent = "guides"
+    weight = 2
+    
+  [[menu.main]]
+    identifier = "guides/pro"
+    name = "Pro"
+    parent = "guides"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "guides/advanced"
+    name = "Advanced"
+    parent = "guides"
+    weight = 4
+    
+  [[menu.main]]
+    identifier = ""
+    name = "Divider"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "actions"
+    name = "Actions"
+    url = "/actions"
+    weight = 11
+    pre = "<i data-feather='zap'></i>"
+
+  [[menu.main]]
+    identifier = "actions/display"
+    name = "Display"
+    parent = "actions"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "actions/events"
+    name = "Events"
+    parent = "actions"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "actions/pro"
+    name = "Pro"
+    parent = "actions"
+    weight = 4
+
+  [[menu.main]]
+    identifier = "actions/js"
+    name = "Javascript"
+    parent = "actions"
+    weight = 5
+
+  [[menu.main]]
+    identifier = "filters"
+    name = "Filters"
+    url = "/filters"
+    weight = 12
+    pre = "<i data-feather='filter'></i>"
+
+  [[menu.main]]
+    identifier = "filters/forms"
+    name = "Forms"
+    parent = "filters"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "filters/display"
+    name = "Display"
+    parent = "filters"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "filters/emails"
+    name = "Emails"
+    parent = "filters"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "filters/pro"
+    name = "Pro"
+    parent = "filters"
+    weight = 4

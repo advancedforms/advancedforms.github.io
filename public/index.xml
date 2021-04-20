@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Advanced Forms</title>
+    <link>/</link>
+    <description>Recent content on Advanced Forms</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Nov 2020 00:00:00 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Available arguments</title>
+      <link>/guides/available-arguments/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0100</pubDate>
+      
+      <guid>/guides/available-arguments/</guid>
+      <description>This page lists all the available arguments that may be passed when displaying a form, either using a shortcode or a function call.
+submit_text Text used for the submit button. Default to &amp;ldquo;Submit&amp;rdquo;.
+[advanced_form submit_text=&amp;quot;Send&amp;quot;]
+advanced_form( &#39;KEY&#39;, array( &#39;submit_text&#39; =&amp;gt; &#39;Send&#39; ) )
+redirect URL to redirect to after successful submission. Defaults to the current URL where the success message will be displayed after submission.
+[advanced_form redirect=&amp;quot;/thank-you&amp;quot;]
+advanced_form( &#39;KEY&#39;, array( &#39;redirect&#39; =&amp;gt; &#39;/thank-you&#39; ) )</description>
+    </item>
+    
+    <item>
+      <title>Customizing the form template</title>
+      <link>/guides/customizing-the-form-template/</link>
+      <pubDate>Sun, 09 Feb 2020 00:00:00 +0100</pubDate>
+      
+      <guid>/guides/customizing-the-form-template/</guid>
+      <description>This guide is intended to give an overview of what the markup for a form looks like and what options are available to customize it. The visualization below shows the different HTML elements that make up a form, classes that can be used to style them and hooks that might be useful.
+Some customization can be achieved with the form arguments, for example changing the submit button text. If you want to programmatically change the arguments then use the af/form/args filter.</description>
+    </item>
+    
+    <item>
+      <title>Decreasing number of scripts and styles</title>
+      <link>/guides/decreasing-number-of-scripts-and-styles/</link>
+      <pubDate>Sun, 15 Dec 2019 00:00:00 +0100</pubDate>
+      
+      <guid>/guides/decreasing-number-of-scripts-and-styles/</guid>
+      <description>Advanced Custom Fields has the unfortunate habit of enqueuing scripts and styles for all field types even when not in use. As a result there are normally scripts and styles included when displaying a form which are not actually in use.
+It&amp;rsquo;s possible to manually dequeue unecessary resources with a bit of care. The following snippet can be used to dequeue some things which are included by ACF. The comments explain which field types use which enqueues.</description>
+    </item>
+    
+    <item>
+      <title>Adding custom merge tags</title>
+      <link>/guides/adding-custom-merge-tags/</link>
+      <pubDate>Fri, 13 Dec 2019 00:00:00 +0100</pubDate>
+      
+      <guid>/guides/adding-custom-merge-tags/</guid>
+      <description>Advanced Forms has a variety of built-in merge tags which can be used in success messages, emails, and calculated fields. Examples include {field:NAME} and {entry_id}. Sometimes it&amp;rsquo;s desirable to add custom merge tags which we&amp;rsquo;ll cover in this guide.
+Registering a new merge tag To add merge tags we use the af/merge_tags/resolve filter. This filter will be invoked for every merge tag, that is all occurences of two braces ({}) with content in between.</description>
+    </item>
+    
+    <item>
+      <title>Configuring integrations</title>
+      <link>/guides/configuring-integrations/</link>
+      <pubDate>Sun, 18 Mar 2018 00:01:00 +0100</pubDate>
+      
+      <guid>/guides/configuring-integrations/</guid>
+      <description>Mailchimp Advanced Forms Pro enables you to connect forms to Mailchimp and subscribe your visitors to Mailchimp lists. Configuring Mailchimp is easy, all you need is an API key.
+Generating an API Key Start by logging in to your Mailchimp account on mailchimp.com. Click your profile name in the top right corner and select Account. Navigate to API Keys under the Extras tab and press the Create a Key button. Lastly, copy the newly generated key.</description>
+    </item>
+    
+    <item>
+      <title>Configuring your form</title>
+      <link>/guides/configuring-your-form/</link>
+      <pubDate>Sun, 09 Jul 2017 00:00:00 +0100</pubDate>
+      
+      <guid>/guides/configuring-your-form/</guid>
+      <description>Adding a success message Setting up email notifications Making a multi-page form From version 1.5 and onwards Advanced Forms supports multi-page forms. Setting them up is similar to configuring tabs in a regular ACF field group. To create a paged form simply insert &amp;ldquo;Page&amp;rdquo; fields to divide your form. The &amp;ldquo;Page&amp;rdquo; field has settings for numbering and button text as well. Only the settings on the first page field will be used.</description>
+    </item>
+    
+    <item>
+      <title>Processing form submissions</title>
+      <link>/guides/processing-form-submissions/</link>
+      <pubDate>Fri, 23 Dec 2016 00:02:00 +0100</pubDate>
+      
+      <guid>/guides/processing-form-submissions/</guid>
+      <description>Overview After a form has been submitted the field values need to be processed. The plugin comes with the ability to automatically save form data to entries and to send custom emails. Emails and entries can be configured in the form settings but are not enabled by default.
+If you need to process the form data further the handy action hook af/form/submission should be used. To simplify the retrieval of field values a helper function af_get_field is provided which takes a field name/key and returns a value.</description>
+    </item>
+    
+    <item>
+      <title>Adding custom restrictions</title>
+      <link>/guides/adding-custom-restrictions/</link>
+      <pubDate>Fri, 23 Dec 2016 00:01:00 +0100</pubDate>
+      
+      <guid>/guides/adding-custom-restrictions/</guid>
+      <description>Advanced Forms comes with the option to hide a form unless certain conditions are meet. Included is the ability to limit the number of entries created by a form, to restrict a form from non-logged in users, and to set a schedule during which the form should be available.
+Custom restrictions may be applied using the filter af/form/restriction which is documented [here]({{ site.url }}/filters/forms/af-form-restriction). The following is an example of limiting a form to only administrators.</description>
+    </item>
+    
+    <item>
+      <title>Displaying a form</title>
+      <link>/guides/displaying-a-form/</link>
+      <pubDate>Fri, 23 Dec 2016 00:01:00 +0100</pubDate>
+      
+      <guid>/guides/displaying-a-form/</guid>
+      <description>Once a form has been added and fields have been assigned you can display the form either using a shortcode or with a function call. There are a variety of available arguments that can be used to tweak how your form appears and behaves.
+Using shortcode To display a form using a shortcode use the structure below. The form key can be found right below the title on the form edit page.</description>
+    </item>
+    
+    <item>
+      <title>Creating a form</title>
+      <link>/guides/creating-a-form/</link>
+      <pubDate>Fri, 23 Dec 2016 00:00:00 +0100</pubDate>
+      
+      <guid>/guides/creating-a-form/</guid>
+      <description>Forms can be created either using the UI provided or programmatically.
+Using the admin interface To create a form using the UI navigate to the &amp;ldquo;Forms&amp;rdquo; admin page and create a new form. Use the form settings to set up entries, emails and display options. At the bottom you will find a list of all fields which are connected to your form.
+The fields connected to a form are set up through Advanced Custom Fields allowing you to use the full range of field types offered by ACF.</description>
+    </item>
+    
+    <item>
+      <title>Customizing validations</title>
+      <link>/guides/customizing-validations/</link>
+      <pubDate>Fri, 23 Dec 2016 00:00:00 +0100</pubDate>
+      
+      <guid>/guides/customizing-validations/</guid>
+      <description>Validating individual fields Advanced Forms uses ACF to render and validate fields. This means that any custom field validations will also work with your forms. ACF provides the acf/validate_value to add extra validation logic for specific fields and it&amp;rsquo;s the recommended way to add validation logic for form fields as well. Refer to the ACF documentation for more info.
+Validating forms Sometimes it&amp;rsquo;s not sufficient to validate individual fields. From version 1.</description>
+    </item>
+    
+    <item>
+      <title>af/field/before_render</title>
+      <link>/filters/af/field/before_render/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/filters/af/field/before_render/</guid>
+      <description>Modify an ACF field before it&amp;rsquo;s rendered. Similar to acf/prepare_field.
+&amp;lt;?php function modify_field( $field, $form, $args ) { $field[&amp;#39;label&amp;#39;] = &amp;#39;New field label&amp;#39;; return $field; } add_filter( &amp;#39;af/field/before_render/name=FIELD_NAME&amp;#39;, &amp;#39;modify_field&amp;#39;, 10, 3 );  Modifiers  af/field/before_render Applies to all fields. af/field/before_render/name=FIELD_NAME Applies to fields with specific name. af/field/before_render/key=FIELD_KEY Applies to fields with specific key.  </description>
+    </item>
+    
+    <item>
+      <title>af/field/calculate_value</title>
+      <link>/filters/af/field/calculate_value/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/filters/af/field/calculate_value/</guid>
+      <description>Provide your own value to be displayed in a calculated field. af_get_field can be used as normal but beware that no validation is performed on fields.
+&amp;lt;?php function calculate_field_value( $value, $field, $form, $args ) { $quantity = af_get_field( &amp;#39;quantity&amp;#39; ); $price = 10; $total = $quantity * $price; return &amp;#39;$&amp;#39; . $total; } add_filter( &amp;#39;af/field/calculate_value/name=FIELD_NAME&amp;#39;, &amp;#39;calculate_field_value&amp;#39;, 10, 4 );  Modifiers  af/field/calculate_value Applies to all fields. af/field/calculate_value/name=FIELD_NAME Applies to fields with specific name.</description>
+    </item>
+    
+    <item>
+      <title>af/field/calculated/update_value</title>
+      <link>/actions/af/field/calculated/update_value/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/actions/af/field/calculated/update_value/</guid>
+      <description>This Javascript action will be triggered when a calculated field has been updated with a new value.
+// This will intercept the rendered calculated field and insert the markup // into an element with the id `#preview-container` acf.addAction( &amp;#39;af/field/calculated/value_updated/name=FIELD_NAME&amp;#39;, function( value, field, form ) { $(&amp;#39;#preview-container&amp;#39;).html(value); });  Modifiers  af/field/calculated/update_value Applies to all fields. af/field/calculated/update_value/name=FIELD_NAME Applies to fields with specific name. af/field/calculated/update_value/key=FIELD_KEY Applies to fields with specific key.  </description>
+    </item>
+    
+    <item>
+      <title>af/field/prefill_value</title>
+      <link>/filters/af/field/prefill_value/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/filters/af/field/prefill_value/</guid>
+      <description>Prefill field values before displaying form. Can be used for example to provide dynamic default values.
+&amp;lt;?php function prefill_form_field( $value, $field, $form, $args ) { return &amp;#39;Pre-filled value&amp;#39;; } add_filter( &amp;#39;af/field/prefill_value/key=FIELD_KEY&amp;#39;, &amp;#39;prefill_form_field&amp;#39;, 10, 4 );  Modifiers  af/field/prefill_value Applies to all fields. af/field/prefill_value/name=FIELD_NAME Applies to fields with specific name. af/field/prefill_value/key=FIELD_KEY Applies to fields with specific key.  </description>
+    </item>
+    
+    <item>
+      <title>af/form/after_fields</title>
+      <link>/actions/af/form/after_fields/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/actions/af/form/after_fields/</guid>
+      <description>Triggered after the submit button.
+&amp;lt;?php function after_fields( $form, $args ) { echo &amp;#39;After fields&amp;#39;; } add_action( &amp;#39;af/form/after_fields/key=FORM_KEY&amp;#39;, &amp;#39;after_fields&amp;#39;, 10 ,2 );  Modifiers  af/form/after_fields Applies to all forms. af/form/after_fields/key=FORM_KEY Applies to forms with specific key. af/form/after_fields/id=FORM_ID Applies to forms with specific post ID.  </description>
+    </item>
+    
+    <item>
+      <title>af/form/args</title>
+      <link>/filters/af/form/args/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/filters/af/form/args/</guid>
+      <description>Alter the arguments used to display a form. The arguments are either passed to the function call or defined as attributes on a shortcode.
+&amp;lt;?php function filter_args( $args, $form ) { $args[&amp;#39;submit_text&amp;#39;] = &amp;#39;Send&amp;#39;; return $args; } add_filter( &amp;#39;af/form/args/key=FORM_KEY&amp;#39;, &amp;#39;filter_args&amp;#39;, 10, 2 );  Modifiers  af/form/args Applies to all forms. af/form/args/key=FORM_KEY Applies to forms with specific key. af/form/args/id=FORM_ID Applies to forms with specific post ID.  </description>
+    </item>
+    
+    <item>
+      <title>af/form/before_fields</title>
+      <link>/actions/af/form/before_fields/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/actions/af/form/before_fields/</guid>
+      <description>Triggered right before the fields and after the description.
+&amp;lt;?php function before_fields( $form, $args ) { echo &amp;#39;Before fields and after description&amp;#39;; } add_action( &amp;#39;af/form/before_fields/key=FORM_KEY&amp;#39;, &amp;#39;before_fields&amp;#39;, 10, 2 );  Modifiers  af/form/before_fields Applies to all forms. af/form/before_fields/key=FORM_KEY Applies to forms with specific key. af/form/before_fields/id=FORM_ID Applies to forms with specific post ID.  </description>
+    </item>
+    
+    <item>
+      <title>af/form/before_render</title>
+      <link>/filters/af/form/before_render/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/filters/af/form/before_render/</guid>
+      <description>Make changes to a form before it&amp;rsquo;s rendered. Parameter $form is a form array.
+Can be used for example to modify the form title, description, or success message.
+&amp;lt;?php function filter_form( $form, $args ) { $form[&amp;#39;display&amp;#39;][&amp;#39;description&amp;#39;] = &amp;#39;New form description&amp;#39;; return $form; } add_filter( &amp;#39;af/form/before_render/key=FORM_KEY&amp;#39;, &amp;#39;filter_form&amp;#39;, 10, 2 );  Modifiers  af/form/before_render Applies to all forms. af/form/before_render/key=FORM_KEY Applies to forms with specific key. af/form/before_render/id=FORM_ID Applies to forms with specific post ID.</description>
+    </item>
+    
+    <item>
+      <title>af/form/before_title</title>
+      <link>/actions/af/form/before_title/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/actions/af/form/before_title/</guid>
+      <description>Triggered at the beginning of a form, before the title.
+&amp;lt;?php function before_title( $form, $args ) { echo &amp;#39;Before title&amp;#39;; } add_action( &amp;#39;af/form/before_title/key=FORM_KEY&amp;#39;, &amp;#39;before_title&amp;#39;, 10, 2 );  Modifiers  af/form/before_title Applies to all forms. af/form/before_title/key=FORM_KEY Applies to forms with specific key. af/form/before_title/id=FORM_ID Applies to forms with specific post ID.  </description>
+    </item>
+    
+    <item>
+      <title>af/form/button_attributes</title>
+      <link>/filters/af/form/button_attributes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/filters/af/form/button_attributes/</guid>
+      <description>Filter attributes on the submit button. Use to add classes, set an ID, or add new attributes.
+$attributes is an array of HTML attributes and their values.
+&amp;lt;?php function filter_submit_button_attributes( $attributes, $form, $args ) { $attributes[&amp;#39;class&amp;#39;] .= &amp;#39; button&amp;#39;; return $attributes; } add_filter( &amp;#39;af/form/button_attributes/key=FORM_KEY&amp;#39;, &amp;#39;filter_submit_button_attributes&amp;#39;, 10, 3 );  Modifiers  af/form/button_attributes Applies to all forms. af/form/button_attributes/key=FORM_KEY Applies to forms with specific key. af/form/button_attributes/id=FORM_ID Applies to forms with specific post ID.</description>
+    </item>
+    
+    <item>
+      <title>af/form/editing/post_created</title>
+      <link>/actions/af/form/editing/post_created/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/actions/af/form/editing/post_created/</guid>
+      <description>Triggered after a post has been created. Not triggered when a post is edited.
+&amp;lt;?php function form_post_created( $post, $form, $args ) { // Do something with the created post.  // $post is a WP_Post object. } add_action( &amp;#39;af/form/editing/post_created/key=FORM_KEY&amp;#39;, &amp;#39;form_post_created&amp;#39;, 10, 3 );  Modifiers  af/form/editing/post_created Applies to all forms. af/form/editing/post_created/key=FORM_KEY Applies to forms with specific key. af/form/editing/post_created/id=FORM_ID Applies to forms with specific post ID.  </description>
+    </item>
+    
+    <item>
+      <title>af/form/editing/post_data</title>
+      <link>/filters/af/form/editing/post_data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/filters/af/form/editing/post_data/</guid>
+      <description>Override the post data used when a post is created or updated. Post data is the $postarr argument passed to wp_insert_post.
+&amp;lt;?php function modify_post_data( $post_data, $form, $args ) { // Override post title  $post_data[&amp;#39;post_title&amp;#39;] = &amp;#39;New post title!&amp;#39;; return $post_data; } add_filter( &amp;#39;af/form/editing/post_data/key=FORM_KEY&amp;#39;, &amp;#39;modify_post_data&amp;#39;, 10, 3 );  Modifiers  af/form/editing/post_data Applies to all forms. af/form/editing/post_data/key=FORM_KEY Applies to forms with specific key. af/form/editing/post_data/id=FORM_ID Applies to forms with specific post ID.</description>
+    </item>
+    
+    <item>
+      <title>af/form/editing/post_updated</title>
+      <link>/actions/af/form/editing/post_updated/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/actions/af/form/editing/post_updated/</guid>
+      <description>Triggered after a post has been edited. Not triggered when a post is created.
+&amp;lt;?php function form_post_updated( $post, $form, $args ) { // Do something with the edited post.  // $post is a WP_Post object. } add_action( &amp;#39;af/form/editing/post_updated/key=FORM_KEY&amp;#39;, &amp;#39;form_post_updated&amp;#39;, 10, 3 );  Modifiers  af/form/editing/post_updated Applies to all forms. af/form/editing/post_updated/key=FORM_KEY Applies to forms with specific key. af/form/editing/post_updated/id=FORM_ID Applies to forms with specific post ID.  </description>
+    </item>
+    
+    <item>
+      <title>af/form/editing/user_created</title>
+      <link>/actions/af/form/editing/user_created/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/actions/af/form/editing/user_created/</guid>
+      <description>Triggered after a user has been created. Not triggered when a user is edited.
+&amp;lt;?php function form_user_created( $user, $form, $args ) { // Do something with the created user.  // $user is a WP_User object. } add_action( &amp;#39;af/form/editing/user_created/key=FORM_KEY&amp;#39;, &amp;#39;form_user_created&amp;#39;, 10, 3 );  Modifiers  af/form/editing/user_created Applies to all forms. af/form/editing/user_created/key=FORM_KEY Applies to forms with specific key. af/form/editing/user_created/id=FORM_ID Applies to forms with specific post ID.  </description>
+    </item>
+    
+    <item>
+      <title>af/form/editing/user_data</title>
+      <link>/filters/af/form/editing/user_data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/filters/af/form/editing/user_data/</guid>
+      <description>Override the user data used when a user is created or updated. User data is the $userdata argument passed to wp_insert_user.
+&amp;lt;?php function modify_user_data( $user_data, $form, $args ) { // Override user role  $user_data[&amp;#39;user_role&amp;#39;] = &amp;#39;administrator&amp;#39;; return $user_data; } add_filter( &amp;#39;af/form/editing/user_data/key=FORM_KEY&amp;#39;, &amp;#39;modify_user_data&amp;#39;, 10, 3 );  Modifiers  af/form/editing/user_data Applies to all forms. af/form/editing/user_data/key=FORM_KEY Applies to forms with specific key. af/form/editing/user_data/id=FORM_ID Applies to forms with specific post ID.  </description>
+    </item>
+    
+    <item>
+      <title>af/form/editing/user_updated</title>
+      <link>/actions/af/form/editing/user_updated/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/actions/af/form/editing/user_updated/</guid>
+      <description>Triggered after a user has been edited. Not triggered when a user is created.
+&amp;lt;?php function form_user_updated( $user, $form, $args ) { // Do something with the updated user.  // $user is a WP_User object. } add_action( &amp;#39;af/form/editing/user_updated/key=FORM_KEY&amp;#39;, &amp;#39;form_user_updated&amp;#39;, 10, 3 );  Modifiers  af/form/editing/user_updated Applies to all forms. af/form/editing/user_updated/key=FORM_KEY Applies to forms with specific key. af/form/editing/user_updated/id=FORM_ID Applies to forms with specific post ID.  </description>
+    </item>
+    
+    <item>
+      <title>af/form/email/after_send</title>
+      <link>/actions/af/form/email/after_send/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/actions/af/form/email/after_send/</guid>
+      <description>Triggered after an email has been sent.
+&amp;lt;?php function after_email_send( $email, $form ) { // Do something with email } add_action( &amp;#39;af/email/after_send/key=FORM_KEY&amp;#39;, &amp;#39;after_email_send&amp;#39;, 10, 2 );  Modifiers  af/form/email/after_send Applies to all forms. af/form/email/after_send/key=FORM_KEY Applies to forms with specific key. af/form/email/after_send/id=FORM_ID Applies to forms with specific post ID.  </description>
+    </item>
+    
+    <item>
+      <title>af/form/email/attachments</title>
+      <link>/filters/af/form/email/attachments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/filters/af/form/email/attachments/</guid>
+      <description>Filter the attachments of a form email before sending. $attachments should be an array of file paths similar to the attachments parameter for wp_mail.
+&amp;lt;?php function filter_email_attachments( $attachments, $email, $form, $fields ) { // Add a file as an attachment  $attachments[] = &amp;#39;/path/to/file&amp;#39;; return $attachments; } add_filter( &amp;#39;af/form/email/attachments/key=FORM_KEY&amp;#39;, &amp;#39;filter_email_attachments&amp;#39;, 10, 4 );  Modifiers  af/form/email/attachments Applies to all forms. af/form/email/attachments/key=FORM_KEY Applies to forms with specific key. af/form/email/attachments/id=FORM_ID Applies to forms with specific post ID.</description>
+    </item>
+    
+    <item>
+      <title>af/form/email/before_send</title>
+      <link>/actions/af/form/email/before_send/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/actions/af/form/email/before_send/</guid>
+      <description>Triggered before an email is sent.
+&amp;lt;?php function before_email_send( $email, $form ) { // Do something with email } add_action( &amp;#39;af/email/before_send/key=FORM_KEY&amp;#39;, &amp;#39;before_email_send&amp;#39;, 10, 2 );  Modifiers  af/form/email/before_send Applies to all forms. af/form/email/before_send/key=FORM_KEY Applies to forms with specific key. af/form/email/before_send/id=FORM_ID Applies to forms with specific post ID.  </description>
+    </item>
+    
+    <item>
+      <title>af/form/email/content</title>
+      <link>/filters/af/form/email/content/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/filters/af/form/email/content/</guid>
+      <description>Filter the contents of a form email before sending.
+&amp;lt;?php function filter_email_content( $content, $email, $form, $fields ) { // Add some extra text to the end of the content  $content .= &amp;#39; Some extra content&amp;#39;; return $content; } add_filter( &amp;#39;af/form/email/content/key=FORM_KEY&amp;#39;, &amp;#39;filter_email_content&amp;#39;, 10, 4 );  Modifiers  af/form/email/content Applies to all forms. af/form/email/content/key=FORM_KEY Applies to forms with specific key. af/form/email/content/id=FORM_ID Applies to forms with specific post ID.  </description>
+    </item>
+    
+    <item>
+      <title>af/form/email/headers</title>
+      <link>/filters/af/form/email/headers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/filters/af/form/email/headers/</guid>
+      <description>Filter the headers of a form email before sending. $headers should be an array of email headers.
+&amp;lt;?php function filter_email_headers( $headers, $email, $form, $fields ) { // Set the reply-to address 	$headers[] = &amp;#39;Reply-To: john@doe.com&amp;#39;; return $headers; } add_filter( &amp;#39;af/form/email/headers/key=FORM_KEY&amp;#39;, &amp;#39;filter_email_headers&amp;#39;, 10, 4 );  Modifiers  af/form/email/headers Applies to all forms. af/form/email/headers/key=FORM_KEY Applies to forms with specific key. af/form/email/headers/id=FORM_ID Applies to forms with specific post ID.  </description>
+    </item>
+    
+    <item>
+      <title>af/form/email/recipients</title>
+      <link>/filters/af/form/email/recipients/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/filters/af/form/email/recipients/</guid>
+      <description>Filter the recipient of a form email before sending. Should be a comma-separated list of email addresses.
+This filter can also be used to stop an email by returning false. In combination with af_get_field( &#39;FIELD_NAME&#39; ) this can be used to conditionally send emails based on submitted values.
+&amp;lt;?php function filter_email_recipient( $recipient, $email, $form, $fields ) { // Add another recipient to email  $recipient .= &amp;#39;, john@doe.com&amp;#39;; return $recipient; } add_filter( &amp;#39;af/form/email/recipient/key=FORM_KEY&amp;#39;, &amp;#39;filter_email_recipient&amp;#39;, 10, 4 );  Modifiers  af/form/email/recipients Applies to all forms.</description>
+    </item>
+    
+    <item>
+      <title>af/form/email/styles</title>
+      <link>/filters/af/form/email/styles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/filters/af/form/email/styles/</guid>
+      <description>Alter the CSS used for email notifications.
+&amp;lt;?php function filter_email_styles( $styles, $email, $form ) { // Remove all default styles  return &amp;#39;&amp;#39;; } add_filter( &amp;#39;af/form/email/styles/key=FORM_KEY&amp;#39;, &amp;#39;filter_email_styles&amp;#39;, 10, 3 );  Modifiers  af/form/email/styles Applies to all forms. af/form/email/styles/key=FORM_KEY Applies to forms with specific key. af/form/email/styles/id=FORM_ID Applies to forms with specific post ID.  </description>
+    </item>
+    
+    <item>
+      <title>af/form/email/subject</title>
+      <link>/filters/af/form/email/subject/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/filters/af/form/email/subject/</guid>
+      <description>Filter the subject line of a form email before sending.
+&amp;lt;?php function filter_email_subject( $subject, $email, $form, $fields ) { // Alter the subject line  $subject = &amp;#39;New subject&amp;#39;; return $subject; } add_filter( &amp;#39;af/form/email/subject/key=FORM_KEY&amp;#39;, &amp;#39;filter_email_subject&amp;#39;, 10, 4 );  Modifiers  af/form/email/subject Applies to all forms. af/form/email/subject/key=FORM_KEY Applies to forms with specific key. af/form/email/subject/id=FORM_ID Applies to forms with specific post ID.  </description>
+    </item>
+    
+    <item>
+      <title>af/form/entry_created</title>
+      <link>/actions/af/form/entry_created/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/actions/af/form/entry_created/</guid>
+      <description>Triggered after an entry has been created
+&amp;lt;?php function entry_created( $entry_id, $form ) { // Do something with entry } add_action( &amp;#39;af/form/entry_created/key=FORM_KEY&amp;#39;, &amp;#39;entry_created&amp;#39;, 10, 2 );  Modifiers  af/form/entry_created Applies to all forms. af/form/entry_created/key=FORM_KEY Applies to forms with specific key. af/form/entry_created/id=FORM_ID Applies to forms with specific post ID.  </description>
+    </item>
+    
+    <item>
+      <title>af/form/field_attributes</title>
+      <link>/filters/af/form/field_attributes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/filters/af/form/field_attributes/</guid>
+      <description>Filter attributes on field wrappers. Use to add classes, set an ID, or add new attributes.
+$attributes is an array of HTML attributes and their values.
+&amp;lt;?php function filter_field_attributes( $attributes, $field, $form, $args ) { $attributes[&amp;#39;id&amp;#39;] = &amp;#39;form-id&amp;#39;; return $attributes; } add_filter( &amp;#39;af/form/field_attributes/key=FORM_KEY&amp;#39;, &amp;#39;filter_field_attributes&amp;#39;, 10, 4 );  Modifiers  af/form/field_attributes Applies to all forms. af/form/field_attributes/key=FORM_KEY Applies to forms with specific key. af/form/field_attributes/id=FORM_ID Applies to forms with specific post ID.  </description>
+    </item>
+    
+    <item>
+      <title>af/form/hidden_fields</title>
+      <link>/actions/af/form/hidden_fields/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/actions/af/form/hidden_fields/</guid>
+      <description>Use this action to add hidden inputs which can contain data you want to pass along your form, for example the current post title as shown in the example below.
+The hidden fields will be available in all submission hooks, such as af/form/submission, and can be accessed through the $_POST object. Please keep in mind that hidden inputs are not ACF fields and won&amp;rsquo;t be saved automatically to entries or posts.</description>
+    </item>
+    
+    <item>
+      <title>af/form/mailchimp/request</title>
+      <link>/filters/af/form/mailchimp/request/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/filters/af/form/mailchimp/request/</guid>
+      <description>Change the Mailchimp API request before it&amp;rsquo;s sent. The request is for the &amp;ldquo;Add member to list&amp;rdquo; endpoint.
+&amp;lt;?php function modify_mailchimp_request( $request, $form, $args ) { // The request body is JSON encoded so we must first decode it  $body = json_decode( $request[&amp;#39;body&amp;#39;], true ); // Set custom merge tag named &amp;#34;NICKNAME&amp;#34; from &amp;#34;nickname&amp;#34; field  $body[&amp;#39;merge_fields&amp;#39;][&amp;#39;NICKNAME&amp;#39;] = af_get_field( &amp;#39;nickname&amp;#39; ); // Re-encode the altered body as JSON  $request[&amp;#39;body&amp;#39;] = json_encode( $body, JSON_FORCE_OBJECT ); return $request; } add_filter( &amp;#39;af/form/mailchimp/request/key=FORM_KEY&amp;#39;, &amp;#39;modify_mailchimp_request&amp;#39;, 10, 3 );  Modifiers  af/form/mailchimp/request Applies to all forms.</description>
+    </item>
+    
+    <item>
+      <title>af/form/next_button_atts</title>
+      <link>/filters/af/form/next_button_atts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/filters/af/form/next_button_atts/</guid>
+      <description>Filter attributes on the next button in multi-page forms. Use to add classes, set an ID, or add new attributes.
+$attributes is an array of HTML attributes and their values.
+&amp;lt;?php function filter_next_button_attributes( $attributes, $field ) { $attributes[&amp;#39;class&amp;#39;] .= &amp;#39; button&amp;#39;; return $attributes; } add_filter( &amp;#39;af/form/next_button_atts&amp;#39;, &amp;#39;filter_next_button_attributes&amp;#39;, 10, 2 );  </description>
+    </item>
+    
+    <item>
+      <title>af/form/page_changed</title>
+      <link>/actions/af/form/page_changed/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/actions/af/form/page_changed/</guid>
+      <description>This Javascript action will be triggered when the current page is changed in a multi-page form.
+acf.addAction( &amp;#39;af/form/page_changed&amp;#39;, function( newPage, previousPage, form ) { console.log(&amp;#34;Changed page from %d to %d&amp;#34;, previousPage, newPage); });  Scroll to top of form when page changes acf.addAction( &amp;#39;af/form/page_changed&amp;#39;, function( newPage, previousPage, form ) { $( &amp;#39;html, body&amp;#39; ).animate({ scrollTop: form.$el.offset().top, }, 1000); });  </description>
+    </item>
+    
+    <item>
+      <title>af/form/previous_button_atts</title>
+      <link>/filters/af/form/previous_button_atts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/filters/af/form/previous_button_atts/</guid>
+      <description>Filter attributes on the previous button in multi-page forms. Use to add classes, set an ID, or add new attributes.
+$attributes is an array of HTML attributes and their values.
+&amp;lt;?php function filter_previous_button_attributes( $attributes, $field ) { $attributes[&amp;#39;class&amp;#39;] .= &amp;#39; button&amp;#39;; return $attributes; } add_filter( &amp;#39;af/form/previous_button_atts&amp;#39;, &amp;#39;filter_previous_button_attributes&amp;#39;, 10, 2 );  </description>
+    </item>
+    
+    <item>
+      <title>af/form/restriction</title>
+      <link>/filters/af/form/restriction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/filters/af/form/restriction/</guid>
+      <description>Restrict a form based on custom conditions. Return false to display form normally or return a message which should be displayed instead of the form fields.
+The first conditional in the example should always be included in order to not override other restrictions
+&amp;lt;?php function restrict_form( $restriction, $form, $args ) { // Added in case another restriction already applies 	if ( $restriction ) { return $restriction; } if ( condition_to_hide_form ) { return &amp;#39;This message will be displayed instead of the form&amp;#39;; } return false; } add_filter( &amp;#39;af/form/restriction/key=FORM_KEY&amp;#39;, &amp;#39;restrict_form&amp;#39;, 10, 3 );  Modifiers  af/form/restriction Applies to all forms.</description>
+    </item>
+    
+    <item>
+      <title>af/form/validate</title>
+      <link>/actions/af/form/validate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/actions/af/form/validate/</guid>
+      <description>Triggered before a form is submitted, giving a chance to perform extra validation. Validation errors should be added using af_add_error( $field_name_or_key, $message ).
+&amp;lt;?php function validate_form( $form, $args ) { $age = af_get_field( &amp;#39;age&amp;#39; ); if ( $age &amp;gt; 18 ) { af_add_error( &amp;#39;age&amp;#39;, &amp;#39;You must be above 18&amp;#39; ); } } add_action( &amp;#39;af/form/validate/key=FORM_KEY&amp;#39;, &amp;#39;validate_form&amp;#39;, 10, 2 );  Modifiers  af/form/validate Applies to all forms. af/form/validate/key=FORM_KEY Applies to forms with specific key.</description>
+    </item>
+    
+    <item>
+      <title>Creating and editing posts</title>
+      <link>/guides/creating-and-editing-posts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/creating-and-editing-posts/</guid>
+      <description>A common use case for front-end forms is allowing users to create and edit posts. Maybe you want to let users submit post drafts which administrators can review and publish. Or have a post type for support issues which customers can submit and edit. Advanced Forms Pro makes it dead-simple to make forms which create and edit posts.
+Configuring your form Go to the Wordpress admin and edit the form which you want to configure.</description>
+    </item>
+    
+    <item>
+      <title>Creating and editing users</title>
+      <link>/guides/creating-and-editing-users/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/creating-and-editing-users/</guid>
+      <description>A common use case for front-end forms is allowing visitors to create and edit users. Maybe you want to let users upload a picture gallery to their own profile. Or you want a sign up form where users can provide extra information which is saved as fields on their profiles. Advanced Forms Pro makes user creation and editing super easy to setup.
+Configuring your form Go to the Wordpress admin and edit the form which you want to configure.</description>
+    </item>
+    
+    <item>
+      <title>Frequently Asked Questions</title>
+      <link>/faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/faq/</guid>
+      <description>Why is my success message not showing after submission? This issue is often caused by page caching provided either by your host or a plugin on your site. We recommend disabling the cache for the page with your form or to create a custom &amp;ldquo;thank you&amp;rdquo; page and redirecting to that after submission.
+How do I redirect to another page after submission? You can pass a URL as the redirect argument when displaying your form.</description>
+    </item>
+    
+    <item>
+      <title>Functions</title>
+      <link>/functions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/functions/</guid>
+      <description>advanced_form() af_get_field() AF() AF() returns the singleton object which contains information about the current submission, including the form, arguments and fields.</description>
+    </item>
+    
+    <item>
+      <title>Installing and activating</title>
+      <link>/guides/installing-and-activating/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/installing-and-activating/</guid>
+      <description>Advanced Forms Pro can be purchased from hookturn.io. After purchasing you will get get a license key as well as a download link to the plugin. The license key grants updates and support for one year.
+ Download the plugin zip file. Install and activate using the downloaded file. If you have the free version installed, disable it before activating the Pro plugin. Navigate to &amp;ldquo;Settings&amp;rdquo; below &amp;ldquo;Forms&amp;rdquo;. Enter your license key and click &amp;ldquo;Update&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Support</title>
+      <link>/support/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/support/</guid>
+      <description>If you have a question or are experiencing an issue, please start by checking out the Frequently Asked Questions. If you can&amp;rsquo;t find an answer there we&amp;rsquo;d of course be happy to help out!
+If you have a pre-sales question about the Pro plugin, please send us an email instead of using the support forum.
+Free users Support is offered through the WordPress support forum
+Go to support forum &amp;rarr;  Pro users Priority support is offered over email where we respond as soon as possible</description>
+    </item>
+    
+    <item>
+      <title>Using calculated fields</title>
+      <link>/guides/using-calculated-fields/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/using-calculated-fields/</guid>
+      <description>Calculated fields are updated live when a form is filled out and can contain any content you&amp;rsquo;d like to. They are perfect for providing previews or to show calculated values before submission.
+Adding a calculated field Calculated fields are just regular ACF fields. Go to your field group and add a new field of type &amp;ldquo;Calculated&amp;rdquo;. Next you need to configure what value this field should display which is done in the form settings.</description>
+    </item>
+    
+    <item>
+      <title>Videos</title>
+      <link>/videos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/videos/</guid>
+      <description>Introduction   How to pre-fill form fields   How to create multi-stage forms   </description>
+    </item>
+    
+  </channel>
+</rss>

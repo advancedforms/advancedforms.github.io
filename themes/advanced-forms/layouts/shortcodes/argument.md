@@ -1,0 +1,1 @@
+<code><a href="{{ ref . (print "guides/4-arguments#" (.Get 0)) }}">{{ .Get 0 }}</a></code>
