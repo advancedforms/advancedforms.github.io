@@ -1,807 +1,89 @@
-<!DOCTYPE html>
-
-
-
-
-<html class="no-js" lang="en">
-  
-  <head>
-    <title>Configuring integrations | Advanced Forms</title>
-    <meta name="description" content="">
-
-    <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="Configuring integrations">
-    <meta property="og:image" content="/images/site-logo.png">
-    <meta property="og:description" content="">
-    <meta property="og:site_name" content="Advanced Forms">
-
-    
-    <link rel="stylesheet" href="/css/style.min.edb9bcdb8b47a22c90afb5bb4021992473b46b32dc679333da2326f9c4c7a47c.css" />
-    <script src="https://unpkg.com/feather-icons"></script>
-  </head>
-
-  <body>
-    <div class="container">
-      <aside>
-        <a class="logo-wrapper" href="/"
-          ><img src="/images/icon-128x128.png" class="logo" alt="Advanced Forms logo" />
-          <h1>Advanced Forms</h1>
-        </a>
-
-        <nav class="menu">
-  
-  
-  
-    
-
-    <div class="sub-menu " data-parent="home">
-      <a href="/" class="back">&larr; Go back</a>
-      <h2 class="subtitle"><i data-feather='play'></i> Home</h2>
-
-      
-    </div>
-  
-    
-      
-    
-
-    <div class="sub-menu active" data-parent="guides">
-      <a href="/" class="back">&larr; Go back</a>
-      <h2 class="subtitle"><i data-feather='align-left'></i> Guides</h2>
-
-      
-        
-          <h3 class="section-title">Basic</h3>
-
-          
-            <a class="item sub " href="/guides/creating-a-form/">Creating a form</a>
-          
-            <a class="item sub " href="/guides/configuring-your-form/">Configuring your form</a>
-          
-            <a class="item sub " href="/guides/displaying-a-form/">Displaying a form</a>
-          
-            <a class="item sub " href="/guides/available-arguments/">Available arguments</a>
-          
-        
-      
-        
-          <h3 class="section-title">Pro</h3>
-
-          
-            <a class="item sub " href="/guides/installing-and-activating/">Installing and activating</a>
-          
-            <a class="item sub " href="/guides/creating-and-editing-posts/">Creating and editing posts</a>
-          
-            <a class="item sub " href="/guides/creating-and-editing-users/">Creating and editing users</a>
-          
-            <a class="item sub active" href="/guides/configuring-integrations/">Configuring integrations</a>
-          
-            <a class="item sub " href="/guides/using-calculated-fields/">Using calculated fields</a>
-          
-        
-      
-        
-          <h3 class="section-title">Advanced</h3>
-
-          
-            <a class="item sub " href="/guides/processing-form-submissions/">Processing form submissions</a>
-          
-            <a class="item sub " href="/guides/adding-custom-merge-tags/">Adding custom merge tags</a>
-          
-            <a class="item sub " href="/guides/adding-custom-restrictions/">Adding custom restrictions</a>
-          
-            <a class="item sub " href="/guides/customizing-the-form-template/">Customizing the form template</a>
-          
-            <a class="item sub " href="/guides/decreasing-number-of-scripts-and-styles/">Decreasing number of scripts and styles</a>
-          
-            <a class="item sub " href="/guides/customizing-validations/">Customizing validations</a>
-          
-        
-      
-    </div>
-  
-    
-
-    <div class="sub-menu " data-parent="">
-      <a href="/" class="back">&larr; Go back</a>
-      <h2 class="subtitle"><i data-feather='youtube'></i> Videos</h2>
-
-      
-    </div>
-  
-    
-
-    <div class="sub-menu " data-parent="">
-      <a href="/" class="back">&larr; Go back</a>
-      <h2 class="subtitle"><i data-feather='help-circle'></i> FAQ</h2>
-
-      
-    </div>
-  
-    
-
-    <div class="sub-menu " data-parent="">
-      <a href="/" class="back">&larr; Go back</a>
-      <h2 class="subtitle"><i data-feather='message-circle'></i> Support</h2>
-
-      
-    </div>
-  
-    
-
-    <div class="sub-menu " data-parent="">
-      <a href="/" class="back">&larr; Go back</a>
-      <h2 class="subtitle"> Divider</h2>
-
-      
-    </div>
-  
-    
-
-    <div class="sub-menu " data-parent="">
-      <a href="/" class="back">&larr; Go back</a>
-      <h2 class="subtitle"><i data-feather='code'></i> Functions</h2>
-
-      
-    </div>
-  
-    
-
-    <div class="sub-menu " data-parent="actions">
-      <a href="/" class="back">&larr; Go back</a>
-      <h2 class="subtitle"><i data-feather='zap'></i> Actions</h2>
-
-      
-        
-          <h3 class="section-title">Display</h3>
-
-          
-            <a class="item sub " href="/actions/af/form/before_title/">af/form/before_title</a>
-          
-            <a class="item sub " href="/actions/af/form/before_fields/">af/form/before_fields</a>
-          
-            <a class="item sub " href="/actions/af/form/after_fields/">af/form/after_fields</a>
-          
-            <a class="item sub " href="/actions/af/form/hidden_fields/">af/form/hidden_fields</a>
-          
-        
-      
-        
-          <h3 class="section-title">Events</h3>
-
-          
-            <a class="item sub " href="/actions/af/form/email/before_send/">af/form/email/before_send</a>
-          
-            <a class="item sub " href="/actions/af/form/email/after_send/">af/form/email/after_send</a>
-          
-            <a class="item sub " href="/actions/af/form/entry_created/">af/form/entry_created</a>
-          
-            <a class="item sub " href="/actions/af/form/validate/">af/form/validate</a>
-          
-        
-      
-        
-          <h3 class="section-title">Pro</h3>
-
-          
-            <a class="item sub " href="/actions/af/form/editing/post_created/">af/form/editing/post_created</a>
-          
-            <a class="item sub " href="/actions/af/form/editing/post_updated/">af/form/editing/post_updated</a>
-          
-            <a class="item sub " href="/actions/af/form/editing/user_created/">af/form/editing/user_created</a>
-          
-            <a class="item sub " href="/actions/af/form/editing/user_updated/">af/form/editing/user_updated</a>
-          
-        
-      
-        
-          <h3 class="section-title">Javascript</h3>
-
-          
-            <a class="item sub " href="/actions/af/form/page_changed/">af/form/page_changed</a>
-          
-            <a class="item sub " href="/actions/af/field/calculated/update_value/">af/field/calculated/update_value</a>
-          
-        
-      
-    </div>
-  
-    
-
-    <div class="sub-menu " data-parent="filters">
-      <a href="/" class="back">&larr; Go back</a>
-      <h2 class="subtitle"><i data-feather='filter'></i> Filters</h2>
-
-      
-        
-          <h3 class="section-title">Forms</h3>
-
-          
-            <a class="item sub " href="/filters/af/form/args/">af/form/args</a>
-          
-            <a class="item sub " href="/filters/af/form/before_render/">af/form/before_render</a>
-          
-            <a class="item sub " href="/filters/af/form/restriction/">af/form/restriction</a>
-          
-            <a class="item sub " href="/filters/af/field/prefill_value/">af/field/prefill_value</a>
-          
-            <a class="item sub " href="/filters/af/field/before_render/">af/field/before_render</a>
-          
-        
-      
-        
-          <h3 class="section-title">Display</h3>
-
-          
-            <a class="item sub " href="/filters/af/form/field_attributes/">af/form/field_attributes</a>
-          
-            <a class="item sub " href="/filters/af/form/button_attributes/">af/form/button_attributes</a>
-          
-            <a class="item sub " href="/filters/af/form/previous_button_atts/">af/form/previous_button_atts</a>
-          
-            <a class="item sub " href="/filters/af/form/next_button_atts/">af/form/next_button_atts</a>
-          
-        
-      
-        
-          <h3 class="section-title">Emails</h3>
-
-          
-            <a class="item sub " href="/filters/af/form/email/recipients/">af/form/email/recipients</a>
-          
-            <a class="item sub " href="/filters/af/form/email/subject/">af/form/email/subject</a>
-          
-            <a class="item sub " href="/filters/af/form/email/content/">af/form/email/content</a>
-          
-            <a class="item sub " href="/filters/af/form/email/headers/">af/form/email/headers</a>
-          
-            <a class="item sub " href="/filters/af/form/email/attachments/">af/form/email/attachments</a>
-          
-            <a class="item sub " href="/filters/af/form/email/styles/">af/form/email/styles</a>
-          
-        
-      
-        
-          <h3 class="section-title">Pro</h3>
-
-          
-            <a class="item sub " href="/filters/af/field/calculate_value/">af/field/calculate_value</a>
-          
-            <a class="item sub " href="/filters/af/form/editing/post_data/">af/form/editing/post_data</a>
-          
-            <a class="item sub " href="/filters/af/form/editing/user_data/">af/form/editing/user_data</a>
-          
-            <a class="item sub " href="/filters/af/form/mailchimp/request/">af/form/mailchimp/request</a>
-          
-        
-      
-    </div>
-  
-
-  <div class="main-menu ">
-    
-      
-      <a
-        class="item  "
-        href="/"
-        data-id="home">
-        <i data-feather='play'></i> Home
-      </a>
-      
-    
-      
-      <a
-        class="item  has-sub-pages"
-        
-        data-id="guides">
-        <i data-feather='align-left'></i> Guides
-      </a>
-      
-    
-      
-      <a
-        class="item  "
-        href="/videos/"
-        data-id="">
-        <i data-feather='youtube'></i> Videos
-      </a>
-      
-    
-      
-      <a
-        class="item  "
-        href="/faq/"
-        data-id="">
-        <i data-feather='help-circle'></i> FAQ
-      </a>
-      
-    
-      
-      <a
-        class="item  "
-        href="/support/"
-        data-id="">
-        <i data-feather='message-circle'></i> Support
-      </a>
-      
-    
-      
-        <div class="divider"></div>
-      
-    
-      
-      <a
-        class="item  "
-        href="/functions/"
-        data-id="">
-        <i data-feather='code'></i> Functions
-      </a>
-      
-    
-      
-      <a
-        class="item  has-sub-pages"
-        
-        data-id="actions">
-        <i data-feather='zap'></i> Actions
-      </a>
-      
-    
-      
-      <a
-        class="item  has-sub-pages"
-        
-        data-id="filters">
-        <i data-feather='filter'></i> Filters
-      </a>
-      
-    
-  </div>
-</nav>
-
-      </aside>
-      <main>
-        <header class="regular-header">
-          <i data-feather="search"></i>
-          <input type="text" placeholder="Search documentation..." />
-        </header>
-
-        <header class="mobile-header">
-          <a href="/"><img src="/images/icon-128x128.png" class="logo" alt="Advanced Forms logo" /> </a>
-          <a class="menu-toggle">Menu <i data-feather="menu"></i></a>
-        </header>
-
-        <div class="mobile-menu">
-          <nav class="menu">
-  
-  
-  
-    
-
-    <div class="sub-menu " data-parent="home">
-      <a href="/" class="back">&larr; Go back</a>
-      <h2 class="subtitle"><i data-feather='play'></i> Home</h2>
-
-      
-    </div>
-  
-    
-      
-    
-
-    <div class="sub-menu active" data-parent="guides">
-      <a href="/" class="back">&larr; Go back</a>
-      <h2 class="subtitle"><i data-feather='align-left'></i> Guides</h2>
-
-      
-        
-          <h3 class="section-title">Basic</h3>
-
-          
-            <a class="item sub " href="/guides/creating-a-form/">Creating a form</a>
-          
-            <a class="item sub " href="/guides/configuring-your-form/">Configuring your form</a>
-          
-            <a class="item sub " href="/guides/displaying-a-form/">Displaying a form</a>
-          
-            <a class="item sub " href="/guides/available-arguments/">Available arguments</a>
-          
-        
-      
-        
-          <h3 class="section-title">Pro</h3>
-
-          
-            <a class="item sub " href="/guides/installing-and-activating/">Installing and activating</a>
-          
-            <a class="item sub " href="/guides/creating-and-editing-posts/">Creating and editing posts</a>
-          
-            <a class="item sub " href="/guides/creating-and-editing-users/">Creating and editing users</a>
-          
-            <a class="item sub active" href="/guides/configuring-integrations/">Configuring integrations</a>
-          
-            <a class="item sub " href="/guides/using-calculated-fields/">Using calculated fields</a>
-          
-        
-      
-        
-          <h3 class="section-title">Advanced</h3>
-
-          
-            <a class="item sub " href="/guides/processing-form-submissions/">Processing form submissions</a>
-          
-            <a class="item sub " href="/guides/adding-custom-merge-tags/">Adding custom merge tags</a>
-          
-            <a class="item sub " href="/guides/adding-custom-restrictions/">Adding custom restrictions</a>
-          
-            <a class="item sub " href="/guides/customizing-the-form-template/">Customizing the form template</a>
-          
-            <a class="item sub " href="/guides/decreasing-number-of-scripts-and-styles/">Decreasing number of scripts and styles</a>
-          
-            <a class="item sub " href="/guides/customizing-validations/">Customizing validations</a>
-          
-        
-      
-    </div>
-  
-    
-
-    <div class="sub-menu " data-parent="">
-      <a href="/" class="back">&larr; Go back</a>
-      <h2 class="subtitle"><i data-feather='youtube'></i> Videos</h2>
-
-      
-    </div>
-  
-    
-
-    <div class="sub-menu " data-parent="">
-      <a href="/" class="back">&larr; Go back</a>
-      <h2 class="subtitle"><i data-feather='help-circle'></i> FAQ</h2>
-
-      
-    </div>
-  
-    
-
-    <div class="sub-menu " data-parent="">
-      <a href="/" class="back">&larr; Go back</a>
-      <h2 class="subtitle"><i data-feather='message-circle'></i> Support</h2>
-
-      
-    </div>
-  
-    
-
-    <div class="sub-menu " data-parent="">
-      <a href="/" class="back">&larr; Go back</a>
-      <h2 class="subtitle"> Divider</h2>
-
-      
-    </div>
-  
-    
-
-    <div class="sub-menu " data-parent="">
-      <a href="/" class="back">&larr; Go back</a>
-      <h2 class="subtitle"><i data-feather='code'></i> Functions</h2>
-
-      
-    </div>
-  
-    
-
-    <div class="sub-menu " data-parent="actions">
-      <a href="/" class="back">&larr; Go back</a>
-      <h2 class="subtitle"><i data-feather='zap'></i> Actions</h2>
-
-      
-        
-          <h3 class="section-title">Display</h3>
-
-          
-            <a class="item sub " href="/actions/af/form/before_title/">af/form/before_title</a>
-          
-            <a class="item sub " href="/actions/af/form/before_fields/">af/form/before_fields</a>
-          
-            <a class="item sub " href="/actions/af/form/after_fields/">af/form/after_fields</a>
-          
-            <a class="item sub " href="/actions/af/form/hidden_fields/">af/form/hidden_fields</a>
-          
-        
-      
-        
-          <h3 class="section-title">Events</h3>
-
-          
-            <a class="item sub " href="/actions/af/form/email/before_send/">af/form/email/before_send</a>
-          
-            <a class="item sub " href="/actions/af/form/email/after_send/">af/form/email/after_send</a>
-          
-            <a class="item sub " href="/actions/af/form/entry_created/">af/form/entry_created</a>
-          
-            <a class="item sub " href="/actions/af/form/validate/">af/form/validate</a>
-          
-        
-      
-        
-          <h3 class="section-title">Pro</h3>
-
-          
-            <a class="item sub " href="/actions/af/form/editing/post_created/">af/form/editing/post_created</a>
-          
-            <a class="item sub " href="/actions/af/form/editing/post_updated/">af/form/editing/post_updated</a>
-          
-            <a class="item sub " href="/actions/af/form/editing/user_created/">af/form/editing/user_created</a>
-          
-            <a class="item sub " href="/actions/af/form/editing/user_updated/">af/form/editing/user_updated</a>
-          
-        
-      
-        
-          <h3 class="section-title">Javascript</h3>
-
-          
-            <a class="item sub " href="/actions/af/form/page_changed/">af/form/page_changed</a>
-          
-            <a class="item sub " href="/actions/af/field/calculated/update_value/">af/field/calculated/update_value</a>
-          
-        
-      
-    </div>
-  
-    
-
-    <div class="sub-menu " data-parent="filters">
-      <a href="/" class="back">&larr; Go back</a>
-      <h2 class="subtitle"><i data-feather='filter'></i> Filters</h2>
-
-      
-        
-          <h3 class="section-title">Forms</h3>
-
-          
-            <a class="item sub " href="/filters/af/form/args/">af/form/args</a>
-          
-            <a class="item sub " href="/filters/af/form/before_render/">af/form/before_render</a>
-          
-            <a class="item sub " href="/filters/af/form/restriction/">af/form/restriction</a>
-          
-            <a class="item sub " href="/filters/af/field/prefill_value/">af/field/prefill_value</a>
-          
-            <a class="item sub " href="/filters/af/field/before_render/">af/field/before_render</a>
-          
-        
-      
-        
-          <h3 class="section-title">Display</h3>
-
-          
-            <a class="item sub " href="/filters/af/form/field_attributes/">af/form/field_attributes</a>
-          
-            <a class="item sub " href="/filters/af/form/button_attributes/">af/form/button_attributes</a>
-          
-            <a class="item sub " href="/filters/af/form/previous_button_atts/">af/form/previous_button_atts</a>
-          
-            <a class="item sub " href="/filters/af/form/next_button_atts/">af/form/next_button_atts</a>
-          
-        
-      
-        
-          <h3 class="section-title">Emails</h3>
-
-          
-            <a class="item sub " href="/filters/af/form/email/recipients/">af/form/email/recipients</a>
-          
-            <a class="item sub " href="/filters/af/form/email/subject/">af/form/email/subject</a>
-          
-            <a class="item sub " href="/filters/af/form/email/content/">af/form/email/content</a>
-          
-            <a class="item sub " href="/filters/af/form/email/headers/">af/form/email/headers</a>
-          
-            <a class="item sub " href="/filters/af/form/email/attachments/">af/form/email/attachments</a>
-          
-            <a class="item sub " href="/filters/af/form/email/styles/">af/form/email/styles</a>
-          
-        
-      
-        
-          <h3 class="section-title">Pro</h3>
-
-          
-            <a class="item sub " href="/filters/af/field/calculate_value/">af/field/calculate_value</a>
-          
-            <a class="item sub " href="/filters/af/form/editing/post_data/">af/form/editing/post_data</a>
-          
-            <a class="item sub " href="/filters/af/form/editing/user_data/">af/form/editing/user_data</a>
-          
-            <a class="item sub " href="/filters/af/form/mailchimp/request/">af/form/mailchimp/request</a>
-          
-        
-      
-    </div>
-  
-
-  <div class="main-menu ">
-    
-      
-      <a
-        class="item  "
-        href="/"
-        data-id="home">
-        <i data-feather='play'></i> Home
-      </a>
-      
-    
-      
-      <a
-        class="item  has-sub-pages"
-        
-        data-id="guides">
-        <i data-feather='align-left'></i> Guides
-      </a>
-      
-    
-      
-      <a
-        class="item  "
-        href="/videos/"
-        data-id="">
-        <i data-feather='youtube'></i> Videos
-      </a>
-      
-    
-      
-      <a
-        class="item  "
-        href="/faq/"
-        data-id="">
-        <i data-feather='help-circle'></i> FAQ
-      </a>
-      
-    
-      
-      <a
-        class="item  "
-        href="/support/"
-        data-id="">
-        <i data-feather='message-circle'></i> Support
-      </a>
-      
-    
-      
-        <div class="divider"></div>
-      
-    
-      
-      <a
-        class="item  "
-        href="/functions/"
-        data-id="">
-        <i data-feather='code'></i> Functions
-      </a>
-      
-    
-      
-      <a
-        class="item  has-sub-pages"
-        
-        data-id="actions">
-        <i data-feather='zap'></i> Actions
-      </a>
-      
-    
-      
-      <a
-        class="item  has-sub-pages"
-        
-        data-id="filters">
-        <i data-feather='filter'></i> Filters
-      </a>
-      
-    
-  </div>
-</nav>
-
-          <a class="menu-close">Close menu <i data-feather="arrow-up"></i></a>
-        </div>
-
-        
-<div class="content section">
-  <h1>Configuring integrations</h1>
-
-  
-  
-  
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#mailchimp">Mailchimp</a>
-      <ul>
-        <li><a href="#generating-an-api-key">Generating an API Key</a></li>
-        <li><a href="#connecting-your-form-to-mailchimp">Connecting your form to Mailchimp</a></li>
-      </ul>
-    </li>
-    <li><a href="#slack">Slack</a>
-      <ul>
-        <li><a href="#creating-a-webhook">Creating a webhook</a></li>
-        <li><a href="#configuring-your-form">Configuring your form</a></li>
-      </ul>
-    </li>
-    <li><a href="#zapier">Zapier</a>
-      <ul>
-        <li><a href="#creating-a-zap">Creating a Zap</a></li>
-      </ul>
-    </li>
-    <li><a href="#google-recaptcha">Google reCAPTCHA</a>
-      <ul>
-        <li><a href="#getting-api-keys">Getting API keys</a></li>
-        <li><a href="#protecting-your-form">Protecting your form</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  
-
-  <h2 id="mailchimp">Mailchimp</h2>
-<p>Advanced Forms Pro enables you to connect forms to Mailchimp and subscribe your visitors to Mailchimp lists. Configuring Mailchimp is easy, all you need is an API key.</p>
-<h3 id="generating-an-api-key">Generating an API Key</h3>
-<p>Start by logging in to your Mailchimp account on mailchimp.com. Click your profile name in the top right corner and select <em>Account</em>. Navigate to <em>API Keys</em> under the <em>Extras</em> tab and press the <em>Create a Key</em> button. Lastly, copy the newly generated key.</p>
-<iframe src="//fast.wistia.net/embed/iframe/0x8n36j330" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" webkitallowfullscreen="webkitallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" width="600" height="400"></iframe>
-<h3 id="connecting-your-form-to-mailchimp">Connecting your form to Mailchimp</h3>
-<p>Once you have your API key it&rsquo;s time to configure Advanced Forms. Log in to the Wordpress admin panel and navigate to <em>Forms</em> → <em>Settings</em>. Paste your API key in the <em>Mailchimp API key</em> and save. Advanced Forms is now connected to your Mailchimp account and ready to start adding some subscribers.</p>
-<p>Find and edit the form you want to connect. Navigate to the <em>Integrations</em> tab and enable the Mailchimp integration. You should now be faced with a few settings. The list field lets you configure which Mailchimp list to subscribe users to and the email field lets you select which form field to get an email address from. Remember that this needs to be a valid email address and hence it&rsquo;s recommended to use an ACF email field. Optionally you may also configure first name and last name to make your subscriber info more complete.</p>
-<p><img src="/images/mailchimp-settings.png" alt="Mailchimp form settings"></p>
-<h2 id="slack">Slack</h2>
-<p>By connecting your Slack workspace to a form you will instantly get a message whenever a visitor sends a submission. A perfect way to be notified whether you&rsquo;re creating a simple contact form or building a full-blown helpdesk.</p>
-<h3 id="creating-a-webhook">Creating a webhook</h3>
-<p>All you need to connect your form to Slack is a single URL called a webhook. Here&rsquo;s how you get one:</p>
-<ol>
-<li>Navigate to <a href="https://my.slack.com/services/new/incoming-webhook/">my.slack.com/services/new/incoming-webhook/</a> and make sure you are logged in to your Slack workspace.</li>
-<li>Select the channel you want notifications to be sent to and click <em>Add Incoming WebHooks integration</em>.</li>
-<li>Copy your fresh webhook URL.</li>
-</ol>
-<h3 id="configuring-your-form">Configuring your form</h3>
-<p>Once a webhook has been generated you&rsquo;re ready to set up your form. In the Wordpress admin find your form, edit it, and enable the Slack integration under <em>Integrations</em>. Fill in your webhook URL and type a little message which will be included with each notification. Also select any fields which you would like included. That&rsquo;s it!</p>
-<p><img src="/images/slack-notification.png" alt="Example of a Slack notification"></p>
-<h2 id="zapier">Zapier</h2>
-<p>With the help of <a href="https://zapier.com">Zapier</a> you can connect your form to thousand of services and create automated workflows. You could create a form that accepts files from users and automatically uploads them to your Dropbox. Or you could automatically save form submissions to a Google Spreadsheet. There are literally thousands of possibilities.</p>
-<h3 id="creating-a-zap">Creating a Zap</h3>
-<ol>
-<li>Set up a form with all the fields you want to pass on to Zapier.</li>
-<li>Follow this <a href="https://zapier.com/developer/invite/66711/01f290c023c6caeb5201b57663c0af01/">link</a> to create a new Zap for your form.</li>
-<li>Choose the &ldquo;New Submission&rdquo; trigger and continue.</li>
-<li>Copy the provided URL,  and jump over to your form in the Wordpress admin.</li>
-<li>Under &ldquo;Integrations&rdquo;, enable the Zapier integration and the paste the URL from step 5. Finishing by clicking the &ldquo;Send test submission&rdquo; button.</li>
-<li>Hop back to Zapier and continue with the Zap creation process. Zapier should pick up some sample data with your form fields within a few seconds.</li>
-<li>Complete your Zap by connecting it to an action!</li>
-</ol>
-<h2 id="google-recaptcha">Google reCAPTCHA</h2>
-<p>Basic spam protection is built into all forms using a honeypot. Sometimes more sophisticated spam protection is necessary and for these situations Advanced Forms Pro supports Google reCAPTCHA. Once configured, the user will be presented with a challenge when submitting a form if they are suspected of being a bot. Because Advanced Forms uses the invisible reCAPTCHA, most users won&rsquo;t have to click anything to prove that they are human.</p>
-<h3 id="getting-api-keys">Getting API keys</h3>
-<p>Google requires a set of API keys which you&rsquo;ll have to create using a Google account.</p>
-<ol>
-<li>Navigate to <a href="https://www.google.com/recaptcha/admin/create">this page</a> and sign in with your Google account.</li>
-<li>For &ldquo;reCAPTCHA type&rdquo;, select &ldquo;reCAPTCHA v2&rdquo; and &ldquo;Invisible reCAPTCHA badge&rdquo; from the options that appear.</li>
-<li>Fill in the rest of the form and then click &ldquo;Submit&rdquo;. Make note of the generated site key and secret key.</li>
-</ol>
-<h3 id="protecting-your-form">Protecting your form</h3>
-<p>Once you have your API keys it&rsquo;s time to configure the plugin and the forms you want to protect. Log in to the WordPress admin panel and navigate to <em>Forms</em> → <em>Settings</em>. Fill in the site key and secret key you generated in the previous step and save.</p>
-<p>Every form you want to protect must be enabled manually. Go to the edit panel of your form and navigate to the <em>Integrations</em> tab. If you have added your API keys to the plugin settings you should be able to enable the <em>Google reCAPTCHA</em> integration.</p>
-
-</div>
-
-
-        <footer class="section">
-          Created by <a href="https://fabianlindfors.se">Fabian Lindfors</a> 🇸🇪 in collaboration with <a href="https://hookturn.io">Hookturn</a> 🇦🇺
-        </footer>
-      </main>
-    </div>
-
-    <script>
-      feather.replace();
-    </script>
-
-    
-    <script src="/js/script.js"></script>
-  </body>
-</html>
+<!doctype html><html class=no-js lang=en><head><title>Configuring integrations | Advanced Forms for ACF</title><meta name=description content><meta property="og:locale" content="en_US"><meta property="og:title" content="Configuring integrations"><meta property="og:image" content="/images/site-logo.png"><meta property="og:description" content><meta property="og:site_name" content="Advanced Forms for ACF"><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css><link rel=stylesheet href=/css/style.min.ba75937f85aa8c9bfd5153cc40a716a6f64ee88d454ea6bd117bb920c2a79009.css><script src=https://unpkg.com/feather-icons></script></head><body><div class=container><aside><a class=logo-wrapper href=/><img src=/images/icon-128x128.png class=logo alt="Advanced Forms logo"><h1>Advanced Forms</h1></a><nav class=menu><div class=sub-menu data-parent=home><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=play></i> Home</h2></div><div class="sub-menu active" data-parent=guides><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=align-left></i> Guides</h2><h3 class=section-title>Basic</h3><a class="item sub" href=/guides/creating-a-form/>Creating a form</a>
+<a class="item sub" href=/guides/configuring-your-form/>Configuring your form</a>
+<a class="item sub" href=/guides/displaying-your-form/>Displaying your form</a>
+<a class="item sub" href=/guides/available-arguments/>Available arguments</a><h3 class=section-title>Pro</h3><a class="item sub" href=/guides/installing-and-activating/>Installing and activating</a>
+<a class="item sub" href=/guides/creating-and-editing-posts/>Creating and editing posts</a>
+<a class="item sub" href=/guides/creating-and-editing-users/>Creating and editing users</a>
+<a class="item sub active" href=/guides/configuring-integrations/>Configuring integrations</a>
+<a class="item sub" href=/guides/using-calculated-fields/>Using calculated fields</a><h3 class=section-title>Advanced</h3><a class="item sub" href=/guides/processing-form-submissions/>Processing form submissions</a>
+<a class="item sub" href=/guides/adding-custom-merge-tags/>Adding custom merge tags</a>
+<a class="item sub" href=/guides/adding-custom-restrictions/>Adding custom restrictions</a>
+<a class="item sub" href=/guides/customizing-the-form-template/>Customizing the form template</a>
+<a class="item sub" href=/guides/decreasing-number-of-scripts-and-styles/>Decreasing number of scripts and styles</a>
+<a class="item sub" href=/guides/customizing-validations/>Customizing validations</a></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=youtube></i> Videos</h2></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=help-circle></i> FAQ</h2></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=message-circle></i> Support</h2></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle>Divider</h2></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=code></i> Functions</h2></div><div class=sub-menu data-parent=actions><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=zap></i> Actions</h2><h3 class=section-title>Display</h3><a class="item sub" href=/actions/af/form/before_title/>af/form/before_title</a>
+<a class="item sub" href=/actions/af/form/before_fields/>af/form/before_fields</a>
+<a class="item sub" href=/actions/af/form/after_fields/>af/form/after_fields</a>
+<a class="item sub" href=/actions/af/form/hidden_fields/>af/form/hidden_fields</a><h3 class=section-title>Events</h3><a class="item sub" href=/actions/af/form/email/before_send/>af/form/email/before_send</a>
+<a class="item sub" href=/actions/af/form/email/after_send/>af/form/email/after_send</a>
+<a class="item sub" href=/actions/af/form/entry_created/>af/form/entry_created</a>
+<a class="item sub" href=/actions/af/form/validate/>af/form/validate</a><h3 class=section-title>Pro</h3><a class="item sub" href=/actions/af/form/editing/post_created/>af/form/editing/post_created</a>
+<a class="item sub" href=/actions/af/form/editing/post_updated/>af/form/editing/post_updated</a>
+<a class="item sub" href=/actions/af/form/editing/user_created/>af/form/editing/user_created</a>
+<a class="item sub" href=/actions/af/form/editing/user_updated/>af/form/editing/user_updated</a><h3 class=section-title>Javascript</h3><a class="item sub" href=/actions/af/form/page_changed/>af/form/page_changed</a>
+<a class="item sub" href=/actions/af/field/calculated/update_value/>af/field/calculated/update_value</a></div><div class=sub-menu data-parent=filters><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=filter></i> Filters</h2><h3 class=section-title>Forms</h3><a class="item sub" href=/filters/af/form/args/>af/form/args</a>
+<a class="item sub" href=/filters/af/form/before_render/>af/form/before_render</a>
+<a class="item sub" href=/filters/af/form/restriction/>af/form/restriction</a>
+<a class="item sub" href=/filters/af/field/prefill_value/>af/field/prefill_value</a>
+<a class="item sub" href=/filters/af/field/before_render/>af/field/before_render</a><h3 class=section-title>Display</h3><a class="item sub" href=/filters/af/form/field_attributes/>af/form/field_attributes</a>
+<a class="item sub" href=/filters/af/form/button_attributes/>af/form/button_attributes</a>
+<a class="item sub" href=/filters/af/form/previous_button_atts/>af/form/previous_button_atts</a>
+<a class="item sub" href=/filters/af/form/next_button_atts/>af/form/next_button_atts</a><h3 class=section-title>Emails</h3><a class="item sub" href=/filters/af/form/email/recipients/>af/form/email/recipients</a>
+<a class="item sub" href=/filters/af/form/email/subject/>af/form/email/subject</a>
+<a class="item sub" href=/filters/af/form/email/content/>af/form/email/content</a>
+<a class="item sub" href=/filters/af/form/email/headers/>af/form/email/headers</a>
+<a class="item sub" href=/filters/af/form/email/attachments/>af/form/email/attachments</a>
+<a class="item sub" href=/filters/af/form/email/styles/>af/form/email/styles</a><h3 class=section-title>Pro</h3><a class="item sub" href=/filters/af/field/calculate_value/>af/field/calculate_value</a>
+<a class="item sub" href=/filters/af/form/editing/post_data/>af/form/editing/post_data</a>
+<a class="item sub" href=/filters/af/form/editing/user_data/>af/form/editing/user_data</a>
+<a class="item sub" href=/filters/af/form/mailchimp/request/>af/form/mailchimp/request</a></div><div class=main-menu><a class=item href=/ data-id=home><i data-feather=play></i> Home</a>
+<a class="item has-sub-pages" data-id=guides><i data-feather=align-left></i> Guides</a>
+<a class=item href=/videos/ data-id><i data-feather=youtube></i> Videos</a>
+<a class=item href=/faq/ data-id><i data-feather=help-circle></i> FAQ</a>
+<a class=item href=/support/ data-id><i data-feather=message-circle></i> Support</a><div class=divider></div><a class=item href=/functions/ data-id><i data-feather=code></i> Functions</a>
+<a class="item has-sub-pages" data-id=actions><i data-feather=zap></i> Actions</a>
+<a class="item has-sub-pages" data-id=filters><i data-feather=filter></i> Filters</a></div></nav></aside><main><header class=regular-header><i data-feather=search></i>
+<input class=search type=text placeholder="Search documentation..."></header><header class=mobile-header><a href=/><img src=/images/icon-128x128.png class=logo alt="Advanced Forms logo"></a>
+<a class=menu-toggle>Menu <i data-feather=menu></i></a></header><div class=mobile-menu><nav class=menu><div class=sub-menu data-parent=home><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=play></i> Home</h2></div><div class="sub-menu active" data-parent=guides><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=align-left></i> Guides</h2><h3 class=section-title>Basic</h3><a class="item sub" href=/guides/creating-a-form/>Creating a form</a>
+<a class="item sub" href=/guides/configuring-your-form/>Configuring your form</a>
+<a class="item sub" href=/guides/displaying-your-form/>Displaying your form</a>
+<a class="item sub" href=/guides/available-arguments/>Available arguments</a><h3 class=section-title>Pro</h3><a class="item sub" href=/guides/installing-and-activating/>Installing and activating</a>
+<a class="item sub" href=/guides/creating-and-editing-posts/>Creating and editing posts</a>
+<a class="item sub" href=/guides/creating-and-editing-users/>Creating and editing users</a>
+<a class="item sub active" href=/guides/configuring-integrations/>Configuring integrations</a>
+<a class="item sub" href=/guides/using-calculated-fields/>Using calculated fields</a><h3 class=section-title>Advanced</h3><a class="item sub" href=/guides/processing-form-submissions/>Processing form submissions</a>
+<a class="item sub" href=/guides/adding-custom-merge-tags/>Adding custom merge tags</a>
+<a class="item sub" href=/guides/adding-custom-restrictions/>Adding custom restrictions</a>
+<a class="item sub" href=/guides/customizing-the-form-template/>Customizing the form template</a>
+<a class="item sub" href=/guides/decreasing-number-of-scripts-and-styles/>Decreasing number of scripts and styles</a>
+<a class="item sub" href=/guides/customizing-validations/>Customizing validations</a></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=youtube></i> Videos</h2></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=help-circle></i> FAQ</h2></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=message-circle></i> Support</h2></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle>Divider</h2></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=code></i> Functions</h2></div><div class=sub-menu data-parent=actions><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=zap></i> Actions</h2><h3 class=section-title>Display</h3><a class="item sub" href=/actions/af/form/before_title/>af/form/before_title</a>
+<a class="item sub" href=/actions/af/form/before_fields/>af/form/before_fields</a>
+<a class="item sub" href=/actions/af/form/after_fields/>af/form/after_fields</a>
+<a class="item sub" href=/actions/af/form/hidden_fields/>af/form/hidden_fields</a><h3 class=section-title>Events</h3><a class="item sub" href=/actions/af/form/email/before_send/>af/form/email/before_send</a>
+<a class="item sub" href=/actions/af/form/email/after_send/>af/form/email/after_send</a>
+<a class="item sub" href=/actions/af/form/entry_created/>af/form/entry_created</a>
+<a class="item sub" href=/actions/af/form/validate/>af/form/validate</a><h3 class=section-title>Pro</h3><a class="item sub" href=/actions/af/form/editing/post_created/>af/form/editing/post_created</a>
+<a class="item sub" href=/actions/af/form/editing/post_updated/>af/form/editing/post_updated</a>
+<a class="item sub" href=/actions/af/form/editing/user_created/>af/form/editing/user_created</a>
+<a class="item sub" href=/actions/af/form/editing/user_updated/>af/form/editing/user_updated</a><h3 class=section-title>Javascript</h3><a class="item sub" href=/actions/af/form/page_changed/>af/form/page_changed</a>
+<a class="item sub" href=/actions/af/field/calculated/update_value/>af/field/calculated/update_value</a></div><div class=sub-menu data-parent=filters><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=filter></i> Filters</h2><h3 class=section-title>Forms</h3><a class="item sub" href=/filters/af/form/args/>af/form/args</a>
+<a class="item sub" href=/filters/af/form/before_render/>af/form/before_render</a>
+<a class="item sub" href=/filters/af/form/restriction/>af/form/restriction</a>
+<a class="item sub" href=/filters/af/field/prefill_value/>af/field/prefill_value</a>
+<a class="item sub" href=/filters/af/field/before_render/>af/field/before_render</a><h3 class=section-title>Display</h3><a class="item sub" href=/filters/af/form/field_attributes/>af/form/field_attributes</a>
+<a class="item sub" href=/filters/af/form/button_attributes/>af/form/button_attributes</a>
+<a class="item sub" href=/filters/af/form/previous_button_atts/>af/form/previous_button_atts</a>
+<a class="item sub" href=/filters/af/form/next_button_atts/>af/form/next_button_atts</a><h3 class=section-title>Emails</h3><a class="item sub" href=/filters/af/form/email/recipients/>af/form/email/recipients</a>
+<a class="item sub" href=/filters/af/form/email/subject/>af/form/email/subject</a>
+<a class="item sub" href=/filters/af/form/email/content/>af/form/email/content</a>
+<a class="item sub" href=/filters/af/form/email/headers/>af/form/email/headers</a>
+<a class="item sub" href=/filters/af/form/email/attachments/>af/form/email/attachments</a>
+<a class="item sub" href=/filters/af/form/email/styles/>af/form/email/styles</a><h3 class=section-title>Pro</h3><a class="item sub" href=/filters/af/field/calculate_value/>af/field/calculate_value</a>
+<a class="item sub" href=/filters/af/form/editing/post_data/>af/form/editing/post_data</a>
+<a class="item sub" href=/filters/af/form/editing/user_data/>af/form/editing/user_data</a>
+<a class="item sub" href=/filters/af/form/mailchimp/request/>af/form/mailchimp/request</a></div><div class=main-menu><a class=item href=/ data-id=home><i data-feather=play></i> Home</a>
+<a class="item has-sub-pages" data-id=guides><i data-feather=align-left></i> Guides</a>
+<a class=item href=/videos/ data-id><i data-feather=youtube></i> Videos</a>
+<a class=item href=/faq/ data-id><i data-feather=help-circle></i> FAQ</a>
+<a class=item href=/support/ data-id><i data-feather=message-circle></i> Support</a><div class=divider></div><a class=item href=/functions/ data-id><i data-feather=code></i> Functions</a>
+<a class="item has-sub-pages" data-id=actions><i data-feather=zap></i> Actions</a>
+<a class="item has-sub-pages" data-id=filters><i data-feather=filter></i> Filters</a></div></nav><a class=menu-close>Close menu <i data-feather=arrow-up></i></a></div><div class="content section"><h1>Configuring integrations</h1><nav id=TableOfContents><ul><li><a href=#mailchimp>Mailchimp</a><ul><li><a href=#generating-an-api-key>Generating an API Key</a></li><li><a href=#connecting-your-form-to-mailchimp>Connecting your form to Mailchimp</a></li></ul></li><li><a href=#slack>Slack</a><ul><li><a href=#creating-a-webhook>Creating a webhook</a></li><li><a href=#configuring-your-form>Configuring your form</a></li></ul></li><li><a href=#zapier>Zapier</a><ul><li><a href=#creating-a-zap>Creating a Zap</a></li></ul></li><li><a href=#google-recaptcha>Google reCAPTCHA</a><ul><li><a href=#getting-api-keys>Getting API keys</a></li><li><a href=#protecting-your-form>Protecting your form</a></li></ul></li></ul></nav><h2 id=mailchimp>Mailchimp</h2><p>Advanced Forms Pro enables you to connect forms to Mailchimp and subscribe your visitors to Mailchimp lists. Configuring Mailchimp is easy, all you need is an API key.</p><h3 id=generating-an-api-key>Generating an API Key</h3><p>Start by logging in to your Mailchimp account on mailchimp.com. Click your profile name in the top right corner and select <em>Account</em>. Navigate to <em>API Keys</em> under the <em>Extras</em> tab and press the <em>Create a Key</em> button. Lastly, copy the newly generated key.</p><iframe src=//fast.wistia.net/embed/iframe/0x8n36j330 allowtransparency=true frameborder=0 scrolling=no class=wistia_embed name=wistia_embed allowfullscreen mozallowfullscreen=mozallowfullscreen webkitallowfullscreen=webkitallowfullscreen oallowfullscreen=oallowfullscreen msallowfullscreen=msallowfullscreen width=600 height=400></iframe><h3 id=connecting-your-form-to-mailchimp>Connecting your form to Mailchimp</h3><p>Once you have your API key it&rsquo;s time to configure Advanced Forms. Log in to the Wordpress admin panel and navigate to <em>Forms</em> → <em>Settings</em>. Paste your API key in the <em>Mailchimp API key</em> and save. Advanced Forms is now connected to your Mailchimp account and ready to start adding some subscribers.</p><p>Find and edit the form you want to connect. Navigate to the <em>Integrations</em> tab and enable the Mailchimp integration. You should now be faced with a few settings. The list field lets you configure which Mailchimp list to subscribe users to and the email field lets you select which form field to get an email address from. Remember that this needs to be a valid email address and hence it&rsquo;s recommended to use an ACF email field. Optionally you may also configure first name and last name to make your subscriber info more complete.</p><p><img src=/images/mailchimp-settings.png alt="Mailchimp form settings"></p><h2 id=slack>Slack</h2><p>By connecting your Slack workspace to a form you will instantly get a message whenever a visitor sends a submission. A perfect way to be notified whether you&rsquo;re creating a simple contact form or building a full-blown helpdesk.</p><h3 id=creating-a-webhook>Creating a webhook</h3><p>All you need to connect your form to Slack is a single URL called a webhook. Here&rsquo;s how you get one:</p><ol><li>Navigate to <a href=https://my.slack.com/services/new/incoming-webhook/>my.slack.com/services/new/incoming-webhook/</a> and make sure you are logged in to your Slack workspace.</li><li>Select the channel you want notifications to be sent to and click <em>Add Incoming WebHooks integration</em>.</li><li>Copy your fresh webhook URL.</li></ol><h3 id=configuring-your-form>Configuring your form</h3><p>Once a webhook has been generated you&rsquo;re ready to set up your form. In the Wordpress admin find your form, edit it, and enable the Slack integration under <em>Integrations</em>. Fill in your webhook URL and type a little message which will be included with each notification. Also select any fields which you would like included. That&rsquo;s it!</p><p><img src=/images/slack-notification.png alt="Example of a Slack notification"></p><h2 id=zapier>Zapier</h2><p>With the help of <a href=https://zapier.com>Zapier</a> you can connect your form to thousand of services and create automated workflows. You could create a form that accepts files from users and automatically uploads them to your Dropbox. Or you could automatically save form submissions to a Google Spreadsheet. There are literally thousands of possibilities.</p><h3 id=creating-a-zap>Creating a Zap</h3><ol><li>Set up a form with all the fields you want to pass on to Zapier.</li><li>Follow this <a href=https://zapier.com/developer/invite/66711/01f290c023c6caeb5201b57663c0af01/>link</a> to create a new Zap for your form.</li><li>Choose the &ldquo;New Submission&rdquo; trigger and continue.</li><li>Copy the provided URL, and jump over to your form in the Wordpress admin.</li><li>Under &ldquo;Integrations&rdquo;, enable the Zapier integration and the paste the URL from step 5. Finishing by clicking the &ldquo;Send test submission&rdquo; button.</li><li>Hop back to Zapier and continue with the Zap creation process. Zapier should pick up some sample data with your form fields within a few seconds.</li><li>Complete your Zap by connecting it to an action!</li></ol><h2 id=google-recaptcha>Google reCAPTCHA</h2><p>Basic spam protection is built into all forms using a honeypot. Sometimes more sophisticated spam protection is necessary and for these situations Advanced Forms Pro supports Google reCAPTCHA. Once configured, the user will be presented with a challenge when submitting a form if they are suspected of being a bot. Because Advanced Forms uses the invisible reCAPTCHA, most users won&rsquo;t have to click anything to prove that they are human.</p><h3 id=getting-api-keys>Getting API keys</h3><p>Google requires a set of API keys which you&rsquo;ll have to create using a Google account.</p><ol><li>Navigate to <a href=https://www.google.com/recaptcha/admin/create>this page</a> and sign in with your Google account.</li><li>For &ldquo;reCAPTCHA type&rdquo;, select &ldquo;reCAPTCHA v2&rdquo; and &ldquo;Invisible reCAPTCHA badge&rdquo; from the options that appear.</li><li>Fill in the rest of the form and then click &ldquo;Submit&rdquo;. Make note of the generated site key and secret key.</li></ol><h3 id=protecting-your-form>Protecting your form</h3><p>Once you have your API keys it&rsquo;s time to configure the plugin and the forms you want to protect. Log in to the WordPress admin panel and navigate to <em>Forms</em> → <em>Settings</em>. Fill in the site key and secret key you generated in the previous step and save.</p><p>Every form you want to protect must be enabled manually. Go to the edit panel of your form and navigate to the <em>Integrations</em> tab. If you have added your API keys to the plugin settings you should be able to enable the <em>Google reCAPTCHA</em> integration.</p></div><footer class=section>Created by <a href=https://fabianlindfors.se>Fabian Lindfors</a> 🇸🇪 in collaboration with <a href=https://hookturn.io>Hookturn</a> 🇦🇺</footer></main></div><script>feather.replace()</script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js></script><script type=text/javascript>docsearch({apiKey:'fc0e72bc26da8cdce55c581fb036bc0a',indexName:'advancedforms',inputSelector:'.search',debug:!1})</script><script src=/js/script.js></script><script>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-45755328-16","auto"),ga("send","pageview")</script></body></html>

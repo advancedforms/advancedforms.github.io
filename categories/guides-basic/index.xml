@@ -1,66 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>guides basic on Advanced Forms</title>
-    <link>/categories/guides-basic/</link>
-    <description>Recent content in guides basic on Advanced Forms</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 09 Nov 2020 00:00:00 +0100</lastBuildDate><atom:link href="/categories/guides-basic/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Available arguments</title>
-      <link>/guides/available-arguments/</link>
-      <pubDate>Mon, 09 Nov 2020 00:00:00 +0100</pubDate>
-      
-      <guid>/guides/available-arguments/</guid>
-      <description>This page lists all the available arguments that may be passed when displaying a form, either using a shortcode or a function call.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>guides basic on Advanced Forms for ACF</title><link>/categories/guides-basic/</link><description>Recent content in guides basic on Advanced Forms for ACF</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/categories/guides-basic/index.xml" rel="self" type="application/rss+xml"/><item><title>Available arguments</title><link>/guides/available-arguments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/guides/available-arguments/</guid><description>This page lists all the available arguments that may be passed when displaying a form, either using a shortcode or a function call.
 submit_text Text used for the submit button. Default to &amp;ldquo;Submit&amp;rdquo;.
 [advanced_form submit_text=&amp;quot;Send&amp;quot;]
-advanced_form( &#39;KEY&#39;, array( &#39;submit_text&#39; =&amp;gt; &#39;Send&#39; ) )
+advanced_form( 'KEY', array( 'submit_text' =&amp;gt; 'Send' ) )
 redirect URL to redirect to after successful submission. Defaults to the current URL where the success message will be displayed after submission.
 [advanced_form redirect=&amp;quot;/thank-you&amp;quot;]
-advanced_form( &#39;KEY&#39;, array( &#39;redirect&#39; =&amp;gt; &#39;/thank-you&#39; ) )</description>
-    </item>
-    
-    <item>
-      <title>Configuring your form</title>
-      <link>/guides/configuring-your-form/</link>
-      <pubDate>Sun, 09 Jul 2017 00:00:00 +0100</pubDate>
-      
-      <guid>/guides/configuring-your-form/</guid>
-      <description>Adding a success message Setting up email notifications Making a multi-page form From version 1.5 and onwards Advanced Forms supports multi-page forms. Setting them up is similar to configuring tabs in a regular ACF field group. To create a paged form simply insert &amp;ldquo;Page&amp;rdquo; fields to divide your form. The &amp;ldquo;Page&amp;rdquo; field has settings for numbering and button text as well. Only the settings on the first page field will be used.</description>
-    </item>
-    
-    <item>
-      <title>Processing form submissions</title>
-      <link>/guides/processing-form-submissions/</link>
-      <pubDate>Fri, 23 Dec 2016 00:02:00 +0100</pubDate>
-      
-      <guid>/guides/processing-form-submissions/</guid>
-      <description>Overview After a form has been submitted the field values need to be processed. The plugin comes with the ability to automatically save form data to entries and to send custom emails. Emails and entries can be configured in the form settings but are not enabled by default.
-If you need to process the form data further the handy action hook af/form/submission should be used. To simplify the retrieval of field values a helper function af_get_field is provided which takes a field name/key and returns a value.</description>
-    </item>
-    
-    <item>
-      <title>Displaying a form</title>
-      <link>/guides/displaying-a-form/</link>
-      <pubDate>Fri, 23 Dec 2016 00:01:00 +0100</pubDate>
-      
-      <guid>/guides/displaying-a-form/</guid>
-      <description>Once a form has been added and fields have been assigned you can display the form either using a shortcode or with a function call. There are a variety of available arguments that can be used to tweak how your form appears and behaves.
-Using shortcode To display a form using a shortcode use the structure below. The form key can be found right below the title on the form edit page.</description>
-    </item>
-    
-    <item>
-      <title>Creating a form</title>
-      <link>/guides/creating-a-form/</link>
-      <pubDate>Fri, 23 Dec 2016 00:00:00 +0100</pubDate>
-      
-      <guid>/guides/creating-a-form/</guid>
-      <description>Forms can be created either using the UI provided or programmatically.
-Using the admin interface To create a form using the UI navigate to the &amp;ldquo;Forms&amp;rdquo; admin page and create a new form. Use the form settings to set up entries, emails and display options. At the bottom you will find a list of all fields which are connected to your form.
-The fields connected to a form are set up through Advanced Custom Fields allowing you to use the full range of field types offered by ACF.</description>
-    </item>
-    
-  </channel>
-</rss>
+advanced_form( 'KEY', array( 'redirect' =&amp;gt; '/thank-you' ) )</description></item><item><title>Configuring your form</title><link>/guides/configuring-your-form/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/guides/configuring-your-form/</guid><description>Adding a success message A success message can be configured to give feedback to your users when they have submitted a form.
+Navigate to the settings page for your form. Under the &amp;ldquo;Display&amp;rdquo; tab, use the &amp;ldquo;Success message&amp;rdquo; editor to set up your message. Use the &amp;ldquo;Insert field&amp;rdquo; dropdown if you want to include field values in your message. Below you will find a screenshot of the success message editor, including the &amp;ldquo;Insert field&amp;rdquo; dropdown.</description></item><item><title>Creating a form</title><link>/guides/creating-a-form/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/guides/creating-a-form/</guid><description>Forms can be created either through the WordPress admin interface or programmatically.
+Using the admin interface To create a form using the admin interface, do the following:
+Navigate to the &amp;ldquo;Forms&amp;rdquo; page in the admin panel. Click &amp;ldquo;Add new&amp;rdquo;, give the form a name, and then click &amp;ldquo;Publish&amp;rdquo;. Create a new ACF field group and add the fields you want to be part of your form. Configure a location rule for your field group.</description></item><item><title>Displaying your form</title><link>/guides/displaying-your-form/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/guides/displaying-your-form/</guid><description>Once a form has been added and fields have been assigned you can display the form either using a shortcode or with a function call. There are a variety of available arguments that can be used to tweak how your form appears and behaves.
+Using shortcode To display a form using a shortcode use the structure below. The form key can be found right below the title on the form edit page.</description></item><item><title>Processing form submissions</title><link>/guides/processing-form-submissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/guides/processing-form-submissions/</guid><description>Overview After a form has been submitted the field values need to be processed. The plugin comes with the ability to automatically save form data to entries and to send custom emails. Emails and entries can be configured in the form settings but are not enabled by default.
+If you need to process the form data further the handy action hook af/form/submission should be used. To simplify the retrieval of field values a helper function af_get_field is provided which takes a field name/key and returns a value.</description></item></channel></rss>

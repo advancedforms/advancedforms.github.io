@@ -1,5 +1,5 @@
 (() => {
-  // js/script.js
+  // <stdin>
   var sidebar = document.querySelector("aside .menu");
   var mobileMenu = document.querySelector(".mobile-menu .menu");
   configureMenuNavigation(sidebar);
