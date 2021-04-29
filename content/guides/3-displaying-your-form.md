@@ -8,7 +8,9 @@ menu:
   main:
     parent: guides/basic
     weight: 3
-aliases: /guides/basic/creating-a-form/
+aliases:
+ - /guides/basic/creating-a-form/
+ - /guides/basic/displaying-a-form/
 ---
 
 Once a form has been added and fields have been assigned you can display the form either using a shortcode or with a function call. There are a [variety of available arguments](#) that can be used to tweak how your form appears and behaves.

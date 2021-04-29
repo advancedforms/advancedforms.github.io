@@ -5,7 +5,7 @@ menu:
     identifier: af-form-hidden_fields
     parent: "actions/display"
     weight: 6
-aliases: actions/af-form-hidden_fields/
+aliases: /actions/af-form-hidden_fields/
 ---
 
 Use this action to add hidden inputs which can contain data you want to pass along your form, for example the current post title as shown in the example below.
