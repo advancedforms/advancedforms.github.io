@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="content section">
+<div class="content section post">
   <h1>{{ .Title }}</h1>
 
   {{ $headers := findRE "<h[1-6].*?>(.|\n])+?</h[1-6]>" .Content }}
