@@ -104,8 +104,7 @@
 	
 	af_register_form( <span style=color:teal>$form</span> );
 }
-add_action( <span style=color:#d14>&#39;af/register_forms&#39;</span>, <span style=color:#d14>&#39;register_form&#39;</span> );
-</code></pre></div><p>It&rsquo;s recommended to register your forms on the <code>af/register_forms</code> hook to ensure that both Advanced Forms and ACF are installed and ready.</p><p>If you are adding ACF field groups programmatically using the function <code>acf_add_local_field_group</code> then you need to set your ACF location rule to match your registered form. Adding your form as a location rule is simple and can be done like this:</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#000;font-weight:700>&lt;?</span>php
+add_action( <span style=color:#d14>&#39;af/register_forms&#39;</span>, <span style=color:#d14>&#39;register_form&#39;</span> );</code></pre></div><p>It&rsquo;s recommended to register your forms on the <code>af/register_forms</code> hook to ensure that both Advanced Forms and ACF are installed and ready.</p><p>If you are adding ACF field groups programmatically using the function <code>acf_add_local_field_group</code> then you need to set your ACF location rule to match your registered form. Adding your form as a location rule is simple and can be done like this:</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#000;font-weight:700>&lt;?</span>php
 
 <span style=color:teal>$acf_location_rule</span> <span style=color:#000;font-weight:700>=</span> <span style=color:#000;font-weight:700>array</span> (
     <span style=color:#d14>&#39;param&#39;</span> <span style=color:#000;font-weight:700>=&gt;</span> <span style=color:#d14>&#39;af_form&#39;</span>,
