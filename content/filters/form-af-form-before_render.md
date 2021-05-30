@@ -4,7 +4,7 @@ menu:
   main:
     identifier: af-form-before_render
     parent: "filters/forms"
-    weight: 2
+    weight: 3
 aliases: /filters/af-form-before_render/
 ---
 

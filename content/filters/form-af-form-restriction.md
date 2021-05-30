@@ -4,7 +4,7 @@ menu:
   main:
     identifier: af-form-restriction
     parent: "filters/forms"
-    weight: 3
+    weight: 4
 aliases: /filters/af-form-restriction/
 ---
 
