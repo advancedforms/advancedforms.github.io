@@ -91,8 +91,10 @@
 <a class="item has-sub-pages" data-id=filters><i data-feather=filter></i> Filters</a></div></nav><a class=menu-close>Close menu <i data-feather=arrow-up></i></a></div><div class="content section post"><h1>af/form/email/attachments</h1><p>Filter the attachments of a form email before sending. <code>$attachments</code> should be an array of file paths similar to the attachments parameter for <code>wp_mail</code>.</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#000;font-weight:700>&lt;?</span>php
 
 <span style=color:#000;font-weight:700>function</span> <span style=color:#900;font-weight:700>filter_email_attachments</span>( <span style=color:teal>$attachments</span>, <span style=color:teal>$email</span>, <span style=color:teal>$form</span>, <span style=color:teal>$fields</span> ) {
-  <span style=color:#998;font-style:italic>// Add a file as an attachment
-</span><span style=color:#998;font-style:italic></span>  <span style=color:teal>$attachments</span>[] <span style=color:#000;font-weight:700>=</span> <span style=color:#d14>&#39;/path/to/file&#39;</span>;
+  <span style=color:#998;font-style:italic>// Add an uploaded file from a file field as an attachemnt
+</span><span style=color:#998;font-style:italic></span>  <span style=color:#998;font-style:italic>// The file field should have return format &#34;FileArray&#34;
+</span><span style=color:#998;font-style:italic></span>  <span style=color:teal>$file</span> <span style=color:#000;font-weight:700>=</span> af_get_field( <span style=color:#d14>&#39;file&#39;</span> );
+  <span style=color:teal>$attachments</span>[] <span style=color:#000;font-weight:700>=</span> get_attached_file( <span style=color:teal>$file</span>[<span style=color:#d14>&#39;id&#39;</span>] );
 
   <span style=color:#000;font-weight:700>return</span> <span style=color:teal>$attachments</span>;
 }
