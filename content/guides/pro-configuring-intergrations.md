@@ -7,9 +7,9 @@ menu:
     parent: guides/pro
     weight: 4
 aliases:
-- /pro/integrations/configuring-mailchimp/
-- /pro/integrations/connecting-zapier/
-- /pro/integrations/setting-up-slack-notifications/
+- /pro/configuration/configuring-mailchimp/
+- /pro/configuration/connecting-zapier/
+- /pro/configuration/setting-up-slack-notifications/
 - /pro/integrations/configuring-google-recaptcha/
 ---
 
