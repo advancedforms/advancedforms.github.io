@@ -1,94 +1,307 @@
-<!doctype html><html class=no-js lang=en><head><title>Using calculated fields | Advanced Forms for ACF</title><meta name=description content><meta name=viewport content="width=device-width,initial-scale=1"><meta property="og:locale" content="en_US"><meta property="og:title" content="Using calculated fields"><meta property="og:image" content="/images/site-logo.png"><meta property="og:description" content><meta property="og:site_name" content="Advanced Forms for ACF"><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css><link rel=stylesheet href=/css/style.min.ba75937f85aa8c9bfd5153cc40a716a6f64ee88d454ea6bd117bb920c2a79009.css><script src=https://unpkg.com/feather-icons></script></head><body><div class=container><aside><a class=logo-wrapper href=/><img src=/images/icon-128x128.png class=logo alt="Advanced Forms logo"><h1>Advanced Forms</h1></a><nav class=menu><div class=sub-menu data-parent=home><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=play></i> Home</h2></div><div class="sub-menu active" data-parent=guides><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=align-left></i> Guides</h2><h3 class=section-title>Basic</h3><a class="item sub" href=/guides/creating-a-form/>Creating a form</a>
+<!doctype html><html class=no-js lang=en>
+<head>
+<title>Using calculated fields | Advanced Forms for ACF</title>
+<meta name=description content>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Using calculated fields">
+<meta property="og:image" content="/images/site-logo.png">
+<meta property="og:description" content>
+<meta property="og:site_name" content="Advanced Forms for ACF">
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=manifest href=/site.webmanifest>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css>
+<link rel=stylesheet href=/css/style.min.ba75937f85aa8c9bfd5153cc40a716a6f64ee88d454ea6bd117bb920c2a79009.css>
+<script src=https://unpkg.com/feather-icons></script>
+</head>
+<body>
+<div class=container>
+<aside>
+<a class=logo-wrapper href=/><img src=/images/icon-128x128.png class=logo alt="Advanced Forms logo">
+<h1>Advanced Forms</h1>
+</a>
+<nav class=menu>
+<div class=sub-menu data-parent=home>
+<a href=/ class=back>&larr; Go back</a>
+<h2 class=subtitle><i data-feather=play></i> Home</h2>
+</div>
+<div class="sub-menu active" data-parent=guides>
+<a href=/ class=back>&larr; Go back</a>
+<h2 class=subtitle><i data-feather=align-left></i> Guides</h2>
+<h3 class=section-title>Basic</h3>
+<a class="item sub" href=/guides/creating-a-form/>Creating a form</a>
 <a class="item sub" href=/guides/configuring-your-form/>Configuring your form</a>
 <a class="item sub" href=/guides/displaying-your-form/>Displaying your form</a>
-<a class="item sub" href=/guides/available-arguments/>Available arguments</a><h3 class=section-title>Pro</h3><a class="item sub" href=/guides/installing-and-activating/>Installing and activating</a>
+<a class="item sub" href=/guides/available-arguments/>Available arguments</a>
+<h3 class=section-title>Pro</h3>
+<a class="item sub" href=/guides/installing-and-activating/>Installing and activating</a>
 <a class="item sub" href=/guides/creating-and-editing-posts/>Creating and editing posts</a>
 <a class="item sub" href=/guides/creating-and-editing-users/>Creating and editing users</a>
 <a class="item sub" href=/guides/configuring-integrations/>Configuring integrations</a>
-<a class="item sub active" href=/guides/using-calculated-fields/>Using calculated fields</a><h3 class=section-title>Advanced</h3><a class="item sub" href=/guides/processing-form-submissions/>Processing form submissions</a>
+<a class="item sub active" href=/guides/using-calculated-fields/>Using calculated fields</a>
+<h3 class=section-title>Advanced</h3>
+<a class="item sub" href=/guides/processing-form-submissions/>Processing form submissions</a>
 <a class="item sub" href=/guides/adding-custom-merge-tags/>Adding custom merge tags</a>
 <a class="item sub" href=/guides/adding-custom-restrictions/>Adding custom restrictions</a>
 <a class="item sub" href=/guides/customizing-the-form-template/>Customizing the form template</a>
 <a class="item sub" href=/guides/decreasing-number-of-scripts-and-styles/>Decreasing number of scripts and styles</a>
-<a class="item sub" href=/guides/customizing-validations/>Customizing validations</a></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=youtube></i> Videos</h2></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=help-circle></i> FAQ</h2></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=message-circle></i> Support</h2></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle>Divider</h2></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=code></i> Functions</h2></div><div class=sub-menu data-parent=actions><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=zap></i> Actions</h2><h3 class=section-title>Display</h3><a class="item sub" href=/actions/af/form/before_title/>af/form/before_title</a>
+<a class="item sub" href=/guides/customizing-validations/>Customizing validations</a>
+</div>
+<div class=sub-menu data-parent>
+<a href=/ class=back>&larr; Go back</a>
+<h2 class=subtitle><i data-feather=youtube></i> Videos</h2>
+</div>
+<div class=sub-menu data-parent>
+<a href=/ class=back>&larr; Go back</a>
+<h2 class=subtitle><i data-feather=help-circle></i> FAQ</h2>
+</div>
+<div class=sub-menu data-parent>
+<a href=/ class=back>&larr; Go back</a>
+<h2 class=subtitle><i data-feather=message-circle></i> Support</h2>
+</div>
+<div class=sub-menu data-parent>
+<a href=/ class=back>&larr; Go back</a>
+<h2 class=subtitle> Divider</h2>
+</div>
+<div class=sub-menu data-parent>
+<a href=/ class=back>&larr; Go back</a>
+<h2 class=subtitle><i data-feather=code></i> Functions</h2>
+</div>
+<div class=sub-menu data-parent=actions>
+<a href=/ class=back>&larr; Go back</a>
+<h2 class=subtitle><i data-feather=zap></i> Actions</h2>
+<h3 class=section-title>Display</h3>
+<a class="item sub" href=/actions/af/form/before_title/>af/form/before_title</a>
 <a class="item sub" href=/actions/af/form/before_fields/>af/form/before_fields</a>
 <a class="item sub" href=/actions/af/form/after_fields/>af/form/after_fields</a>
-<a class="item sub" href=/actions/af/form/hidden_fields/>af/form/hidden_fields</a><h3 class=section-title>Events</h3><a class="item sub" href=/actions/af/form/email/before_send/>af/form/email/before_send</a>
+<a class="item sub" href=/actions/af/form/hidden_fields/>af/form/hidden_fields</a>
+<h3 class=section-title>Events</h3>
+<a class="item sub" href=/actions/af/form/email/before_send/>af/form/email/before_send</a>
 <a class="item sub" href=/actions/af/form/email/after_send/>af/form/email/after_send</a>
 <a class="item sub" href=/actions/af/form/entry_created/>af/form/entry_created</a>
-<a class="item sub" href=/actions/af/form/validate/>af/form/validate</a><h3 class=section-title>Pro</h3><a class="item sub" href=/actions/af/form/editing/post_created/>af/form/editing/post_created</a>
+<a class="item sub" href=/actions/af/form/validate/>af/form/validate</a>
+<h3 class=section-title>Pro</h3>
+<a class="item sub" href=/actions/af/form/editing/post_created/>af/form/editing/post_created</a>
 <a class="item sub" href=/actions/af/form/editing/post_updated/>af/form/editing/post_updated</a>
 <a class="item sub" href=/actions/af/form/editing/user_created/>af/form/editing/user_created</a>
-<a class="item sub" href=/actions/af/form/editing/user_updated/>af/form/editing/user_updated</a><h3 class=section-title>Javascript</h3><a class="item sub" href=/actions/af/form/page_changed/>af/form/page_changed</a>
-<a class="item sub" href=/actions/af/field/calculated/update_value/>af/field/calculated/update_value</a></div><div class=sub-menu data-parent=filters><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=filter></i> Filters</h2><h3 class=section-title>Forms</h3><a class="item sub" href=/filters/af/form/args/>af/form/args</a>
+<a class="item sub" href=/actions/af/form/editing/user_updated/>af/form/editing/user_updated</a>
+<h3 class=section-title>Javascript</h3>
+<a class="item sub" href=/actions/af/form/page_changed/>af/form/page_changed</a>
+<a class="item sub" href=/actions/af/field/calculated/update_value/>af/field/calculated/update_value</a>
+</div>
+<div class=sub-menu data-parent=filters>
+<a href=/ class=back>&larr; Go back</a>
+<h2 class=subtitle><i data-feather=filter></i> Filters</h2>
+<h3 class=section-title>Forms</h3>
+<a class="item sub" href=/filters/af/form/args/>af/form/args</a>
 <a class="item sub" href=/filters/af/form/success_message/>af/form/success_message</a>
 <a class="item sub" href=/filters/af/form/before_render/>af/form/before_render</a>
 <a class="item sub" href=/filters/af/field/prefill_value/>af/field/prefill_value</a>
 <a class="item sub" href=/filters/af/form/restriction/>af/form/restriction</a>
-<a class="item sub" href=/filters/af/field/before_render/>af/field/before_render</a><h3 class=section-title>Display</h3><a class="item sub" href=/filters/af/form/field_attributes/>af/form/field_attributes</a>
+<a class="item sub" href=/filters/af/field/before_render/>af/field/before_render</a>
+<h3 class=section-title>Display</h3>
+<a class="item sub" href=/filters/af/form/field_attributes/>af/form/field_attributes</a>
 <a class="item sub" href=/filters/af/form/button_attributes/>af/form/button_attributes</a>
 <a class="item sub" href=/filters/af/form/previous_button_atts/>af/form/previous_button_atts</a>
-<a class="item sub" href=/filters/af/form/next_button_atts/>af/form/next_button_atts</a><h3 class=section-title>Emails</h3><a class="item sub" href=/filters/af/form/email/recipients/>af/form/email/recipients</a>
+<a class="item sub" href=/filters/af/form/next_button_atts/>af/form/next_button_atts</a>
+<h3 class=section-title>Emails</h3>
+<a class="item sub" href=/filters/af/form/email/recipients/>af/form/email/recipients</a>
 <a class="item sub" href=/filters/af/form/email/subject/>af/form/email/subject</a>
 <a class="item sub" href=/filters/af/form/email/content/>af/form/email/content</a>
 <a class="item sub" href=/filters/af/form/email/headers/>af/form/email/headers</a>
 <a class="item sub" href=/filters/af/form/email/attachments/>af/form/email/attachments</a>
-<a class="item sub" href=/filters/af/form/email/styles/>af/form/email/styles</a><h3 class=section-title>Pro</h3><a class="item sub" href=/filters/af/field/calculate_value/>af/field/calculate_value</a>
+<a class="item sub" href=/filters/af/form/email/styles/>af/form/email/styles</a>
+<h3 class=section-title>Pro</h3>
+<a class="item sub" href=/filters/af/field/calculate_value/>af/field/calculate_value</a>
 <a class="item sub" href=/filters/af/form/editing/post_data/>af/form/editing/post_data</a>
 <a class="item sub" href=/filters/af/form/editing/user_data/>af/form/editing/user_data</a>
-<a class="item sub" href=/filters/af/form/mailchimp/request/>af/form/mailchimp/request</a></div><div class=main-menu><a class=item href=/ data-id=home><i data-feather=play></i> Home</a>
-<a class="item has-sub-pages" data-id=guides><i data-feather=align-left></i> Guides</a>
-<a class=item href=/videos/ data-id><i data-feather=youtube></i> Videos</a>
-<a class=item href=/faq/ data-id><i data-feather=help-circle></i> FAQ</a>
-<a class=item href=/support/ data-id><i data-feather=message-circle></i> Support</a><div class=divider></div><a class=item href=/functions/ data-id><i data-feather=code></i> Functions</a>
-<a class="item has-sub-pages" data-id=actions><i data-feather=zap></i> Actions</a>
-<a class="item has-sub-pages" data-id=filters><i data-feather=filter></i> Filters</a></div></nav></aside><main><header class=regular-header><i data-feather=search></i>
-<input class=search type=text placeholder="Search documentation..."></header><header class=mobile-header><a href=/><img src=/images/icon-128x128.png class=logo alt="Advanced Forms logo"></a>
-<a class=menu-toggle>Menu <i data-feather=menu></i></a></header><div class=mobile-menu><nav class=menu><div class=sub-menu data-parent=home><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=play></i> Home</h2></div><div class="sub-menu active" data-parent=guides><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=align-left></i> Guides</h2><h3 class=section-title>Basic</h3><a class="item sub" href=/guides/creating-a-form/>Creating a form</a>
+<a class="item sub" href=/filters/af/form/mailchimp/request/>af/form/mailchimp/request</a>
+</div>
+<div class=main-menu>
+<a class=item href=/ data-id=home>
+<i data-feather=play></i> Home
+</a>
+<a class="item has-sub-pages" data-id=guides>
+<i data-feather=align-left></i> Guides
+</a>
+<a class=item href=/videos/ data-id>
+<i data-feather=youtube></i> Videos
+</a>
+<a class=item href=/faq/ data-id>
+<i data-feather=help-circle></i> FAQ
+</a>
+<a class=item href=/support/ data-id>
+<i data-feather=message-circle></i> Support
+</a>
+<div class=divider></div>
+<a class=item href=/functions/ data-id>
+<i data-feather=code></i> Functions
+</a>
+<a class="item has-sub-pages" data-id=actions>
+<i data-feather=zap></i> Actions
+</a>
+<a class="item has-sub-pages" data-id=filters>
+<i data-feather=filter></i> Filters
+</a>
+</div>
+</nav>
+</aside>
+<main>
+<header class=regular-header>
+<i data-feather=search></i>
+<input class=search type=text placeholder="Search documentation...">
+</header>
+<header class=mobile-header>
+<a href=/><img src=/images/icon-128x128.png class=logo alt="Advanced Forms logo"> </a>
+<a class=menu-toggle>Menu <i data-feather=menu></i></a>
+</header>
+<div class=mobile-menu>
+<nav class=menu>
+<div class=sub-menu data-parent=home>
+<a href=/ class=back>&larr; Go back</a>
+<h2 class=subtitle><i data-feather=play></i> Home</h2>
+</div>
+<div class="sub-menu active" data-parent=guides>
+<a href=/ class=back>&larr; Go back</a>
+<h2 class=subtitle><i data-feather=align-left></i> Guides</h2>
+<h3 class=section-title>Basic</h3>
+<a class="item sub" href=/guides/creating-a-form/>Creating a form</a>
 <a class="item sub" href=/guides/configuring-your-form/>Configuring your form</a>
 <a class="item sub" href=/guides/displaying-your-form/>Displaying your form</a>
-<a class="item sub" href=/guides/available-arguments/>Available arguments</a><h3 class=section-title>Pro</h3><a class="item sub" href=/guides/installing-and-activating/>Installing and activating</a>
+<a class="item sub" href=/guides/available-arguments/>Available arguments</a>
+<h3 class=section-title>Pro</h3>
+<a class="item sub" href=/guides/installing-and-activating/>Installing and activating</a>
 <a class="item sub" href=/guides/creating-and-editing-posts/>Creating and editing posts</a>
 <a class="item sub" href=/guides/creating-and-editing-users/>Creating and editing users</a>
 <a class="item sub" href=/guides/configuring-integrations/>Configuring integrations</a>
-<a class="item sub active" href=/guides/using-calculated-fields/>Using calculated fields</a><h3 class=section-title>Advanced</h3><a class="item sub" href=/guides/processing-form-submissions/>Processing form submissions</a>
+<a class="item sub active" href=/guides/using-calculated-fields/>Using calculated fields</a>
+<h3 class=section-title>Advanced</h3>
+<a class="item sub" href=/guides/processing-form-submissions/>Processing form submissions</a>
 <a class="item sub" href=/guides/adding-custom-merge-tags/>Adding custom merge tags</a>
 <a class="item sub" href=/guides/adding-custom-restrictions/>Adding custom restrictions</a>
 <a class="item sub" href=/guides/customizing-the-form-template/>Customizing the form template</a>
 <a class="item sub" href=/guides/decreasing-number-of-scripts-and-styles/>Decreasing number of scripts and styles</a>
-<a class="item sub" href=/guides/customizing-validations/>Customizing validations</a></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=youtube></i> Videos</h2></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=help-circle></i> FAQ</h2></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=message-circle></i> Support</h2></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle>Divider</h2></div><div class=sub-menu data-parent><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=code></i> Functions</h2></div><div class=sub-menu data-parent=actions><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=zap></i> Actions</h2><h3 class=section-title>Display</h3><a class="item sub" href=/actions/af/form/before_title/>af/form/before_title</a>
+<a class="item sub" href=/guides/customizing-validations/>Customizing validations</a>
+</div>
+<div class=sub-menu data-parent>
+<a href=/ class=back>&larr; Go back</a>
+<h2 class=subtitle><i data-feather=youtube></i> Videos</h2>
+</div>
+<div class=sub-menu data-parent>
+<a href=/ class=back>&larr; Go back</a>
+<h2 class=subtitle><i data-feather=help-circle></i> FAQ</h2>
+</div>
+<div class=sub-menu data-parent>
+<a href=/ class=back>&larr; Go back</a>
+<h2 class=subtitle><i data-feather=message-circle></i> Support</h2>
+</div>
+<div class=sub-menu data-parent>
+<a href=/ class=back>&larr; Go back</a>
+<h2 class=subtitle> Divider</h2>
+</div>
+<div class=sub-menu data-parent>
+<a href=/ class=back>&larr; Go back</a>
+<h2 class=subtitle><i data-feather=code></i> Functions</h2>
+</div>
+<div class=sub-menu data-parent=actions>
+<a href=/ class=back>&larr; Go back</a>
+<h2 class=subtitle><i data-feather=zap></i> Actions</h2>
+<h3 class=section-title>Display</h3>
+<a class="item sub" href=/actions/af/form/before_title/>af/form/before_title</a>
 <a class="item sub" href=/actions/af/form/before_fields/>af/form/before_fields</a>
 <a class="item sub" href=/actions/af/form/after_fields/>af/form/after_fields</a>
-<a class="item sub" href=/actions/af/form/hidden_fields/>af/form/hidden_fields</a><h3 class=section-title>Events</h3><a class="item sub" href=/actions/af/form/email/before_send/>af/form/email/before_send</a>
+<a class="item sub" href=/actions/af/form/hidden_fields/>af/form/hidden_fields</a>
+<h3 class=section-title>Events</h3>
+<a class="item sub" href=/actions/af/form/email/before_send/>af/form/email/before_send</a>
 <a class="item sub" href=/actions/af/form/email/after_send/>af/form/email/after_send</a>
 <a class="item sub" href=/actions/af/form/entry_created/>af/form/entry_created</a>
-<a class="item sub" href=/actions/af/form/validate/>af/form/validate</a><h3 class=section-title>Pro</h3><a class="item sub" href=/actions/af/form/editing/post_created/>af/form/editing/post_created</a>
+<a class="item sub" href=/actions/af/form/validate/>af/form/validate</a>
+<h3 class=section-title>Pro</h3>
+<a class="item sub" href=/actions/af/form/editing/post_created/>af/form/editing/post_created</a>
 <a class="item sub" href=/actions/af/form/editing/post_updated/>af/form/editing/post_updated</a>
 <a class="item sub" href=/actions/af/form/editing/user_created/>af/form/editing/user_created</a>
-<a class="item sub" href=/actions/af/form/editing/user_updated/>af/form/editing/user_updated</a><h3 class=section-title>Javascript</h3><a class="item sub" href=/actions/af/form/page_changed/>af/form/page_changed</a>
-<a class="item sub" href=/actions/af/field/calculated/update_value/>af/field/calculated/update_value</a></div><div class=sub-menu data-parent=filters><a href=/ class=back>&larr; Go back</a><h2 class=subtitle><i data-feather=filter></i> Filters</h2><h3 class=section-title>Forms</h3><a class="item sub" href=/filters/af/form/args/>af/form/args</a>
+<a class="item sub" href=/actions/af/form/editing/user_updated/>af/form/editing/user_updated</a>
+<h3 class=section-title>Javascript</h3>
+<a class="item sub" href=/actions/af/form/page_changed/>af/form/page_changed</a>
+<a class="item sub" href=/actions/af/field/calculated/update_value/>af/field/calculated/update_value</a>
+</div>
+<div class=sub-menu data-parent=filters>
+<a href=/ class=back>&larr; Go back</a>
+<h2 class=subtitle><i data-feather=filter></i> Filters</h2>
+<h3 class=section-title>Forms</h3>
+<a class="item sub" href=/filters/af/form/args/>af/form/args</a>
 <a class="item sub" href=/filters/af/form/success_message/>af/form/success_message</a>
 <a class="item sub" href=/filters/af/form/before_render/>af/form/before_render</a>
 <a class="item sub" href=/filters/af/field/prefill_value/>af/field/prefill_value</a>
 <a class="item sub" href=/filters/af/form/restriction/>af/form/restriction</a>
-<a class="item sub" href=/filters/af/field/before_render/>af/field/before_render</a><h3 class=section-title>Display</h3><a class="item sub" href=/filters/af/form/field_attributes/>af/form/field_attributes</a>
+<a class="item sub" href=/filters/af/field/before_render/>af/field/before_render</a>
+<h3 class=section-title>Display</h3>
+<a class="item sub" href=/filters/af/form/field_attributes/>af/form/field_attributes</a>
 <a class="item sub" href=/filters/af/form/button_attributes/>af/form/button_attributes</a>
 <a class="item sub" href=/filters/af/form/previous_button_atts/>af/form/previous_button_atts</a>
-<a class="item sub" href=/filters/af/form/next_button_atts/>af/form/next_button_atts</a><h3 class=section-title>Emails</h3><a class="item sub" href=/filters/af/form/email/recipients/>af/form/email/recipients</a>
+<a class="item sub" href=/filters/af/form/next_button_atts/>af/form/next_button_atts</a>
+<h3 class=section-title>Emails</h3>
+<a class="item sub" href=/filters/af/form/email/recipients/>af/form/email/recipients</a>
 <a class="item sub" href=/filters/af/form/email/subject/>af/form/email/subject</a>
 <a class="item sub" href=/filters/af/form/email/content/>af/form/email/content</a>
 <a class="item sub" href=/filters/af/form/email/headers/>af/form/email/headers</a>
 <a class="item sub" href=/filters/af/form/email/attachments/>af/form/email/attachments</a>
-<a class="item sub" href=/filters/af/form/email/styles/>af/form/email/styles</a><h3 class=section-title>Pro</h3><a class="item sub" href=/filters/af/field/calculate_value/>af/field/calculate_value</a>
+<a class="item sub" href=/filters/af/form/email/styles/>af/form/email/styles</a>
+<h3 class=section-title>Pro</h3>
+<a class="item sub" href=/filters/af/field/calculate_value/>af/field/calculate_value</a>
 <a class="item sub" href=/filters/af/form/editing/post_data/>af/form/editing/post_data</a>
 <a class="item sub" href=/filters/af/form/editing/user_data/>af/form/editing/user_data</a>
-<a class="item sub" href=/filters/af/form/mailchimp/request/>af/form/mailchimp/request</a></div><div class=main-menu><a class=item href=/ data-id=home><i data-feather=play></i> Home</a>
-<a class="item has-sub-pages" data-id=guides><i data-feather=align-left></i> Guides</a>
-<a class=item href=/videos/ data-id><i data-feather=youtube></i> Videos</a>
-<a class=item href=/faq/ data-id><i data-feather=help-circle></i> FAQ</a>
-<a class=item href=/support/ data-id><i data-feather=message-circle></i> Support</a><div class=divider></div><a class=item href=/functions/ data-id><i data-feather=code></i> Functions</a>
-<a class="item has-sub-pages" data-id=actions><i data-feather=zap></i> Actions</a>
-<a class="item has-sub-pages" data-id=filters><i data-feather=filter></i> Filters</a></div></nav><a class=menu-close>Close menu <i data-feather=arrow-up></i></a></div><div class="content section post"><h1>Using calculated fields</h1><nav id=TableOfContents><ul><li><a href=#adding-a-calculated-field>Adding a calculated field</a></li><li><a href=#customizing-the-calculated-value>Customizing the calculated value</a></li><li><a href=#extending-calculated-fields-with-javascript>Extending calculated fields with Javascript</a></li></ul></nav><p>Calculated fields are updated live when a form is filled out and can contain any content you&rsquo;d like to. They are perfect for providing previews or to show calculated values before submission.</p><h2 id=adding-a-calculated-field>Adding a calculated field</h2><p>Calculated fields are just regular ACF fields. Go to your field group and add a new field of type &ldquo;Calculated&rdquo;. Next you need to configure what value this field should display which is done in the form settings. Head on over to your form settings and switch to the &ldquo;Calculated&rdquo; tab.</p><p>Under the &ldquo;Calculated&rdquo; tab you will find a WYSIWYG editor for each calculated field. You can add regular content and mix in field values which will be updated in real-time, similar to how field values can be included in email notifications and success messages. Mathematical arithmetic, such as addition, is not currently supported through the admin interface but can easily be achieved with a little bit of code. Read the next section for an example on how this can be done.</p><h2 id=customizing-the-calculated-value>Customizing the calculated value</h2><p>Calculated fields are not limited to static content with mixed in fields but also support using code to define more complex calculations, for example arithmetic. Use the <code>af/field/calculate_value</code> filter to provide your own calculation logic.</p><p>Below is an example of a calculated field which display the sum of two other fields in the form called <code>number_field_1</code> and <code>number_field_2</code>. Replace <code>FIELD_NAME</code> in the example below with the name of your calculated field.</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#000;font-weight:700>&lt;?</span>php
+<a class="item sub" href=/filters/af/form/mailchimp/request/>af/form/mailchimp/request</a>
+</div>
+<div class=main-menu>
+<a class=item href=/ data-id=home>
+<i data-feather=play></i> Home
+</a>
+<a class="item has-sub-pages" data-id=guides>
+<i data-feather=align-left></i> Guides
+</a>
+<a class=item href=/videos/ data-id>
+<i data-feather=youtube></i> Videos
+</a>
+<a class=item href=/faq/ data-id>
+<i data-feather=help-circle></i> FAQ
+</a>
+<a class=item href=/support/ data-id>
+<i data-feather=message-circle></i> Support
+</a>
+<div class=divider></div>
+<a class=item href=/functions/ data-id>
+<i data-feather=code></i> Functions
+</a>
+<a class="item has-sub-pages" data-id=actions>
+<i data-feather=zap></i> Actions
+</a>
+<a class="item has-sub-pages" data-id=filters>
+<i data-feather=filter></i> Filters
+</a>
+</div>
+</nav>
+<a class=menu-close>Close menu <i data-feather=arrow-up></i></a>
+</div>
+<div class="content section post">
+<h1>Using calculated fields</h1>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#adding-a-calculated-field>Adding a calculated field</a></li>
+<li><a href=#customizing-the-calculated-value>Customizing the calculated value</a></li>
+<li><a href=#extending-calculated-fields-with-javascript>Extending calculated fields with Javascript</a></li>
+</ul>
+</nav>
+<p>Calculated fields are updated live when a form is filled out and can contain any content you&rsquo;d like to. They are perfect for providing previews or to show calculated values before submission.</p>
+<h2 id=adding-a-calculated-field>Adding a calculated field</h2>
+<p>Calculated fields are just regular ACF fields. Go to your field group and add a new field of type &ldquo;Calculated&rdquo;. Next you need to configure what value this field should display which is done in the form settings. Head on over to your form settings and switch to the &ldquo;Calculated&rdquo; tab.</p>
+<p>Under the &ldquo;Calculated&rdquo; tab you will find a WYSIWYG editor for each calculated field. You can add regular content and mix in field values which will be updated in real-time, similar to how field values can be included in email notifications and success messages. Mathematical arithmetic, such as addition, is not currently supported through the admin interface but can easily be achieved with a little bit of code. Read the next section for an example on how this can be done.</p>
+<h2 id=customizing-the-calculated-value>Customizing the calculated value</h2>
+<p>Calculated fields are not limited to static content with mixed in fields but also support using code to define more complex calculations, for example arithmetic. Use the <code>af/field/calculate_value</code> filter to provide your own calculation logic.</p>
+<p>Below is an example of a calculated field which display the sum of two other fields in the form called <code>number_field_1</code> and <code>number_field_2</code>. Replace <code>FIELD_NAME</code> in the example below with the name of your calculated field.</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#000;font-weight:700>&lt;?</span>php
 
 <span style=color:#000;font-weight:700>function</span> <span style=color:#900;font-weight:700>calculated_field_value</span>() {
   <span style=color:#998;font-style:italic>// Get field values (these will be updated in real-time)
@@ -101,11 +314,16 @@
   <span style=color:#998;font-style:italic>// Display the sum in the calculated field
 </span><span style=color:#998;font-style:italic></span>  <span style=color:#000;font-weight:700>return</span> <span style=color:#d14>&#39;Sum: &#39;</span> <span style=color:#000;font-weight:700>.</span> <span style=color:teal>$sum</span>;
 }
-add_filter( <span style=color:#d14>&#39;af/field/calculate_value/name=FIELD_NAME&#39;</span>, <span style=color:#d14>&#39;calculated_field_value&#39;</span>, <span style=color:#099>10</span>, <span style=color:#099>0</span> );</code></pre></div><h2 id=extending-calculated-fields-with-javascript>Extending calculated fields with Javascript</h2><p>Using the ACF Javascript API the behaviour of calculated fields can be customized. The <code>af/field/calculated/value_updated</code> action is triggered when a calculated field is updated and can be used when you want use the calculated value for something more than just the field.</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#998;font-style:italic>// Intercept the rendered calculated field and insert the markup
+add_filter( <span style=color:#d14>&#39;af/field/calculate_value/name=FIELD_NAME&#39;</span>, <span style=color:#d14>&#39;calculated_field_value&#39;</span>, <span style=color:#099>10</span>, <span style=color:#099>0</span> );</code></pre></div>
+<h2 id=extending-calculated-fields-with-javascript>Extending calculated fields with Javascript</h2>
+<p>Using the ACF Javascript API the behaviour of calculated fields can be customized. The <code>af/field/calculated/value_updated</code> action is triggered when a calculated field is updated and can be used when you want use the calculated value for something more than just the field.</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#998;font-style:italic>// Intercept the rendered calculated field and insert the markup
 </span><span style=color:#998;font-style:italic>// into an element with the id `#preview-container`
 </span><span style=color:#998;font-style:italic></span>acf.addAction( <span style=color:#d14>&#39;af/field/calculated/value_updated/name=FIELD_NAME&#39;</span>, <span style=color:#000;font-weight:700>function</span>( value, field, form ) {
   $(<span style=color:#d14>&#39;#preview-container&#39;</span>).html(value);
-});</code></pre></div><p>If you want to cause an update of a calculated field you can use trigger the <code>af/field/calculated/update_value</code>. This is convenient for example when you want to update a calculated field when the user interacts with something outside the form.</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#998;font-style:italic>// This is the simplest format available and will trigger the update for 
+});</code></pre></div>
+<p>If you want to cause an update of a calculated field you can use trigger the <code>af/field/calculated/update_value</code>. This is convenient for example when you want to update a calculated field when the user interacts with something outside the form.</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#998;font-style:italic>// This is the simplest format available and will trigger the update for 
 </span><span style=color:#998;font-style:italic>// all calculated fields on the page
 </span><span style=color:#998;font-style:italic></span>acf.doAction( <span style=color:#d14>&#39;af/field/calculated/update_value&#39;</span> );
 
@@ -113,4 +331,17 @@ add_filter( <span style=color:#d14>&#39;af/field/calculate_value/name=FIELD_NAME
 </span><span style=color:#998;font-style:italic></span>acf.doAction( <span style=color:#d14>&#39;af/field/calculated/update_value/name=FIELD_NAME&#39;</span> );
 
 <span style=color:#998;font-style:italic>// You may also target specific fields by field key
-</span><span style=color:#998;font-style:italic></span>acf.doAction( <span style=color:#d14>&#39;af/field/calculated/update_value/key=FIELD_KEY&#39;</span> );</code></pre></div></div><footer class=section>Created by <a href=https://fabianlindfors.se>Fabian Lindfors</a> 🇸🇪 in collaboration with <a href=https://hookturn.io>Hookturn</a> 🇦🇺</footer></main></div><script>feather.replace()</script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js></script><script type=text/javascript>docsearch({apiKey:'fc0e72bc26da8cdce55c581fb036bc0a',indexName:'advancedforms',inputSelector:'.search',debug:!1})</script><script src=/js/script.js></script><script>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-45755328-16","auto"),ga("send","pageview")</script></body></html>
+</span><span style=color:#998;font-style:italic></span>acf.doAction( <span style=color:#d14>&#39;af/field/calculated/update_value/key=FIELD_KEY&#39;</span> );</code></pre></div>
+</div>
+<footer class=section>
+Created by <a href=https://fabianlindfors.se>Fabian Lindfors</a> 🇸🇪 in collaboration with <a href=https://hookturn.io>Hookturn</a> 🇦🇺
+</footer>
+</main>
+</div>
+<script>feather.replace()</script>
+<script type=text/javascript src=https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js></script>
+<script type=text/javascript>docsearch({apiKey:'fc0e72bc26da8cdce55c581fb036bc0a',indexName:'advancedforms',inputSelector:'.search',debug:!1})</script>
+<script src=/js/script.js></script>
+<script>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-45755328-16","auto"),ga("send","pageview")</script>
+</body>
+</html>
