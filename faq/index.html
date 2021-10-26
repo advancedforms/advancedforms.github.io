@@ -295,6 +295,7 @@
 <li><a href=#is-it-possible-to-handle-submissions-without-a-page-reload-using-ajax>Is it possible to handle submissions without a page reload (using AJAX)?</a></li>
 <li><a href=#how-do-i-connect-my-form-to-an-external-service>How do I connect my form to an external service?</a></li>
 <li><a href=#how-do-i-only-subscribe-users-in-mailchimp-if-they-have-checked-a-checkbox>How do I only subscribe users in Mailchimp if they have checked a checkbox?</a></li>
+<li><a href=#how-do-i-remove-the-default-styles-for-a-form>How do I remove the default styles for a form?</a></li>
 </ul>
 </nav>
 <h2 id=why-is-my-success-message-not-showing-after-submission>Why is my success message not showing after submission?</h2>
@@ -322,6 +323,19 @@
   <span style=color:#000;font-weight:700>return</span> <span style=color:#000;font-weight:700>false</span>;
 }
 add_filter( <span style=color:#d14>&#39;af/form/mailchimp/request/key=FORM_KEY&#39;</span>, <span style=color:#d14>&#39;form_mailchimp_conditional_checkbox&#39;</span>, <span style=color:#099>10</span>, <span style=color:#099>3</span> );</code></pre></div>
+<h2 id=how-do-i-remove-the-default-styles-for-a-form>How do I remove the default styles for a form?</h2>
+<p>Advanced Forms will enqueue both default styles from ACF and its own styles. To dequeue all of them, use the following snippet:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#000;font-weight:700>&lt;?</span>php
+
+<span style=color:#000;font-weight:700>function</span> <span style=color:#900;font-weight:700>form_remove_default_styles</span>() {
+  <span style=color:#998;font-style:italic>// Remove default Advanced Forms styles
+</span><span style=color:#998;font-style:italic></span>  wp_dequeue_style( <span style=color:#d14>&#39;af-form-style&#39;</span> );
+
+  <span style=color:#998;font-style:italic>// Remove default ACF styles
+</span><span style=color:#998;font-style:italic></span>  wp_dequeue_style( <span style=color:#d14>&#39;acf-input&#39;</span> );
+  wp_dequeue_style( <span style=color:#d14>&#39;acf-pro-input&#39;</span> );
+}
+add_action( <span style=color:#d14>&#39;af/form/enqueue/key=FORM_KEY&#39;</span>, <span style=color:#d14>&#39;form_remove_default_styles&#39;</span> );</code></pre></div>
 </div>
 <footer class=section>
 Created by <a href=https://fabianlindfors.se>Fabian Lindfors</a> 🇸🇪 in collaboration with <a href=https://hookturn.io>Hookturn</a> 🇦🇺
