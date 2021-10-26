@@ -51,3 +51,22 @@ function form_mailchimp_conditional_checkbox( $request ) {
 add_filter( 'af/form/mailchimp/request/key=FORM_KEY', 'form_mailchimp_conditional_checkbox', 10, 3 );
 
 {{< / highlight >}}
+
+## How do I remove the default styles for a form?
+
+Advanced Forms will enqueue both default styles from ACF and its own styles. To dequeue all of them, use the following snippet:
+
+{{< highlight php >}}
+<?php
+
+function form_remove_default_styles() {
+  // Remove default Advanced Forms styles
+  wp_dequeue_style( 'af-form-style' );
+
+  // Remove default ACF styles
+  wp_dequeue_style( 'acf-input' );
+  wp_dequeue_style( 'acf-pro-input' );
+}
+add_action( 'af/form/enqueue/key=FORM_KEY', 'form_remove_default_styles' );
+
+{{< / highlight >}}
