@@ -296,6 +296,7 @@
 <li><a href=#how-do-i-connect-my-form-to-an-external-service>How do I connect my form to an external service?</a></li>
 <li><a href=#how-do-i-only-subscribe-users-in-mailchimp-if-they-have-checked-a-checkbox>How do I only subscribe users in Mailchimp if they have checked a checkbox?</a></li>
 <li><a href=#how-do-i-remove-the-default-styles-for-a-form>How do I remove the default styles for a form?</a></li>
+<li><a href=#im-seeing-weird-behaviour-with-my-form-thas-has-a-large-number-of-fields-what-could-be-wrong>I&rsquo;m seeing weird behaviour with my form thas has a large number of fields. What could be wrong?</a></li>
 </ul>
 </nav>
 <h2 id=why-is-my-success-message-not-showing-after-submission>Why is my success message not showing after submission?</h2>
@@ -336,6 +337,8 @@ add_filter( <span style=color:#d14>&#39;af/form/mailchimp/request/key=FORM_KEY&#
   wp_dequeue_style( <span style=color:#d14>&#39;acf-pro-input&#39;</span> );
 }
 add_action( <span style=color:#d14>&#39;af/form/enqueue/key=FORM_KEY&#39;</span>, <span style=color:#d14>&#39;form_remove_default_styles&#39;</span> );</code></pre></div>
+<h2 id=im-seeing-weird-behaviour-with-my-form-thas-has-a-large-number-of-fields-what-could-be-wrong>I&rsquo;m seeing weird behaviour with my form thas has a large number of fields. What could be wrong?</h2>
+<p>If your form has a very large number of fields there is a risk that you will run into limits set by PHP. If the form is not working at all or you&rsquo;re seeing weird behaviour, we recommend increasing the <a href=https://www.php.net/manual/en/info.configuration.php#ini.max-input-vars><code>max_input_vars</code></a> setting in PHP.</p>
 </div>
 <footer class=section>
 Created by <a href=https://fabianlindfors.se>Fabian Lindfors</a> 🇸🇪 in collaboration with <a href=https://hookturn.io>Hookturn</a> 🇦🇺
