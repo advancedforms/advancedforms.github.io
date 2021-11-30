@@ -70,3 +70,7 @@ function form_remove_default_styles() {
 add_action( 'af/form/enqueue/key=FORM_KEY', 'form_remove_default_styles' );
 
 {{< / highlight >}}
+
+## I'm seeing weird behaviour with my form thas has a large number of fields. What could be wrong?
+
+If your form has a very large number of fields there is a risk that you will run into limits set by PHP. If the form is not working at all or you're seeing weird behaviour, we recommend increasing the [`max_input_vars`](https://www.php.net/manual/en/info.configuration.php#ini.max-input-vars) setting in PHP.
