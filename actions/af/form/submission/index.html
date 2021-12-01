@@ -1,10 +1,10 @@
 <!doctype html><html class=no-js lang=en>
 <head>
-<title>af/form/button_attributes | Advanced Forms for ACF</title>
+<title>af/form/submission | Advanced Forms for ACF</title>
 <meta name=description content>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="af/form/button_attributes">
+<meta property="og:title" content="af/form/submission">
 <meta property="og:image" content="/images/site-logo.png">
 <meta property="og:description" content>
 <meta property="og:site_name" content="Advanced Forms for ACF">
@@ -69,7 +69,7 @@
 <a href=/ class=back>&larr; Go back</a>
 <h2 class=subtitle><i data-feather=code></i> Functions</h2>
 </div>
-<div class=sub-menu data-parent=actions>
+<div class="sub-menu active" data-parent=actions>
 <a href=/ class=back>&larr; Go back</a>
 <h2 class=subtitle><i data-feather=zap></i> Actions</h2>
 <h3 class=section-title>Display</h3>
@@ -78,7 +78,7 @@
 <a class="item sub" href=/actions/af/form/after_fields/>af/form/after_fields</a>
 <a class="item sub" href=/actions/af/form/hidden_fields/>af/form/hidden_fields</a>
 <h3 class=section-title>Events</h3>
-<a class="item sub" href=/actions/af/form/submission/>af/form/submission</a>
+<a class="item sub active" href=/actions/af/form/submission/>af/form/submission</a>
 <a class="item sub" href=/actions/af/form/email/before_send/>af/form/email/before_send</a>
 <a class="item sub" href=/actions/af/form/email/after_send/>af/form/email/after_send</a>
 <a class="item sub" href=/actions/af/form/entry_created/>af/form/entry_created</a>
@@ -92,7 +92,7 @@
 <a class="item sub" href=/actions/af/form/page_changed/>af/form/page_changed</a>
 <a class="item sub" href=/actions/af/field/calculated/update_value/>af/field/calculated/update_value</a>
 </div>
-<div class="sub-menu active" data-parent=filters>
+<div class=sub-menu data-parent=filters>
 <a href=/ class=back>&larr; Go back</a>
 <h2 class=subtitle><i data-feather=filter></i> Filters</h2>
 <h3 class=section-title>Forms</h3>
@@ -104,7 +104,7 @@
 <a class="item sub" href=/filters/af/field/before_render/>af/field/before_render</a>
 <h3 class=section-title>Display</h3>
 <a class="item sub" href=/filters/af/form/field_attributes/>af/form/field_attributes</a>
-<a class="item sub active" href=/filters/af/form/button_attributes/>af/form/button_attributes</a>
+<a class="item sub" href=/filters/af/form/button_attributes/>af/form/button_attributes</a>
 <a class="item sub" href=/filters/af/form/previous_button_atts/>af/form/previous_button_atts</a>
 <a class="item sub" href=/filters/af/form/next_button_atts/>af/form/next_button_atts</a>
 <h3 class=section-title>Emails</h3>
@@ -206,7 +206,7 @@
 <a href=/ class=back>&larr; Go back</a>
 <h2 class=subtitle><i data-feather=code></i> Functions</h2>
 </div>
-<div class=sub-menu data-parent=actions>
+<div class="sub-menu active" data-parent=actions>
 <a href=/ class=back>&larr; Go back</a>
 <h2 class=subtitle><i data-feather=zap></i> Actions</h2>
 <h3 class=section-title>Display</h3>
@@ -215,7 +215,7 @@
 <a class="item sub" href=/actions/af/form/after_fields/>af/form/after_fields</a>
 <a class="item sub" href=/actions/af/form/hidden_fields/>af/form/hidden_fields</a>
 <h3 class=section-title>Events</h3>
-<a class="item sub" href=/actions/af/form/submission/>af/form/submission</a>
+<a class="item sub active" href=/actions/af/form/submission/>af/form/submission</a>
 <a class="item sub" href=/actions/af/form/email/before_send/>af/form/email/before_send</a>
 <a class="item sub" href=/actions/af/form/email/after_send/>af/form/email/after_send</a>
 <a class="item sub" href=/actions/af/form/entry_created/>af/form/entry_created</a>
@@ -229,7 +229,7 @@
 <a class="item sub" href=/actions/af/form/page_changed/>af/form/page_changed</a>
 <a class="item sub" href=/actions/af/field/calculated/update_value/>af/field/calculated/update_value</a>
 </div>
-<div class="sub-menu active" data-parent=filters>
+<div class=sub-menu data-parent=filters>
 <a href=/ class=back>&larr; Go back</a>
 <h2 class=subtitle><i data-feather=filter></i> Filters</h2>
 <h3 class=section-title>Forms</h3>
@@ -241,7 +241,7 @@
 <a class="item sub" href=/filters/af/field/before_render/>af/field/before_render</a>
 <h3 class=section-title>Display</h3>
 <a class="item sub" href=/filters/af/form/field_attributes/>af/form/field_attributes</a>
-<a class="item sub active" href=/filters/af/form/button_attributes/>af/form/button_attributes</a>
+<a class="item sub" href=/filters/af/form/button_attributes/>af/form/button_attributes</a>
 <a class="item sub" href=/filters/af/form/previous_button_atts/>af/form/previous_button_atts</a>
 <a class="item sub" href=/filters/af/form/next_button_atts/>af/form/next_button_atts</a>
 <h3 class=section-title>Emails</h3>
@@ -288,22 +288,20 @@
 <a class=menu-close>Close menu <i data-feather=arrow-up></i></a>
 </div>
 <div class="content section post">
-<h1>af/form/button_attributes</h1>
-<p>Filter attributes on the submit button. Use to add classes, set an ID, or add new attributes.</p>
-<p><code>$attributes</code> is an array of HTML attributes and their values.</p>
+<h1>af/form/submission</h1>
+<p>Triggered when a form is submitted. Can be used to implement your own submission handling, for example to call third-party APIs. Submitted field values can be retrieved using <code>af_get_field( 'FIELD_NAME' )</code>.</p>
+<p>More details are available in the <a href=/guides/processing-form-submissions/>Processing form submissions</a> guide.</p>
 <div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#000;font-weight:700>&lt;?</span>php
 
-<span style=color:#000;font-weight:700>function</span> <span style=color:#900;font-weight:700>filter_submit_button_attributes</span>( <span style=color:teal>$attributes</span>, <span style=color:teal>$form</span>, <span style=color:teal>$args</span> ) {
-    <span style=color:teal>$attributes</span>[<span style=color:#d14>&#39;class&#39;</span>] <span style=color:#000;font-weight:700>.=</span> <span style=color:#d14>&#39; button&#39;</span>;
-    
-    <span style=color:#000;font-weight:700>return</span> <span style=color:teal>$attributes</span>;
+<span style=color:#000;font-weight:700>function</span> <span style=color:#900;font-weight:700>handle_form_submission</span>( <span style=color:teal>$form</span>, <span style=color:teal>$field</span>, <span style=color:teal>$args</span> ) {
+  <span style=color:teal>$email</span> <span style=color:#000;font-weight:700>=</span> af_get_field( <span style=color:#d14>&#39;email&#39;</span> );
 }
-add_filter( <span style=color:#d14>&#39;af/form/button_attributes/key=FORM_KEY&#39;</span>, <span style=color:#d14>&#39;filter_submit_button_attributes&#39;</span>, <span style=color:#099>10</span>, <span style=color:#099>3</span> );</code></pre></div>
+add_action( <span style=color:#d14>&#39;af/form/submission&#39;</span>, <span style=color:#d14>&#39;handle_form_submission&#39;</span>, <span style=color:#099>10</span>, <span style=color:#099>3</span> );</code></pre></div>
 <h2 id=modifiers>Modifiers</h2>
 <ul>
-<li><code>af/form/button_attributes</code> Applies to all forms.</li>
-<li><code>af/form/button_attributes/key=FORM_KEY</code> Applies to forms with specific key.</li>
-<li><code>af/form/button_attributes/id=FORM_ID</code> Applies to forms with specific post ID.</li>
+<li><code>af/form/submission</code> Applies to all forms.</li>
+<li><code>af/form/submission/key=FORM_KEY</code> Applies to forms with specific key.</li>
+<li><code>af/form/submission/id=FORM_ID</code> Applies to forms with specific post ID.</li>
 </ul>
 </div>
 <footer class=section>
