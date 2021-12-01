@@ -2,6 +2,7 @@
 layout: post
 title:  "Processing form submissions"
 categories: guides basic
+actions: ["af/form/submission"]
 menu:
   main:
     parent: guides/advanced

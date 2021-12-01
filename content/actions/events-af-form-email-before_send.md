@@ -4,7 +4,7 @@ menu:
   main:
     identifier: af-form-email-before_send
     parent: "actions/events"
-    weight: 1
+    weight: 2
 aliases: /actions/af-email-before_send/
 ---
 

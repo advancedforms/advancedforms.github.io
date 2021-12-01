@@ -4,7 +4,7 @@ menu:
   main:
     identifier: af-form-email-after_send
     parent: "actions/events"
-    weight: 2
+    weight: 3
 aliases: /actions/af-email-after_send/
 ---
 

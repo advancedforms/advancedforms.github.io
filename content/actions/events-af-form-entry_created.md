@@ -4,7 +4,7 @@ menu:
   main:
     identifier: af-form-entry_created
     parent: "actions/events"
-    weight: 3
+    weight: 4
 aliases: /actions/af-form-entry_created/
 ---
 

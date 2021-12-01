@@ -4,7 +4,7 @@ menu:
   main:
     identifier: af-form-validate
     parent: "actions/events"
-    weight: 4
+    weight: 5
 aliases: /actions/af-form-validate/
 ---
 
