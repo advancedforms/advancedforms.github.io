@@ -1,10 +1,10 @@
 <!doctype html><html class=no-js lang=en>
 <head>
-<title>Creating a form | Advanced Forms for ACF</title>
+<title>af/form/zapier/request | Advanced Forms for ACF</title>
 <meta name=description content>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="Creating a form">
+<meta property="og:title" content="af/form/zapier/request">
 <meta property="og:image" content="/images/site-logo.png">
 <meta property="og:description" content>
 <meta property="og:site_name" content="Advanced Forms for ACF">
@@ -27,11 +27,11 @@
 <a href=/ class=back>&larr; Go back</a>
 <h2 class=subtitle><i data-feather=play></i> Home</h2>
 </div>
-<div class="sub-menu active" data-parent=guides>
+<div class=sub-menu data-parent=guides>
 <a href=/ class=back>&larr; Go back</a>
 <h2 class=subtitle><i data-feather=align-left></i> Guides</h2>
 <h3 class=section-title>Basic</h3>
-<a class="item sub active" href=/guides/creating-a-form/>Creating a form</a>
+<a class="item sub" href=/guides/creating-a-form/>Creating a form</a>
 <a class="item sub" href=/guides/configuring-your-form/>Configuring your form</a>
 <a class="item sub" href=/guides/displaying-your-form/>Displaying your form</a>
 <a class="item sub" href=/guides/available-arguments/>Available arguments</a>
@@ -92,7 +92,7 @@
 <a class="item sub" href=/actions/af/form/page_changed/>af/form/page_changed</a>
 <a class="item sub" href=/actions/af/field/calculated/update_value/>af/field/calculated/update_value</a>
 </div>
-<div class=sub-menu data-parent=filters>
+<div class="sub-menu active" data-parent=filters>
 <a href=/ class=back>&larr; Go back</a>
 <h2 class=subtitle><i data-feather=filter></i> Filters</h2>
 <h3 class=section-title>Forms</h3>
@@ -119,7 +119,7 @@
 <a class="item sub" href=/filters/af/form/editing/post_data/>af/form/editing/post_data</a>
 <a class="item sub" href=/filters/af/form/editing/user_data/>af/form/editing/user_data</a>
 <a class="item sub" href=/filters/af/form/mailchimp/request/>af/form/mailchimp/request</a>
-<a class="item sub" href=/filters/af/form/zapier/request/>af/form/zapier/request</a>
+<a class="item sub active" href=/filters/af/form/zapier/request/>af/form/zapier/request</a>
 </div>
 <div class=main-menu>
 <a class=item href=/ data-id=home>
@@ -165,11 +165,11 @@
 <a href=/ class=back>&larr; Go back</a>
 <h2 class=subtitle><i data-feather=play></i> Home</h2>
 </div>
-<div class="sub-menu active" data-parent=guides>
+<div class=sub-menu data-parent=guides>
 <a href=/ class=back>&larr; Go back</a>
 <h2 class=subtitle><i data-feather=align-left></i> Guides</h2>
 <h3 class=section-title>Basic</h3>
-<a class="item sub active" href=/guides/creating-a-form/>Creating a form</a>
+<a class="item sub" href=/guides/creating-a-form/>Creating a form</a>
 <a class="item sub" href=/guides/configuring-your-form/>Configuring your form</a>
 <a class="item sub" href=/guides/displaying-your-form/>Displaying your form</a>
 <a class="item sub" href=/guides/available-arguments/>Available arguments</a>
@@ -230,7 +230,7 @@
 <a class="item sub" href=/actions/af/form/page_changed/>af/form/page_changed</a>
 <a class="item sub" href=/actions/af/field/calculated/update_value/>af/field/calculated/update_value</a>
 </div>
-<div class=sub-menu data-parent=filters>
+<div class="sub-menu active" data-parent=filters>
 <a href=/ class=back>&larr; Go back</a>
 <h2 class=subtitle><i data-feather=filter></i> Filters</h2>
 <h3 class=section-title>Forms</h3>
@@ -257,7 +257,7 @@
 <a class="item sub" href=/filters/af/form/editing/post_data/>af/form/editing/post_data</a>
 <a class="item sub" href=/filters/af/form/editing/user_data/>af/form/editing/user_data</a>
 <a class="item sub" href=/filters/af/form/mailchimp/request/>af/form/mailchimp/request</a>
-<a class="item sub" href=/filters/af/form/zapier/request/>af/form/zapier/request</a>
+<a class="item sub active" href=/filters/af/form/zapier/request/>af/form/zapier/request</a>
 </div>
 <div class=main-menu>
 <a class=item href=/ data-id=home>
@@ -290,61 +290,24 @@
 <a class=menu-close>Close menu <i data-feather=arrow-up></i></a>
 </div>
 <div class="content section post">
-<h1>Creating a form</h1>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#using-the-admin-interface>Using the admin interface</a></li>
-<li><a href=#programmatically>Programmatically</a></li>
-</ul>
-</nav>
-<p>Forms can be created either through the WordPress admin interface or programmatically.</p>
-<h2 id=using-the-admin-interface>Using the admin interface</h2>
-<p>To create a form using the admin interface, do the following:</p>
-<ol>
-<li>Navigate to the &ldquo;Forms&rdquo; page in the admin panel.</li>
-<li>Click &ldquo;Add new&rdquo;, give the form a name, and then click &ldquo;Publish&rdquo;.</li>
-<li>Create a new ACF field group and add the fields you want to be part of your form.</li>
-<li>Configure a location rule for your field group. Select &ldquo;Form&rdquo; -> &ldquo;is equal to&rdquo; -> name of your form.</li>
-<li>Go back to the form admin page and <a href=/guides/configuring-your-form/>configure the features that you need</a>.</li>
-<li><a href=/guides/displaying-your-form/>Display your form</a>.</li>
-</ol>
-<p>Below you can see an example of a ACF location rule configured for a form named &ldquo;Test form&rdquo;.</p>
-<p><img src=/images/location-rule.png alt="ACF field group location rule for a form named &ldquo;Test form&rdquo;"></p>
-<h2 id=programmatically>Programmatically</h2>
-<p>Registering your forms programmatically is great if you want to integrate Advanced Forms with your theme or plugin. The plugin also has an export feature which will generate the registration code for you. This tools can be found by editing a form in the admin panel and then clicking the &ldquo;Export&rdquo; button.</p>
-<p>To create a form programmatically the function <code>af_register_form( $form )</code> is provided. We recommend using the form export feature to determine the structure of the <code>$form</code> array.</p>
-<p>Note that the only required attribute is <strong>key</strong> which should be a unique identifier for your form starting with <code>"form_"</code>. Setting the title attribute is recommended.</p>
+<h1>af/form/zapier/request</h1>
+<p>Change the Zapier API request before it&rsquo;s sent.</p>
 <div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#000;font-weight:700>&lt;?</span>php
 
-<span style=color:#000;font-weight:700>function</span> <span style=color:#900;font-weight:700>register_form</span>() {
-	<span style=color:teal>$form</span> <span style=color:#000;font-weight:700>=</span> <span style=color:#000;font-weight:700>array</span>(
-	    <span style=color:#d14>&#39;title&#39;</span> <span style=color:#000;font-weight:700>=&gt;</span> <span style=color:#d14>&#39;Form title&#39;</span>,
-	    <span style=color:#d14>&#39;key&#39;</span> <span style=color:#000;font-weight:700>=&gt;</span> <span style=color:#d14>&#39;form_some_unique_key&#39;</span>,
-	    <span style=color:#d14>&#39;display&#39;</span> <span style=color:#000;font-weight:700>=&gt;</span> <span style=color:#000;font-weight:700>array</span>(
-	        <span style=color:#d14>&#39;description&#39;</span> <span style=color:#000;font-weight:700>=&gt;</span> <span style=color:#d14>&#39;&#39;</span>,
-	        <span style=color:#d14>&#39;success_message&#39;</span> <span style=color:#000;font-weight:700>=&gt;</span> <span style=color:#d14>&#39;&#39;</span>,
-	    ),
-	    <span style=color:#d14>&#39;create_entries&#39;</span> <span style=color:#000;font-weight:700>=&gt;</span> <span style=color:#000;font-weight:700>false</span>,
-	    <span style=color:#d14>&#39;restrict_entries&#39;</span> <span style=color:#000;font-weight:700>=&gt;</span> <span style=color:#000;font-weight:700>false</span>,
-	    <span style=color:#d14>&#39;entries_limit&#39;</span> <span style=color:#000;font-weight:700>=&gt;</span> <span style=color:#099>0</span>,
-	    <span style=color:#d14>&#39;entries_restriction_message&#39;</span> <span style=color:#000;font-weight:700>=&gt;</span> <span style=color:#d14>&#39;&#39;</span>,
-	);
-	
-	af_register_form( <span style=color:teal>$form</span> );
+<span style=color:#000;font-weight:700>function</span> <span style=color:#900;font-weight:700>modify_zapier_request</span>( <span style=color:teal>$request</span>, <span style=color:teal>$form</span>, <span style=color:teal>$args</span> ) {
+  <span style=color:#998;font-style:italic>// Combine two fields and send to Zapier with key &#34;full_name&#34;
+</span><span style=color:#998;font-style:italic></span>  <span style=color:teal>$full_name</span> <span style=color:#000;font-weight:700>=</span> af_get_field( <span style=color:#d14>&#39;first_name&#39;</span> ) <span style=color:#000;font-weight:700>.</span> <span style=color:#d14>&#39; &#39;</span> <span style=color:#000;font-weight:700>.</span> af_get_field( <span style=color:#d14>&#39;last_name&#39;</span> );
+  <span style=color:teal>$request</span>[<span style=color:#d14>&#39;body&#39;</span>][<span style=color:#d14>&#39;full_name&#39;</span>] <span style=color:#000;font-weight:700>=</span> <span style=color:teal>$full_name</span>;
+
+  <span style=color:#000;font-weight:700>return</span> <span style=color:teal>$request</span>;
 }
-add_action( <span style=color:#d14>&#39;af/register_forms&#39;</span>, <span style=color:#d14>&#39;register_form&#39;</span> );</code></pre></div>
-<p>It&rsquo;s recommended to register your forms on the <code>af/register_forms</code> hook to ensure that both Advanced Forms and ACF are installed and ready.</p>
-<p>If you are adding ACF field groups programmatically using the function <code>acf_add_local_field_group</code> then you need to set your ACF location rule to match your registered form. Adding your form as a location rule is simple and can be done like this:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#000;font-weight:700>&lt;?</span>php
-
-<span style=color:teal>$acf_location_rule</span> <span style=color:#000;font-weight:700>=</span> <span style=color:#000;font-weight:700>array</span> (
-    <span style=color:#d14>&#39;param&#39;</span> <span style=color:#000;font-weight:700>=&gt;</span> <span style=color:#d14>&#39;af_form&#39;</span>,
-    <span style=color:#d14>&#39;operator&#39;</span> <span style=color:#000;font-weight:700>=&gt;</span> <span style=color:#d14>&#39;==&#39;</span>,
-    <span style=color:#d14>&#39;value&#39;</span> <span style=color:#000;font-weight:700>=&gt;</span> YOUR_FORM_KEY,
-);
-
-<span style=color:#998;font-style:italic>// Use the location rule with acf_add_local_field_group
-</span></code></pre></div>
+add_filter( <span style=color:#d14>&#39;af/form/zapier/request/key=FORM_KEY&#39;</span>, <span style=color:#d14>&#39;modify_zapier_request&#39;</span>, <span style=color:#099>10</span>, <span style=color:#099>3</span> );</code></pre></div>
+<h2 id=modifiers>Modifiers</h2>
+<ul>
+<li><code>af/form/zapier/request</code> Applies to all forms.</li>
+<li><code>af/form/zapier/request/key=FORM_KEY</code> Applies to forms with specific key.</li>
+<li><code>af/form/zapier/request/id=FORM_ID</code> Applies to forms with specific post ID.</li>
+</ul>
 </div>
 <footer class=section>
 Created by <a href=https://fabianlindfors.se>Fabian Lindfors</a> 🇸🇪 in collaboration with <a href=https://hookturn.io>Hookturn</a> 🇦🇺
