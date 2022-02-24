@@ -56,7 +56,7 @@ With the help of [Zapier](https://zapier.com) you can connect your form to thous
 ### Creating a Zap
 
 1. Set up a form with all the fields you want to pass on to Zapier.
-1. Follow this [link](https://zapier.com/developer/invite/66711/01f290c023c6caeb5201b57663c0af01/) to create a new Zap for your form.
+1. Follow this [link](https://zapier.com/developer/public-invite/95660/7dcf09778552a90e3ff6333781b3f3af/) to create a new Zap for your form.
 2. Choose the "New Submission" trigger and continue.
 3. Copy the provided URL,  and jump over to your form in the Wordpress admin.
 4. Under "Integrations", enable the Zapier integration and the paste the URL from step 5. Finishing by clicking the "Send test submission" button.
