@@ -16,7 +16,7 @@ Triggered after an email has been sent.
 function after_email_send( $email, $form ) {
     // Do something with email
 }
-add_action( 'af/email/after_send/key=FORM_KEY', 'after_email_send', 10, 2 );
+add_action( 'af/form/email/after_send/key=FORM_KEY', 'after_email_send', 10, 2 );
 
 {{< / highlight >}}
 

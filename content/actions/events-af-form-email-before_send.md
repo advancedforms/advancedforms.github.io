@@ -16,7 +16,7 @@ Triggered before an email is sent.
 function before_email_send( $email, $form ) {
     // Do something with email
 }
-add_action( 'af/email/before_send/key=FORM_KEY', 'before_email_send', 10, 2 );
+add_action( 'af/form/email/before_send/key=FORM_KEY', 'before_email_send', 10, 2 );
 
 {{< / highlight >}}
 
