@@ -74,3 +74,7 @@ add_action( 'af/form/enqueue/key=FORM_KEY', 'form_remove_default_styles' );
 ## I'm seeing weird behaviour with my form thas has a large number of fields. What could be wrong?
 
 If your form has a very large number of fields there is a risk that you will run into limits set by PHP. If the form is not working at all or you're seeing weird behaviour, we recommend increasing the [`max_input_vars`](https://www.php.net/manual/en/info.configuration.php#ini.max-input-vars) setting in PHP.
+
+## I can't upload images using a gallery field in a form
+
+ACF Gallery fields use the WP media uploader under the hood which means that they require a signed in user to work. The user must also have the right capabilities to access the media library. If you want your form to be accesible for non-signed-in users as well, we recommend replacing the gallery field with a repeater of image fields.
