@@ -25,11 +25,15 @@ If you have configured post editing in the form settings, you don't have to do a
 
 ## Editing existing posts
 
-To edit an existing post, you need to specify which post you want your form to edit. This is achieved using the `post` argument. You can either specify `current` to edit the current post or a post ID to edit a specific one.
+To edit an existing post, you need to specify which post you want your form to edit. This is achieved using the `post` argument which supports three different values:
 
-Edit the currently displayed post: `[advanced_form form="KEY" post="current"]`
+- `current` to edit the currently displayed post
 
-Edit post with ID 123: `[advanced_form form="KEY" post="123"]`
+- `param` to edit based on a post ID passed in as a `post` query parameter, for example `https://example.com/page?post=123`. When using this, it's also recommended to restrict the form so that users can only edit their own posts. This can be enabled under "Restrictions" in the form settings.
+
+- A specific post ID
+
+For example, to edit a post with ID 123: `[advanced_form form="KEY" post="123"]` or to edit the current post: `[advanced_form form="KEY" post="current"]`.
 
 ## Customizations
 
