@@ -1,8 +1,8 @@
 ---
-title: af/form/email/recipients
+title: af/form/email/recipient
 menu:
   main:
-    identifier: af-form-email-recipients
+    identifier: af-form-email-recipient
     parent: "filters/emails"
     weight: 1
 aliases: /filters/af-form-email-recipient/
