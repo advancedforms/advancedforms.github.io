@@ -15,7 +15,7 @@ Override the user data used when a user is created or updated. User data is the 
 
 function modify_user_data( $user_data, $form, $args ) {
     // Override user role
-    $user_data['user_role'] = 'administrator';
+    $user_data['role'] = 'administrator';
 
     return $user_data;
 }
